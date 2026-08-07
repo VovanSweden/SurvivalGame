@@ -16,9 +16,11 @@ game.js
 
 Здесь находятся:
 
+
 - нажатия кнопок;
 - переходы между экранами;
 - выбор персонажа.
+
 
 
 Сейчас реализировано:
@@ -28,11 +30,13 @@ SCREEN 1
 
 START GAME
 
+
 ↓
 
 SCREEN 2
 
 CHOOSE YOUR CHARACTER
+
 
 ↓
 
@@ -47,6 +51,7 @@ GIRL START
 
 
 Пока НЕ реализовано:
+
 
 - история персонажа;
 - карта острова;
@@ -71,7 +76,8 @@ GIRL START
 
 document.getElementById()
 
-ищет элемент по ID.
+ищет элемент по его ID.
+
 
 
 Например:
@@ -80,6 +86,7 @@ document.getElementById()
 HTML:
 
 id="start-button"
+
 
 
 JavaScript:
@@ -92,14 +99,17 @@ document.getElementById("start-button")
 */
 
 
-
-const startButton = document.getElementById("start-button");
-
-
-const startScreen = document.getElementById("start-screen");
+const startButton =
+document.getElementById("start-button");
 
 
-const characterScreen = document.getElementById("character-screen");
+const startScreen =
+document.getElementById("start-screen");
+
+
+const characterScreen =
+document.getElementById("character-screen");
+
 
 
 
@@ -108,10 +118,13 @@ const characterScreen = document.getElementById("character-screen");
 /*
 =================================================
 
-ПОЛУЧАЕМ НЕВИДИМЫЕ ЗОНЫ ПЕРСОНАЖЕЙ
+ПОЛУЧАЕМ НЕВИДИМЫЕ ЗОНЫ ВЫБОРА
 
 
-Эти кнопки находятся поверх изображения fon2.png.
+Эти кнопки находятся поверх:
+
+graphics/fon2.png
+
 
 
 BOY:
@@ -129,18 +142,18 @@ id="girl-choice"
 Игрок их не видит.
 
 
-Он просто нажимает
-на левую или правую часть картинки.
-
-
 =================================================
 */
 
 
-const boyChoice = document.getElementById("boy-choice");
+const boyChoice =
+document.getElementById("boy-choice");
 
 
-const girlChoice = document.getElementById("girl-choice");
+const girlChoice =
+document.getElementById("girl-choice");
+
+
 
 
 
@@ -153,6 +166,7 @@ SCREEN 3
 
 
 Получаем третий экран.
+
 
 
 intro-character-screen
@@ -171,7 +185,6 @@ graphics/girl start.png
 
 
 
-
 intro-character-image
 
 
@@ -182,10 +195,15 @@ intro-character-image
 */
 
 
-const introCharacterScreen = document.getElementById("intro-character-screen");
+const introCharacterScreen =
+document.getElementById("intro-character-screen");
 
 
-const introCharacterImage = document.getElementById("intro-character-image");
+
+const introCharacterImage =
+document.getElementById("intro-character-image");
+
+
 
 
 
@@ -201,17 +219,24 @@ SCREEN 1 → SCREEN 2
 START GAME
 
 
-Когда игрок нажимает на изображение START GAME:
+
+Игрок нажимает прозрачную кнопку
+на картинке fon1.png.
+
+
+
+Происходит:
 
 
 1.
 
-SCREEN 1 скрывается.
+Первый экран скрывается.
+
 
 
 2.
 
-SCREEN 2 появляется.
+Второй экран появляется.
 
 
 =================================================
@@ -231,7 +256,7 @@ startButton.addEventListener("click", function(){
 
 
     /*
-    Показываем выбор персонажа.
+    Показываем фон fon2.png.
     */
 
     characterScreen.style.display = "block";
@@ -239,6 +264,7 @@ startButton.addEventListener("click", function(){
 
 
 });
+
 
 
 
@@ -257,14 +283,14 @@ SCREEN 2 → SCREEN 3
 
 
 
-Игрок нажал на левую часть экрана.
+Игрок нажал левую часть экрана.
+
 
 
 Показываем:
 
 
 graphics/man start.png
-
 
 
 =================================================
@@ -284,7 +310,7 @@ boyChoice.addEventListener("click", function(){
 
 
     /*
-    Открываем экран персонажа.
+    Показываем третий экран.
     */
 
     introCharacterScreen.style.display = "flex";
@@ -293,13 +319,19 @@ boyChoice.addEventListener("click", function(){
 
     /*
     Загружаем картинку парня.
+
+    Название файла должно
+    полностью совпадать с папкой graphics.
+
     */
 
-    introCharacterImage.src = "graphics/man start.png";
+    introCharacterImage.src =
+    "graphics/man start.png";
 
 
 
 });
+
 
 
 
@@ -318,14 +350,14 @@ SCREEN 2 → SCREEN 3
 
 
 
-Игрок нажал на правую часть экрана.
+Игрок нажал правую часть экрана.
+
 
 
 Показываем:
 
 
 graphics/girl start.png
-
 
 
 =================================================
@@ -345,7 +377,7 @@ girlChoice.addEventListener("click", function(){
 
 
     /*
-    Открываем экран персонажа.
+    Показываем третий экран.
     */
 
     introCharacterScreen.style.display = "flex";
@@ -354,9 +386,11 @@ girlChoice.addEventListener("click", function(){
 
     /*
     Загружаем картинку девушки.
+
     */
 
-    introCharacterImage.src = "graphics/girl start.png";
+    introCharacterImage.src =
+    "graphics/girl start.png";
 
 
 

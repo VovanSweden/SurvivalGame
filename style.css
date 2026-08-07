@@ -3,7 +3,6 @@
 
 SURVIVE 30 DAYS
 
-
 ФАЙЛ:
 
 style.css
@@ -12,30 +11,29 @@ style.css
 НАЗНАЧЕНИЕ:
 
 
-Этот файл отвечает только за внешний вид игры.
+Этот файл отвечает только за внешний вид.
 
 
-Здесь находятся:
+Используется система:
 
 
-- размеры экранов;
-- фоновые изображения;
-- расположение элементов;
-- текст;
-- кнопки;
-- изображения персонажей.
+ГОТОВАЯ КАРТИНКА
+
++
+
+ПРОЗРАЧНЫЕ КНОПКИ
+
 
 
 Здесь НЕТ:
 
 
-- переходов между экранами;
-- выбора персонажа;
-- игровой логики.
+- текста игры;
+- изображений персонажей через HTML;
+- логики переходов.
 
 
 Логика находится в:
-
 
 game.js
 
@@ -50,16 +48,13 @@ game.js
 /*
 =================================================
 
-1. НАСТРОЙКА ЭКРАНА ТЕЛЕФОНА
+1. ОСНОВНЫЕ НАСТРОЙКИ ЭКРАНА
 
 
-body — весь экран браузера.
+Телефонный экран.
 
 
-Убираем стандартные отступы.
-
-
-Игра занимает весь экран телефона.
+Убираем стандартные отступы браузера.
 
 
 =================================================
@@ -69,22 +64,22 @@ body — весь экран браузера.
 body {
 
 
-    margin:0;
+margin:0;
 
 
-    padding:0;
+padding:0;
 
 
-    width:100%;
+width:100%;
 
 
-    height:100dvh;
+height:100dvh;
 
 
-    overflow:hidden;
+overflow:hidden;
 
 
-    font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 
 
 }
@@ -94,30 +89,16 @@ body {
 
 
 
-
 /*
 =================================================
 
-2. ГЛАВНЫЙ КОНТЕЙНЕР ИГРЫ
+2. ГЛАВНЫЙ КОНТЕЙНЕР
+
+
+Все игровые экраны находятся внутри:
 
 
 .game
-
-
-Внутри находятся все игровые экраны.
-
-
-Сейчас:
-
-
-SCREEN 1
-
-START GAME
-
-
-SCREEN 2
-
-CHOOSE YOUR CHARACTER
 
 
 =================================================
@@ -127,19 +108,20 @@ CHOOSE YOUR CHARACTER
 .game {
 
 
-    width:100%;
+width:100%;
 
 
-    height:100dvh;
+height:100dvh;
 
 
-    position:relative;
+position:relative;
 
 
-    overflow:hidden;
+overflow:hidden;
 
 
 }
+
 
 
 
@@ -154,7 +136,7 @@ CHOOSE YOUR CHARACTER
 SCREEN 1
 
 
-START GAME
+START SCREEN
 
 
 Фон:
@@ -164,7 +146,13 @@ graphics/fon1.png
 
 
 
-Первый экран игры.
+Вся графика уже находится внутри картинки.
+
+
+HTML содержит только:
+
+
+прозрачную кнопку START.
 
 
 =================================================
@@ -174,154 +162,40 @@ graphics/fon1.png
 .start-screen {
 
 
-    width:100%;
+width:100%;
 
 
-    height:100%;
+height:100%;
 
-     position:relative;
 
+position:absolute;
 
 
-    background-image:url("graphics/fon1.png");
+top:0;
 
-   
 
+left:0;
 
 
-    background-size:cover;
 
+background-image:url("graphics/fon1.png");
 
-    background-position:center;
 
 
-    background-repeat:no-repeat;
+background-size:cover;
 
 
 
-    display:flex;
+background-position:center;
 
 
-    flex-direction:column;
 
+background-repeat:no-repeat;
 
-    align-items:center;
 
 
+display:block;
 
-    justify-content:flex-start;
-
-
-
-    padding-top:50px;
-
-
-    box-sizing:border-box;
-
-
-}
-
-
-
-
-
-
-
-
-/*
-=================================================
-
-НАЗВАНИЕ ИГРЫ
-
-
-Текст:
-
-
-SURVIVE
-
-30 DAYS
-
-
-=================================================
-*/
-
-
-.start-screen h1 {
-
-
-    color:white;
-
-
-
-    font-size:55px;
-
-
-
-    text-align:center;
-
-
-
-    text-shadow:
-
-    0 4px 10px black;
-
-
-
-    margin:0;
-
-
-}
-
-
-
-
-
-
-
-
-/*
-=================================================
-
-ОПИСАНИЕ ИГРЫ
-
-
-Текст под названием.
-
-
-=================================================
-*/
-
-
-.start-screen p {
-
-
-    width:80%;
-
-
-
-    color:white;
-
-
-
-    font-size:20px;
-
-
-
-    line-height:1.4;
-
-
-
-    text-align:center;
-
-
-
-    margin-top:30px;
-
-
-
-    text-shadow:
-
-    0 3px 8px black;
 
 
 }
@@ -337,43 +211,77 @@ SURVIVE
 /*
 =================================================
 
-КНОПКА START GAME
+НЕВИДИМАЯ КНОПКА START GAME
 
 
-Эта кнопка запускает игру.
+Она лежит поверх кнопки,
+которая нарисована внутри fon1.png.
 
 
-Важно:
+
+Настройка положения:
 
 
-margin-top
+top
 
 
-управляет вертикальным положением.
+left
 
 
-Больше значение = ниже кнопка.
+width
+
+
+height
+
 
 
 =================================================
 */
+
 
 .image-start-button {
 
-    position:absolute;
 
-    left:0;
-    bottom:0;
+position:absolute;
 
-    width:100%;
-    height:70%;
 
-    background:transparent;
-    border:none;
 
-    cursor:pointer;
+left:50%;
 
-    z-index:5;
+
+
+top:72%;
+
+
+
+transform:translate(-50%,-50%);
+
+
+
+width:70%;
+
+
+
+height:12%;
+
+
+
+background:transparent;
+
+
+
+border:none;
+
+
+
+cursor:pointer;
+
+
+
+z-index:5;
+
+
+
 }
 
 
@@ -389,29 +297,28 @@ margin-top
 
 SCREEN 2
 
+
 CHOOSE YOUR CHARACTER
+
 
 
 Фон:
 
+
 graphics/fon2.png
 
 
-На изображении уже находятся:
 
-- парень;
-- девушка;
-- оформление.
+Вся графика находится внутри изображения.
 
 
-HTML НЕ содержит:
 
-- картинки;
-- текст;
-- карточки.
+HTML содержит только две зоны:
 
 
-Оставляем только невидимые зоны нажатия.
+BOY
+
+GIRL
 
 
 =================================================
@@ -421,32 +328,41 @@ HTML НЕ содержит:
 .character-screen {
 
 
-    width:100%;
+width:100%;
 
 
-    height:100%;
-
-
-    background-image:url("graphics/fon2.png");
+height:100%;
 
 
 
-    background-size:cover;
-
-
-    background-position:center;
+position:absolute;
 
 
 
-    background-repeat:no-repeat;
+top:0;
+
+
+left:0;
 
 
 
-    position:relative;
+background-image:url("graphics/fon2.png");
 
 
 
-    display:none;
+background-size:cover;
+
+
+
+background-position:center;
+
+
+
+background-repeat:no-repeat;
+
+
+
+display:none;
 
 
 
@@ -457,13 +373,13 @@ HTML НЕ содержит:
 
 
 
+
+
+
 /*
 =================================================
 
-НЕВИДИМЫЕ КНОПКИ
-
-
-Они находятся поверх изображения.
+ПРОЗРАЧНЫЕ КНОПКИ ВЫБОРА
 
 
 Игрок их не видит.
@@ -479,19 +395,24 @@ HTML НЕ содержит:
 .character-hotspot {
 
 
-    position:absolute;
+position:absolute;
 
 
-    background:transparent;
+
+background:transparent;
 
 
-    border:none;
+
+border:none;
 
 
-    cursor:pointer;
+
+cursor:pointer;
 
 
-    z-index:5;
+
+z-index:5;
+
 
 
 }
@@ -501,19 +422,25 @@ HTML НЕ содержит:
 
 
 
+
+
 /*
 =================================================
 
-ЗОНА ПАРНЯ
+ЗОНА BOY
 
 
-Левая часть экрана.
+Левая половина экрана.
 
 
-Если нажать:
+При нажатии:
 
 
 BOY
+
+↓
+
+SCREEN 3
 
 ↓
 
@@ -527,18 +454,19 @@ man start.png
 .boy-hotspot {
 
 
-    left:0;
-
-
-    top:0;
+left:0;
 
 
 
-    width:50%;
+top:0;
 
 
 
-    height:100%;
+width:50%;
+
+
+
+height:100%;
 
 
 
@@ -549,19 +477,25 @@ man start.png
 
 
 
+
+
 /*
 =================================================
 
-ЗОНА ДЕВУШКИ
+ЗОНА GIRL
 
 
-Правая часть экрана.
+Правая половина экрана.
 
 
-Если нажать:
+При нажатии:
 
 
 GIRL
+
+↓
+
+SCREEN 3
 
 ↓
 
@@ -575,22 +509,26 @@ girl start.png
 .girl-hotspot {
 
 
-    right:0;
-
-
-    top:0;
+right:0;
 
 
 
-    width:50%;
+top:0;
 
 
 
-    height:100%;
+width:50%;
+
+
+
+height:100%;
 
 
 
 }
+
+
+
 
 
 
@@ -602,21 +540,23 @@ girl start.png
 
 SCREEN 3
 
+
 INTRO CHARACTER START
 
 
-После выбора персонажа
-открывается полноэкранная картинка.
+После выбора персонажа.
 
 
-BOY:
-
-graphics/man start.png
+Показывает:
 
 
-GIRL:
+man start.png
 
-graphics/girl start.png
+
+или
+
+
+girl start.png
 
 
 =================================================
@@ -626,46 +566,47 @@ graphics/girl start.png
 .intro-character-screen {
 
 
-    width:100%;
+width:100%;
 
 
-    height:100%;
-
-
-
-    display:none;
+height:100%;
 
 
 
-    position:absolute;
+position:absolute;
 
 
 
-    top:0;
+top:0;
+
+
+left:0;
 
 
 
-    left:0;
+display:none;
 
 
 
-    z-index:10;
+background:black;
 
 
 
-    background:black;
+z-index:10;
 
 
 
-    align-items:center;
+align-items:center;
 
 
 
-    justify-content:center;
+justify-content:center;
 
 
 
 }
+
+
 
 
 
@@ -679,12 +620,7 @@ graphics/girl start.png
 КАРТИНКА SCREEN 3
 
 
-Заполняет весь экран телефона.
-
-
-cover:
-
-картинка закрывает весь экран.
+Заполняет экран телефона.
 
 
 =================================================
@@ -694,16 +630,14 @@ cover:
 .intro-character-screen img {
 
 
-
-    width:100%;
-
+width:100%;
 
 
-    height:100%;
+height:100%;
 
 
 
-    object-fit:cover;
+object-fit:cover;
 
 
 
