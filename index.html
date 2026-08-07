@@ -181,43 +181,45 @@ SCREEN 4
 SCREEN 1
 
 
+START SCREEN
+
+
+Теперь первый экран содержит
+только фоновую картинку.
+
+
+Вся надпись:
+
+SURVIVE
+30 DAYS
 START GAME
 
 
-ПЕРВЫЙ ЭКРАН ИГРЫ
-
-
-
-Фоновая картинка:
+уже находится внутри изображения:
 
 
 graphics/fon1.png
 
 
 
-Создаётся через:
+HTML больше не рисует текст.
 
 
-style.css
-
-
-
-На экране:
-
-
-- название игры;
-- описание;
-- кнопка START GAME.
+Невидимая кнопка находится
+поверх нарисованной кнопки START GAME.
 
 
 
-После нажатия кнопки
-будет переход:
+Нажатие:
 
 
-START GAME
+START GAME на картинке
+
 
 ↓
+
+SCREEN 2
+
 
 CHOOSE YOUR CHARACTER
 
@@ -226,133 +228,44 @@ CHOOSE YOUR CHARACTER
 =================================================
 -->
 
-
-
 <section
 
-
 class="start-screen"
-
 
 id="start-screen">
 
 
 
-
-
-
 <!--
 
-Главный заголовок игры.
+Невидимая кнопка.
 
 
-Текст видит игрок.
+Игрок её не видит.
 
 
--->
-
-<h1>
-
-
-SURVIVE
+Она расположена поверх
+нарисованной кнопки START GAME.
 
 
-<br>
-
-
-30 DAYS
-
-
-</h1>
-
-
-
-
-
-
-
-<!--
-
-Описание игры.
-
-
--->
-
-<p>
-
-
-You wake up alone
-on a mysterious tropical island.
-
-
-</p>
-
-
-
-
-
-
-
-
-<!--
-
-Главная кнопка начала игры.
-
-
-Для игрока:
-
-
-START GAME
-
-
-
-Для программы:
-
-
-id="start-button"
-
-
-
-game.js найдёт эту кнопку
-по этому имени.
-
-
-Не менять:
-
-
-id="start-button"
+ID нужен для game.js.
 
 
 
 -->
-
-
 
 <button
 
-
-class="start-button"
-
+class="image-start-button"
 
 id="start-button">
-
-
-START GAME
 
 
 </button>
 
 
 
-
-
 </section>
-
-
-
-
-
-
 
 
 
