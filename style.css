@@ -382,23 +382,36 @@ margin-top
 
 
 
+
+
 /*
 =================================================
 
 SCREEN 2
-
 
 CHOOSE YOUR CHARACTER
 
 
 Фон:
 
-
 graphics/fon2.png
 
 
+На изображении уже находятся:
 
-Появляется после START GAME.
+- парень;
+- девушка;
+- оформление.
+
+
+HTML НЕ содержит:
+
+- картинки;
+- текст;
+- карточки.
+
+
+Оставляем только невидимые зоны нажатия.
 
 
 =================================================
@@ -414,21 +427,11 @@ graphics/fon2.png
     height:100%;
 
 
-    position:relative;
-
-
-    display:none;
-
-
-
-    background-image:
-
-    url("graphics/fon2.png");
+    background-image:url("graphics/fon2.png");
 
 
 
     background-size:cover;
-
 
 
     background-position:center;
@@ -439,190 +442,12 @@ graphics/fon2.png
 
 
 
-    flex-direction:column;
-
-
-
-    align-items:center;
-
-
-
-    justify-content:center;
-
-
-}
-
-
-
-
-
-
-
-
-
-/*
-=================================================
-
-ЗАГОЛОВОК ВТОРОГО ЭКРАНА
-
-
-CHOOSE YOUR CHARACTER
-
-
-=================================================
-*/
-
-
-.character-screen h2 {
-
-
-    color:white;
-
-
-
-    font-size:32px;
-
-
-
-    text-shadow:
-
-    0 3px 8px black;
-
-
-}
-
-
-
-
-
-
-
-
-
-/*
-=================================================
-
-КОНТЕЙНЕР ПЕРСОНАЖЕЙ
-
-
-Расположение:
-
-
-BOY  ← слева
-
-
-GIRL ← справа
-
-
-=================================================
-*/
-
-
-.characters {
-
-
-    display:flex;
-
-
-
-    justify-content:center;
-
-
-
-    align-items:center;
-
-
-
-    gap:30px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/*
-=================================================
-
-КАРТОЧКА ПЕРСОНАЖА
-
-
-Каждый персонаж имеет:
-
-
-- картинку;
-- область нажатия;
-- название.
-
-
-=================================================
-*/
-
-
-.character-card {
-
-
-    width:150px;
-
-
-
-    text-align:center;
-
-
-
     position:relative;
 
 
-}
 
+    display:none;
 
-
-
-
-
-
-
-
-/*
-=================================================
-
-КАРТИНКИ ПЕРСОНАЖЕЙ
-
-
-BOY:
-
-
-graphics/man1.png
-
-
-
-GIRL:
-
-
-graphics/girl1.png
-
-
-=================================================
-*/
-
-
-.character-card img {
-
-
-    width:100%;
-
-
-
-    height:auto;
-
-
-
-    display:block;
 
 
 }
@@ -632,79 +457,44 @@ graphics/girl1.png
 
 
 
-
-
 /*
 =================================================
 
-НЕВИДИМАЯ КНОПКА ПОВЕРХ ПЕРСОНАЖА
+НЕВИДИМЫЕ КНОПКИ
 
 
-Эта кнопка находится поверх картинки.
+Они находятся поверх изображения.
 
 
-Игрок её не видит.
+Игрок их не видит.
 
 
-Но при нажатии:
-
-
-BOY
-
-↓
-
-game.js
-
-
-GIRL
-
-↓
-
-game.js
-
+Они только принимают нажатие.
 
 
 =================================================
 */
 
 
-.character-button {
+.character-hotspot {
 
 
     position:absolute;
 
 
-
-    top:0;
-
-
-    left:0;
-
-
-
-    width:100%;
-
-
-
-    height:85%;
-
-
-
     background:transparent;
-
 
 
     border:none;
 
 
-
     cursor:pointer;
 
 
+    z-index:5;
+
+
 }
-
-
-
 
 
 
@@ -714,40 +504,98 @@ game.js
 /*
 =================================================
 
-НАЗВАНИЕ ПЕРСОНАЖА
+ЗОНА ПАРНЯ
+
+
+Левая часть экрана.
+
+
+Если нажать:
 
 
 BOY
 
-GIRL
+↓
+
+man start.png
 
 
 =================================================
 */
 
 
-.character-card p {
+.boy-hotspot {
 
 
-    color:white;
+    left:0;
 
 
-
-    font-size:24px;
-
-
-
-    font-weight:bold;
+    top:0;
 
 
 
-    text-shadow:
+    width:50%;
 
-    0 3px 8px black;
+
+
+    height:100%;
 
 
 
 }
+
+
+
+
+
+
+/*
+=================================================
+
+ЗОНА ДЕВУШКИ
+
+
+Правая часть экрана.
+
+
+Если нажать:
+
+
+GIRL
+
+↓
+
+girl start.png
+
+
+=================================================
+*/
+
+
+.girl-hotspot {
+
+
+    right:0;
+
+
+    top:0;
+
+
+
+    width:50%;
+
+
+
+    height:100%;
+
+
+
+}
+
+
+
+
+
 
 /*
 =================================================
@@ -757,16 +605,18 @@ SCREEN 3
 INTRO CHARACTER START
 
 
-Экран после выбора персонажа.
+После выбора персонажа
+открывается полноэкранная картинка.
 
 
-Показывает:
+BOY:
 
-man start.png
+graphics/man start.png
 
-или
 
-girl start.png
+GIRL:
+
+graphics/girl start.png
 
 
 =================================================
@@ -776,34 +626,43 @@ girl start.png
 .intro-character-screen {
 
 
-width:100%;
+    width:100%;
 
 
-height:100%;
+    height:100%;
 
 
-display:none;
+
+    display:none;
 
 
-position:absolute;
+
+    position:absolute;
 
 
-top:0;
+
+    top:0;
 
 
-left:0;
+
+    left:0;
 
 
-z-index:10;
+
+    z-index:10;
 
 
-background:black;
+
+    background:black;
 
 
-align-items:center;
+
+    align-items:center;
 
 
-justify-content:center;
+
+    justify-content:center;
+
 
 
 }
@@ -813,24 +672,19 @@ justify-content:center;
 
 
 
+
 /*
 =================================================
 
-КАРТИНКА ПЕРСОНАЖА
+КАРТИНКА SCREEN 3
 
 
-Изображение занимает весь экран.
+Заполняет весь экран телефона.
 
 
-object-fit:
+cover:
 
-cover
-
-
-означает:
-
-показывать картинку полностью,
-не обрезая.
+картинка закрывает весь экран.
 
 
 =================================================
@@ -840,13 +694,17 @@ cover
 .intro-character-screen img {
 
 
+
     width:100%;
+
 
 
     height:100%;
 
 
+
     object-fit:cover;
+
 
 
 }

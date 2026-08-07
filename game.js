@@ -3,7 +3,6 @@
 
 SURVIVE 30 DAYS
 
-
 ФАЙЛ:
 
 game.js
@@ -22,20 +21,18 @@ game.js
 - выбор персонажа.
 
 
-Сейчас реализовано:
+Сейчас реализировано:
 
 
 SCREEN 1
 
 START GAME
 
-
 ↓
 
 SCREEN 2
 
 CHOOSE YOUR CHARACTER
-
 
 ↓
 
@@ -51,7 +48,6 @@ GIRL START
 
 Пока НЕ реализовано:
 
-
 - история персонажа;
 - карта острова;
 - выбор места;
@@ -60,14 +56,8 @@ GIRL START
 - события.
 
 
-Они будут добавляться постепенно.
-
-
 =================================================
 */
-
-
-
 
 
 
@@ -81,9 +71,7 @@ GIRL START
 
 document.getElementById()
 
-
-Эта команда ищет элемент
-по его имени ID.
+ищет элемент по ID.
 
 
 Например:
@@ -100,29 +88,9 @@ document.getElementById("start-button")
 
 
 
-Получаем:
-
-
-startButton
-
-кнопка START GAME
-
-
-
-startScreen
-
-первый экран
-
-
-
-characterScreen
-
-второй экран
-
-
-
 =================================================
 */
+
 
 
 const startButton = document.getElementById("start-button");
@@ -137,28 +105,22 @@ const characterScreen = document.getElementById("character-screen");
 
 
 
-
-
-
-
 /*
 =================================================
 
-ПОЛУЧАЕМ НЕВИДИМЫЕ КНОПКИ ПЕРСОНАЖЕЙ
+ПОЛУЧАЕМ НЕВИДИМЫЕ ЗОНЫ ПЕРСОНАЖЕЙ
 
 
-Эти кнопки находятся поверх картинок.
+Эти кнопки находятся поверх изображения fon2.png.
 
 
 BOY:
-
 
 id="boy-choice"
 
 
 
 GIRL:
-
 
 id="girl-choice"
 
@@ -167,7 +129,8 @@ id="girl-choice"
 Игрок их не видит.
 
 
-Он нажимает на изображение персонажа.
+Он просто нажимает
+на левую или правую часть картинки.
 
 
 =================================================
@@ -183,44 +146,36 @@ const girlChoice = document.getElementById("girl-choice");
 
 
 
-
-
-
-
 /*
 =================================================
 
 SCREEN 3
 
 
-ПОЛУЧАЕМ ТРЕТИЙ ЭКРАН
+Получаем третий экран.
 
 
-introCharacterScreen
+intro-character-screen
 
 
 Это экран, где появляется:
 
-man start.png
+
+graphics/man start.png
+
 
 или
 
-girl start.png
+
+graphics/girl start.png
 
 
 
-introCharacterImage
+
+intro-character-image
 
 
-Это сама картинка персонажа.
-
-
-Позже здесь можно добавить:
-
-
-- текст истории;
-- кнопку продолжения;
-- анимацию.
+Это изображение персонажа.
 
 
 =================================================
@@ -237,38 +192,26 @@ const introCharacterImage = document.getElementById("intro-character-image");
 
 
 
-
-
-
 /*
 =================================================
 
 SCREEN 1 → SCREEN 2
 
 
-ПЕРЕХОД START GAME
-
-
-Когда игрок нажимает:
-
-
 START GAME
 
 
-
-Происходит:
+Когда игрок нажимает на изображение START GAME:
 
 
 1.
 
-Первый экран скрывается.
-
+SCREEN 1 скрывается.
 
 
 2.
 
-Появляется экран выбора персонажа.
-
+SCREEN 2 появляется.
 
 
 =================================================
@@ -280,34 +223,22 @@ startButton.addEventListener("click", function(){
 
 
     /*
-    Скрываем стартовый экран.
-
-    Он больше не показывается.
+    Убираем первый экран.
     */
-
 
     startScreen.style.display = "none";
 
 
 
-
-
     /*
-    Показываем экран выбора персонажа.
-
-    display:flex нужен,
-    потому что в style.css
-    этот экран построен через Flexbox.
-
+    Показываем выбор персонажа.
     */
 
-
-    characterScreen.style.display = "flex";
+    characterScreen.style.display = "block";
 
 
 
 });
-
 
 
 
@@ -325,25 +256,11 @@ SCREEN 2 → SCREEN 3
 ВЫБОР BOY
 
 
-Если игрок нажал
-на парня:
+
+Игрок нажал на левую часть экрана.
 
 
-1.
-
-Экран выбора персонажа скрывается.
-
-
-
-2.
-
-Показывается SCREEN 3.
-
-
-
-3.
-
-Загружается картинка:
+Показываем:
 
 
 graphics/man start.png
@@ -359,46 +276,30 @@ boyChoice.addEventListener("click", function(){
 
 
     /*
-    Убираем экран выбора.
-
+    Скрываем экран выбора.
     */
-
 
     characterScreen.style.display = "none";
 
 
 
-
-
     /*
-    Показываем третий экран.
-
+    Открываем экран персонажа.
     */
-
 
     introCharacterScreen.style.display = "flex";
 
 
 
-
-
     /*
-    Загружаем изображение парня.
-
-    Важно:
-
-название файла должно полностью совпадать
-с названием в папке graphics.
-
-
-*/
+    Загружаем картинку парня.
+    */
 
     introCharacterImage.src = "graphics/man start.png";
 
 
 
 });
-
 
 
 
@@ -416,8 +317,8 @@ SCREEN 2 → SCREEN 3
 ВЫБОР GIRL
 
 
-Если игрок нажал
-на девушку:
+
+Игрок нажал на правую часть экрана.
 
 
 Показываем:
@@ -436,32 +337,23 @@ girlChoice.addEventListener("click", function(){
 
 
     /*
-    Скрываем экран выбора персонажа.
-
+    Скрываем экран выбора.
     */
-
 
     characterScreen.style.display = "none";
 
 
 
-
-
     /*
-    Показываем третий экран.
-
+    Открываем экран персонажа.
     */
-
 
     introCharacterScreen.style.display = "flex";
 
 
 
-
-
     /*
-    Загружаем изображение девушки.
-
+    Загружаем картинку девушки.
     */
 
     introCharacterImage.src = "graphics/girl start.png";
