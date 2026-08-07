@@ -175,13 +175,13 @@ intro-character-screen
 Это экран, где появляется:
 
 
-graphics/man start.png
+graphics/man Start.png
 
 
 или
 
 
-graphics/girl start.png
+graphics/girl Start.png
 
 
 
@@ -290,7 +290,7 @@ SCREEN 2 → SCREEN 3
 Показываем:
 
 
-graphics/man start.png
+graphics/man Start.png
 
 
 =================================================
@@ -326,7 +326,7 @@ boyChoice.addEventListener("click", function(){
     */
 
     introCharacterImage.src =
-    "graphics/man start.png";
+    "graphics/man Start.png";
 
 
 
@@ -357,7 +357,7 @@ SCREEN 2 → SCREEN 3
 Показываем:
 
 
-graphics/girl start.png
+graphics/girl Start.png
 
 
 =================================================
@@ -390,7 +390,7 @@ girlChoice.addEventListener("click", function(){
     */
 
     introCharacterImage.src =
-    "graphics/girl start.png";
+    "graphics/girl Start.png";
 
 
 
