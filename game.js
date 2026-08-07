@@ -102,6 +102,8 @@ document.getElementById("start-button")
 const startButton =
 document.getElementById("start-button");
 
+console.log("GAME JS STARTED");
+
 
 const startScreen =
 document.getElementById("start-screen");

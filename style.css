@@ -629,17 +629,17 @@ justify-content:center;
 
 .intro-character-screen img {
 
+position:absolute;
+
+top:0;
+left:0;
 
 width:100%;
-
-
 height:100%;
-
-
 
 object-fit:cover;
 
-
+z-index:1;
 
 }
 
@@ -783,160 +783,68 @@ SCREEN 3.
 
 .final-character-screen {
 
-
 width:100%;
-
 
 height:100%;
 
-
-
 position:absolute;
-
-
 
 top:0;
 
 left:0;
 
-
-
 display:none;
-
-
 
 background:black;
 
-
-
 z-index:30;
-
-
 
 align-items:center;
 
-
-
 justify-content:center;
-
-
 
 }
 
 
 
-
-
-
-/*
-=================================================
-
-КАРТИНКА SCREEN 4
-
-
-man1.png
-
-girl1.png
-
-
-Заполняет экран телефона.
-
-
-=================================================
-*/
 
 
 .final-character-screen img {
 
+position:absolute;
+
+top:0;
+left:0;
 
 width:100%;
-
-
 height:100%;
-
-
 
 object-fit:cover;
 
+z-index:1;
+
 }
-
-
-# =================================================
-
-#
-# SCREEN 4
-#
-# ПРОЗРАЧНАЯ КНОПКА ПЕРЕХОДА
-#
-# man1.png / girl1.png
-#
-# Переход:
-#
-# SCREEN 4
-#
-# ↓
-#
-# SCREEN 5
-#
-# =================================================
 
 
 .final-character-next-button {
 
 position:absolute;
 
-
 top:0;
-
 left:0;
 
-
-
-/*
-Кнопка занимает
-весь экран.
-
-Игрок нажимает
-на изображение персонажа.
-*/
-
-
 width:100%;
-
 height:100%;
-
-
-
-/*
-Кнопка полностью прозрачная.
-
-На экране остаётся
-только картинка.
-*/
-
 
 background:transparent;
 
-
 border:none;
-
-
 
 cursor:pointer;
 
-
-
-/*
-Кнопка находится
-выше изображения.
-*/
-
-
 z-index:35;
 
-
 }
-
 
 
 
