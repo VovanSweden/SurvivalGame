@@ -249,7 +249,109 @@ document.getElementById("final-character-image");
 /*
 =================================================
 
+SCREEN 4 → SCREEN 5
 
+Получаем прозрачную кнопку
+поверх SCREEN 4.
+
+При нажатии:
+
+man1.png
+girl1.png
+
+↓
+
+fon3.png
+
+=================================================
+*/
+
+const finalCharacterNextButton =
+document.getElementById("final-character-next-button");
+
+
+
+/*
+=================================================
+
+SCREEN 5
+
+LOCATION MAP
+
+
+Получаем элементы карты.
+
+
+location-screen
+
+Это экран с:
+
+graphics/fon3.png
+
+
+
+location-1
+
+location-2
+
+location-3
+
+location-4
+
+
+Это прозрачные кнопки
+поверх карты.
+
+
+=================================================
+*/
+
+
+const locationScreen =
+document.getElementById("location-screen");
+
+
+
+const location1 =
+document.getElementById("location-1");
+
+
+const location2 =
+document.getElementById("location-2");
+
+
+const location3 =
+document.getElementById("location-3");
+
+
+const location4 =
+document.getElementById("location-4");
+
+
+
+/*
+=================================================
+
+ЗАПОМИНАЕМ ВЫБРАННУЮ ЛОКАЦИЮ
+
+
+Позже здесь будут значения:
+
+
+coconut
+
+lake
+
+bamboo
+
+banana
+
+
+=================================================
+*/
+
+
+let selectedLocation = "";
 
 
 
@@ -564,6 +666,22 @@ introCharacterScreen.style.display = "none";
 
 finalCharacterScreen.style.display = "flex";
 
+/*
+Пока экран 4 остаётся открытым.
+
+Позже здесь будет кнопка:
+
+CONTINUE
+
+которая отправит игрока
+на карту острова.
+
+
+Сейчас переход добавляем
+для проверки архитектуры.
+
+*/
+
 
 
 /*
@@ -591,6 +709,158 @@ if(selectedCharacter === "girl"){
 
 }
 
+
+
+});
+
+/*
+=================================================
+
+SCREEN 5
+
+LOCATION BUTTONS
+
+
+Пока только проверяем,
+что кнопки работают.
+
+
+Позже:
+
+
+location-1
+
+↓
+
+LOCAL COCONUT
+
+
+location-2
+
+↓
+
+LOCAL LAKE
+
+
+location-3
+
+↓
+
+LOCAL BAMBOO
+
+
+location-4
+
+↓
+
+LOCAL BANANA
+
+
+
+=================================================
+*/
+
+
+location1.addEventListener("click", function(){
+
+selectedLocation = "coconut";
+
+console.log("Coconut location selected");
+
+});
+
+
+
+location2.addEventListener("click", function(){
+
+selectedLocation = "lake";
+
+console.log("Lake location selected");
+
+});
+
+
+
+location3.addEventListener("click", function(){
+
+selectedLocation = "bamboo";
+
+console.log("Bamboo location selected");
+
+});
+
+
+
+location4.addEventListener("click", function(){
+
+selectedLocation = "banana";
+
+console.log("Banana location selected");
+
+});
+
+/*
+=================================================
+
+SCREEN 4 → SCREEN 5
+
+
+Игрок нажимает на:
+
+man1.png
+или
+girl1.png
+
+
+Переход:
+
+SCREEN 4
+
+↓
+
+SCREEN 5
+
+
+Открывается:
+
+graphics/fon3.png
+
+
+=================================================
+*/
+
+
+finalCharacterNextButton.addEventListener("click", function(){
+
+
+/*
+Скрываем SCREEN 4.
+
+Убираем персонажа:
+man1.png
+или
+girl1.png
+
+*/
+
+finalCharacterScreen.style.display = "none";
+
+
+
+/*
+Открываем SCREEN 5.
+
+Фон:
+
+graphics/fon3.png
+
+находится в CSS:
+
+.location-screen
+
+*/
+
+locationScreen.style.display = "block";
 
 
 });

@@ -518,9 +518,12 @@ game.js
 
 <section
 
+
 class="final-character-screen"
 
+
 id="final-character-screen">
+
 
 
 
@@ -529,13 +532,125 @@ id="final-character-screen">
 <img
 
 
+
 id="final-character-image"
+
 
 
 src="graphics/man1.png"
 
 
+
 alt="Final character">
+
+
+
+
+
+
+
+<!--
+=================================================
+
+
+ПРОЗРАЧНАЯ КНОПКА SCREEN 4
+
+
+
+Этот экран является
+переходным экраном.
+
+
+
+Игрок видит:
+
+man1.png
+
+или
+
+girl1.png
+
+
+
+Но нажимает фактически
+эту кнопку.
+
+
+
+Переход:
+
+
+
+SCREEN 4
+
+
+↓
+
+
+SCREEN 5
+
+
+
+Кнопка занимает
+всю картинку.
+
+
+
+=================================================
+-->
+
+
+
+<!--
+=================================================
+
+ПРОЗРАЧНАЯ КНОПКА SCREEN 4
+
+
+Этот экран является
+переходным экраном.
+
+
+Игрок видит:
+
+man1.png
+
+или
+
+girl1.png
+
+
+Но нажимает фактически
+эту кнопку.
+
+
+Переход:
+
+SCREEN 4
+
+↓
+
+SCREEN 5
+
+
+Кнопка занимает
+всю картинку.
+
+
+=================================================
+-->
+
+
+<button
+
+class="final-character-next-button"
+
+id="final-character-next-button">
+
+
+</button>
+
+
 
 
 
@@ -554,7 +669,338 @@ alt="Final character">
 
 
 
+<!--
+=================================================
 
+
+SCREEN 5
+
+
+LOCATION MAP
+
+
+
+После выбора персонажа:
+
+
+
+SCREEN 4
+
+
+(man1.png / girl1.png)
+
+
+
+↓
+
+
+
+SCREEN 5
+
+
+
+Открывается карта острова.
+
+
+
+ФОН:
+
+
+
+graphics/fon3.png
+
+
+
+
+ВАЖНО:
+
+
+
+Вся графика находится внутри картинки:
+
+
+
+- карта;
+- номера;
+- названия локаций.
+
+
+
+HTML НЕ содержит:
+
+
+
+- карту;
+- текст;
+- иконки.
+
+
+
+HTML содержит только:
+
+
+
+4 прозрачные зоны выбора.
+
+
+
+=================================================
+-->
+
+
+
+<section
+
+
+class="location-screen"
+
+
+id="location-screen">
+
+
+
+
+
+<!--
+
+LOCATION 1
+
+
+На карте:
+
+
+1. COCONUT GROVE
+
+
+
+Нажатие:
+
+
+
+LOCATION 1
+
+
+↓
+
+
+LOCAL COCONUT intro.png
+
+
+↓
+
+
+если BOY:
+
+
+LOCAL COCONUT man1.png
+
+
+если GIRL:
+
+
+LOCAL COCONUT girl1.png
+
+
+
+-->
+
+<button
+
+
+class="location-hotspot location-1"
+
+
+id="location-1">
+
+
+</button>
+
+
+
+
+
+
+
+<!--
+
+LOCATION 2
+
+
+На карте:
+
+
+2. MOUNTAIN LAKE
+
+
+
+Нажатие:
+
+
+
+LOCATION 2
+
+
+↓
+
+
+LOCAL LAKE intro.png
+
+
+↓
+
+
+если BOY:
+
+
+LOCAL LAKE man1.png
+
+
+если GIRL:
+
+
+LOCAL LAKE girl1.png
+
+
+
+-->
+
+<button
+
+
+class="location-hotspot location-2"
+
+
+id="location-2">
+
+
+</button>
+
+
+
+
+
+
+
+<!--
+
+LOCATION 3
+
+
+На карте:
+
+
+3. BAMBOO GROVE
+
+
+
+Нажатие:
+
+
+
+LOCATION 3
+
+
+↓
+
+
+LOCAL BAMBOO intro.png
+
+
+↓
+
+
+если BOY:
+
+
+LOCAL BAMBOO man1.png
+
+
+если GIRL:
+
+
+LOCAL BAMBOO girl1.png
+
+
+
+-->
+
+<button
+
+
+class="location-hotspot location-3"
+
+
+id="location-3">
+
+
+</button>
+
+
+
+
+
+
+
+<!--
+
+LOCATION 4
+
+
+На карте:
+
+
+4. BANANA PLANTATION
+
+
+
+Нажатие:
+
+
+
+LOCATION 4
+
+
+↓
+
+
+LOCAL BANANA intro.png
+
+
+↓
+
+
+если BOY:
+
+
+LOCAL BANANA man1.png
+
+
+если GIRL:
+
+
+LOCAL BANANA girl1.png
+
+
+
+-->
+
+<button
+
+
+class="location-hotspot location-4"
+
+
+id="location-4">
+
+
+</button>
+
+
+
+
+
+
+</section>
 
 
 

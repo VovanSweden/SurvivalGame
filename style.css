@@ -858,6 +858,364 @@ height:100%;
 
 object-fit:cover;
 
+}
+
+
+# =================================================
+
+#
+# SCREEN 4
+#
+# ПРОЗРАЧНАЯ КНОПКА ПЕРЕХОДА
+#
+# man1.png / girl1.png
+#
+# Переход:
+#
+# SCREEN 4
+#
+# ↓
+#
+# SCREEN 5
+#
+# =================================================
+
+
+.final-character-next-button {
+
+position:absolute;
+
+
+top:0;
+
+left:0;
+
+
+
+/*
+Кнопка занимает
+весь экран.
+
+Игрок нажимает
+на изображение персонажа.
+*/
+
+
+width:100%;
+
+height:100%;
+
+
+
+/*
+Кнопка полностью прозрачная.
+
+На экране остаётся
+только картинка.
+*/
+
+
+background:transparent;
+
+
+border:none;
+
+
+
+cursor:pointer;
+
+
+
+/*
+Кнопка находится
+выше изображения.
+*/
+
+
+z-index:35;
+
+
+}
+
+
+
+
+
+
+# =================================================
+#
+# SCREEN 5
+#
+# LOCATION MAP
+#
+# Фон:
+#
+# graphics/fon3.png
+#
+#
+# На картинке уже находятся:
+#
+# - карта острова;
+# - номера локаций;
+# - названия мест.
+#
+# HTML содержит только:
+#
+# прозрачные кнопки выбора.
+#
+# =================================================
+
+
+.location-screen {
+
+width:100%;
+
+height:100%;
+
+
+position:absolute;
+
+
+top:0;
+
+left:0;
+
+
+
+background-image:url("graphics/fon3.png");
+
+
+
+background-size:cover;
+
+
+
+background-position:center;
+
+
+
+background-repeat:no-repeat;
+
+
+
+display:none;
+
+
+
+z-index:40;
+
+
+
+}
+
+
+
+/*
+=================================================
+
+ПРОЗРАЧНЫЕ КНОПКИ ЛОКАЦИЙ
+
+
+Они лежат поверх карты.
+
+
+Игрок видит только fon3.png.
+
+
+=================================================
+*/
+
+
+.location-hotspot {
+
+
+position:absolute;
+
+
+background:transparent;
+
+
+border:none;
+
+
+cursor:pointer;
+
+
+z-index:50;
+
+
+}
+
+
+
+/*
+=================================================
+
+LOCATION 1
+
+
+COCONUT GROVE
+
+
+graphics/fon3.png
+
+
+Кнопка соответствует
+первой точке на карте.
+
+
+Дальше game.js решает:
+
+BOY:
+
+LOCAL COCONUT man1.png
+
+
+GIRL:
+
+LOCAL COCONUT girl1.png
+
+
+=================================================
+*/
+
+
+.location-1 {
+
+
+left:35%;
+
+
+top:18%;
+
+
+width:30%;
+
+
+height:18%;
+
+
+}
+
+
+
+/*
+=================================================
+
+LOCATION 2
+
+
+MOUNTAIN LAKE
+
+
+Дальше:
+
+LOCAL LAKE man1.png
+
+или
+
+LOCAL LAKE girl1.png
+
+
+=================================================
+*/
+
+
+.location-2 {
+
+
+left:15%;
+
+
+top:45%;
+
+
+width:35%;
+
+
+height:18%;
+
+
+}
+
+
+
+/*
+=================================================
+
+LOCATION 3
+
+
+BAMBOO GROVE
+
+
+Дальше:
+
+LOCAL BAMBOO man1.png
+
+или
+
+LOCAL BAMBOO girl1.png
+
+
+=================================================
+*/
+
+
+.location-3 {
+
+
+right:10%;
+
+
+top:45%;
+
+
+width:35%;
+
+
+height:18%;
+
+
+}
+
+
+
+/*
+=================================================
+
+LOCATION 4
+
+
+BANANA PLANTATION
+
+
+Дальше:
+
+LOCAL BANANA man1.png
+
+или
+
+LOCAL BANANA girl1.png
+
+
+=================================================
+*/
+
+
+.location-4 {
+
+
+left:35%;
+
+
+bottom:15%;
+
+
+width:30%;
+
+
+height:18%;
 
 
 }
