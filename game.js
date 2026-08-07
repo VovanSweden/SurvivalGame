@@ -1,150 +1,309 @@
 /*
 =================================================
-SURVIVE 30  DAYS
 
-ФАЙЛ: game.js
+SURVIVE 30 DAYS
 
-Назначение:
 
-Этот файл отвечает за игровую логику.
+ФАЙЛ:
 
-Сейчас реализована первая функция:
+game.js
+
+
+НАЗНАЧЕНИЕ:
+
+
+Этот файл отвечает за логику игры.
+
+
+Здесь находятся:
+
+- нажатия кнопок;
+- переходы между экранами;
+- выбор персонажа.
+
+
+Сейчас реализовано:
+
+
+SCREEN 1
 
 START GAME
 
-После нажатия:
 
-- стартовый экран скрывается;
-- экран выбора персонажа появляется.
+↓
 
-Позже здесь будут:
+SCREEN 2
 
-- выбор персонажа;
-- выбор предметов;
-- симуляция дней;
-- события;
-- победа и поражение.
+CHOOSE YOUR CHARACTER
+
+
+↓
+
+SCREEN 3
+
+MAN START
+
+или
+
+GIRL START
+
+
+
+Пока НЕ реализовано:
+
+
+- история персонажа;
+- карта острова;
+- выбор места;
+- предметы;
+- дни выживания;
+- события.
+
+
+Они будут добавляться постепенно.
+
 
 =================================================
 */
 
 
+
+
+
+
+
+
 /*
 =================================================
-Получаем необходимые элементы страницы.
+
+ПОЛУЧАЕМ ЭЛЕМЕНТЫ СТРАНИЦЫ
+
 
 document.getElementById()
 
-ищет элемент по его id.
+
+Эта команда ищет элемент
+по его имени ID.
+
+
+Например:
+
+
+HTML:
+
+id="start-button"
+
+
+JavaScript:
+
+document.getElementById("start-button")
+
+
+
+Получаем:
+
+
+startButton
+
+кнопка START GAME
+
+
+
+startScreen
+
+первый экран
+
+
+
+characterScreen
+
+второй экран
+
+
 
 =================================================
 */
+
 
 const startButton = document.getElementById("start-button");
 
+
 const startScreen = document.getElementById("start-screen");
+
 
 const characterScreen = document.getElementById("character-screen");
 
+
+
+
+
+
+
+
+
 /*
 =================================================
-Получаем элементы третьего экрана.
+
+ПОЛУЧАЕМ НЕВИДИМЫЕ КНОПКИ ПЕРСОНАЖЕЙ
 
 
-introScreen
-
-сам экран истории персонажа.
+Эти кнопки находятся поверх картинок.
 
 
-introImage
+BOY:
 
-картинка выбранного персонажа.
+
+id="boy-choice"
+
+
+
+GIRL:
+
+
+id="girl-choice"
+
+
+
+Игрок их не видит.
+
+
+Он нажимает на изображение персонажа.
 
 
 =================================================
 */
 
 
-const introScreen = document.getElementById("intro-screen");
+const boyChoice = document.getElementById("boy-choice");
 
-const introImage = document.getElementById("intro-image");
+
+const girlChoice = document.getElementById("girl-choice");
+
+
+
+
+
+
 
 
 
 /*
-Получаем кнопки выбора персонажа.
+=================================================
+
+SCREEN 3
 
 
-boy-character
-
-карточка парня.
+ПОЛУЧАЕМ ТРЕТИЙ ЭКРАН
 
 
-girl-character
+introCharacterScreen
 
-карточка девушки.
+
+Это экран, где появляется:
+
+man start.png
+
+или
+
+girl start.png
+
+
+
+introCharacterImage
+
+
+Это сама картинка персонажа.
+
+
+Позже здесь можно добавить:
+
+
+- текст истории;
+- кнопку продолжения;
+- анимацию.
 
 
 =================================================
 */
 
 
-const boyCharacter = document.getElementById("boy-character");
+const introCharacterScreen = document.getElementById("intro-character-screen");
 
-const girlCharacter = document.getElementById("girl-character");
+
+const introCharacterImage = document.getElementById("intro-character-image");
+
+
+
+
+
+
+
 
 
 /*
 =================================================
-Обрабатываем нажатие кнопки START GAME.
+
+SCREEN 1 → SCREEN 2
+
+
+ПЕРЕХОД START GAME
+
+
+Когда игрок нажимает:
+
+
+START GAME
+
+
+
+Происходит:
+
+
+1.
+
+Первый экран скрывается.
+
+
+
+2.
+
+Появляется экран выбора персонажа.
+
+
 
 =================================================
 */
 
-startButton.addEventListener("click", function () {
+
+startButton.addEventListener("click", function(){
+
+
 
     /*
     Скрываем стартовый экран.
+
+    Он больше не показывается.
     */
+
 
     startScreen.style.display = "none";
 
 
+
+
+
     /*
     Показываем экран выбора персонажа.
+
+    display:flex нужен,
+    потому что в style.css
+    этот экран построен через Flexbox.
+
     */
+
 
     characterScreen.style.display = "flex";
 
-});
-
-/*
-=================================================
-ВЫБОР ПЕРСОНАЖА
-
-
-Если игрок выбирает парня:
-
-
-- экран выбора скрывается;
-- появляется INTRO SCREEN;
-- загружается man2.png.
-
-
-=================================================
-*/
-
-
-boyCharacter.addEventListener("click", function () {
-
-
-    characterScreen.style.display = "none";
-
-
-    introScreen.style.display = "flex";
-
-
-    introImage.src = "graphics/man2.png";
 
 
 });
@@ -155,33 +314,158 @@ boyCharacter.addEventListener("click", function () {
 
 
 
+
+
 /*
 =================================================
-ВЫБОР ДЕВУШКИ
+
+SCREEN 2 → SCREEN 3
 
 
-Если игрок выбирает девушку:
+ВЫБОР BOY
 
 
-- экран выбора скрывается;
-- появляется INTRO SCREEN;
-- загружается girl2.png.
+Если игрок нажал
+на парня:
+
+
+1.
+
+Экран выбора персонажа скрывается.
+
+
+
+2.
+
+Показывается SCREEN 3.
+
+
+
+3.
+
+Загружается картинка:
+
+
+graphics/man start.png
+
 
 
 =================================================
 */
 
 
-girlCharacter.addEventListener("click", function () {
+boyChoice.addEventListener("click", function(){
+
+
+
+    /*
+    Убираем экран выбора.
+
+    */
 
 
     characterScreen.style.display = "none";
 
 
-    introScreen.style.display = "flex";
 
 
-    introImage.src = "graphics/girl2.png";
+
+    /*
+    Показываем третий экран.
+
+    */
+
+
+    introCharacterScreen.style.display = "flex";
+
+
+
+
+
+    /*
+    Загружаем изображение парня.
+
+    Важно:
+
+название файла должно полностью совпадать
+с названием в папке graphics.
+
+
+*/
+
+    introCharacterImage.src = "graphics/man start.png";
+
+
+
+});
+
+
+
+
+
+
+
+
+
+/*
+=================================================
+
+SCREEN 2 → SCREEN 3
+
+
+ВЫБОР GIRL
+
+
+Если игрок нажал
+на девушку:
+
+
+Показываем:
+
+
+graphics/girl start.png
+
+
+
+=================================================
+*/
+
+
+girlChoice.addEventListener("click", function(){
+
+
+
+    /*
+    Скрываем экран выбора персонажа.
+
+    */
+
+
+    characterScreen.style.display = "none";
+
+
+
+
+
+    /*
+    Показываем третий экран.
+
+    */
+
+
+    introCharacterScreen.style.display = "flex";
+
+
+
+
+
+    /*
+    Загружаем изображение девушки.
+
+    */
+
+    introCharacterImage.src = "graphics/girl start.png";
+
 
 
 });
