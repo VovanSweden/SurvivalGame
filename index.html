@@ -360,21 +360,154 @@ SCREEN 3
 INTRO CHARACTER START
 
 
-После выбора персонажа
-открывается новая картинка.
+После выбора персонажа появляется:
+
+BOY:
+
+graphics/man Start.png
+
+
+или
+
+
+GIRL:
+
+graphics/girl Start.png
+
+
+
+Этот экран показывает только картинку.
+
+
+Поверх всей картинки находится
+невидимая кнопка.
+
+
+Любое нажатие:
+
+
+SCREEN 3
+
+↓
+
+SCREEN 4
+
+
+
+=================================================
+-->
+
+
+<section
+
+
+class="intro-character-screen"
+
+
+id="intro-character-screen">
+
+
+
+
+
+
+<img
+
+
+id="intro-character-image"
+
+
+src="graphics/man Start.png"
+
+
+alt="Selected character">
+
+
+
+
+
+<!--
+
+Невидимая кнопка.
+
+
+Она занимает весь экран.
+
+
+Игрок нажимает на картинку,
+но фактически нажимает эту кнопку.
+
+
+ID нужен для game.js.
+
+
+-->
+
+
+
+<button
+
+
+class="character-start-button"
+
+
+id="character-start-button">
+
+
+</button>
+
+
+
+
+
+
+</section>
+
+
+<!--
+=================================================
+
+
+SCREEN 4
+
+
+INTRO CHARACTER
+
+
+
+После нажатия на:
+
+SCREEN 3
+
+(man Start / girl Start)
+
+
+открывается этот экран.
+
 
 
 Если выбран BOY:
 
 
-graphics/man start.png
+graphics/man1.png
 
 
 
-Если выбран GIRL:
+Если выбрана GIRL:
 
 
-graphics/girl start.png
+graphics/girl1.png
+
+
+
+
+HTML только показывает картинку.
+
+
+
+Выбор делает:
+
+game.js
 
 
 
@@ -385,9 +518,9 @@ graphics/girl start.png
 
 <section
 
-class="intro-character-screen"
+class="final-character-screen"
 
-id="intro-character-screen">
+id="final-character-screen">
 
 
 
@@ -395,18 +528,20 @@ id="intro-character-screen">
 
 <img
 
-id="intro-character-image"
 
-src="graphics/man start.png"
+id="final-character-image"
 
-alt="Selected character">
+
+src="graphics/man1.png"
+
+
+alt="Final character">
 
 
 
 
 
 </section>
-
 
 
 
@@ -425,6 +560,7 @@ alt="Selected character">
 
 
 
+
 <!--
 
 ПОДКЛЮЧЕНИЕ ЛОГИКИ ИГРЫ
@@ -434,9 +570,13 @@ game.js отвечает за:
 
 
 - START GAME;
+
 - выбор BOY;
+
 - выбор GIRL;
-- переходы между экранами.
+
+- переход SCREEN 3 → SCREEN 4.
+
 
 
 -->
@@ -449,7 +589,9 @@ game.js отвечает за:
 
 
 
+
 </body>
+
 
 
 </html>

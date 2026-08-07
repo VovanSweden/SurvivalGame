@@ -207,6 +207,117 @@ document.getElementById("intro-character-image");
 
 
 
+/*
+=================================================
+
+SCREEN 3 → SCREEN 4
+
+
+Получаем элементы:
+
+character-start-button
+
+кнопка поверх SCREEN 3
+
+
+final-character-screen
+
+экран SCREEN 4
+
+
+final-character-image
+
+картинка SCREEN 4
+
+
+=================================================
+*/
+
+
+const characterStartButton =
+document.getElementById("character-start-button");
+
+
+const finalCharacterScreen =
+document.getElementById("final-character-screen");
+
+
+const finalCharacterImage =
+document.getElementById("final-character-image");
+
+
+/*
+=================================================
+
+
+
+
+
+
+
+
+ЗАПОМИНАЕМ ВЫБОР ПЕРСОНАЖА
+
+
+Если игрок выбрал:
+
+BOY
+
+записываем:
+
+boy
+
+
+Если:
+
+GIRL
+
+записываем:
+
+girl
+
+
+Это нужно, чтобы после SCREEN 3
+понять какую картинку открыть:
+
+
+boy
+
+↓
+
+man1.png
+
+
+girl
+
+↓
+
+girl1.png
+
+
+=================================================
+*/
+
+
+let selectedCharacter = "";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -327,6 +438,7 @@ boyChoice.addEventListener("click", function(){
 
     introCharacterImage.src =
     "graphics/man Start.png";
+    selectedCharacter = "boy";
 
 
 
@@ -391,6 +503,93 @@ girlChoice.addEventListener("click", function(){
 
     introCharacterImage.src =
     "graphics/girl Start.png";
+    selectedCharacter = "girl";
+
+
+
+});
+
+/*
+=================================================
+
+SCREEN 3 → SCREEN 4
+
+
+Игрок нажимает на всю картинку:
+
+man Start.png
+
+или
+
+girl Start.png
+
+
+
+Открывается:
+
+SCREEN 4
+
+
+
+Если был выбран BOY:
+
+graphics/man1.png
+
+
+Если была выбрана GIRL:
+
+graphics/girl1.png
+
+
+
+=================================================
+*/
+
+
+characterStartButton.addEventListener("click", function(){
+
+
+
+/*
+Скрываем SCREEN 3.
+*/
+
+introCharacterScreen.style.display = "none";
+
+
+
+/*
+Показываем SCREEN 4.
+*/
+
+finalCharacterScreen.style.display = "flex";
+
+
+
+/*
+Проверяем выбранного персонажа.
+*/
+
+
+if(selectedCharacter === "boy"){
+
+
+    finalCharacterImage.src =
+    "graphics/man1.png";
+
+
+}
+
+
+
+if(selectedCharacter === "girl"){
+
+
+    finalCharacterImage.src =
+    "graphics/girl1.png";
+
+
+}
 
 
 
