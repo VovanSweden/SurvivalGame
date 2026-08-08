@@ -1,345 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-
 
 <meta charset="UTF-8">
 
-
-<!--
-=================================================
-
-SURVIVE 30 DAYS
-
-ФАЙЛ:
-
-index.html
-
-
-НАЗНАЧЕНИЕ:
-
-
-Этот файл отвечает только за структуру игры.
-
-
-Здесь находятся игровые экраны:
-
-
-SCREEN 1
-
-START SCREEN
-
-
-SCREEN 2
-
-CHOOSE YOUR CHARACTER
-
-
-SCREEN 3
-
-INTRO CHARACTER START
-
-
-
-Здесь НЕТ:
-
-- игровой логики;
-- расчёта дней;
-- событий;
-- предметов.
-
-
-Переходы находятся в:
-
-game.js
-
-
-Внешний вид находится в:
-
-style.css
-
-
-=================================================
--->
-
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-<title>
-
-Survive 30 Days
-
-</title>
-
-
+<title>SurvivalGame</title>
 
 <link rel="stylesheet" href="style.css">
 
-
-
 </head>
-
-
-
 
 
 <body>
 
 
-
-
-<!--
-=================================================
-
-ГЛАВНЫЙ КОНТЕЙНЕР ИГРЫ
-
-
-Все экраны находятся внутри:
-
-.game
-
-
-=================================================
--->
-
-
-
 <div class="game">
 
 
+<!-- SCREEN-001 START SCREEN -->
 
-
-
-
-
-<!--
-=================================================
-
-SCREEN 1
-
-START SCREEN
-
-
-ФОН:
-
-
-graphics/fon1.png
-
-
-
-ВАЖНО:
-
-
-Вся графика уже находится внутри картинки:
-
-
-- название игры;
-- кнопка START GAME.
-
-
-
-HTML ничего не рисует.
-
-
-Есть только прозрачная кнопка.
-
-
-При нажатии:
-
-
-START GAME
-
-
-↓
-
-SCREEN 2
-
-
-=================================================
--->
-
-
-
-<section
-
+<section 
 class="start-screen"
-
-id="start-screen">
-
-
-
-<!--
-
-Невидимая кнопка.
-
-
-Она лежит поверх нарисованной кнопки
-START GAME внутри fon1.png.
-
-
-ID используется в game.js.
-
-
--->
+id="screen-001">
 
 <button
-
 class="image-start-button"
-
-id="start-button">
-
+id="button-screen-001-01">
 </button>
-
-
 
 </section>
 
 
 
-
-
-
-
-
-
-<!--
-=================================================
-
-SCREEN 2
-
-CHOOSE YOUR CHARACTER
-
-
-ФОН:
-
-
-graphics/fon2.png
-
-
-
-Вся картинка находится в одном файле.
-
-
-HTML НЕ содержит:
-
-
-- текста;
-- персонажей;
-- рамок.
-
-
-
-Есть только две зоны нажатия.
-
-
-Левая половина:
-
-
-BOY
-
-
-
-Правая половина:
-
-
-GIRL
-
-
-
-=================================================
--->
-
-
+<!-- SCREEN-002 CHARACTER CHOICE -->
 
 <section
-
 class="character-screen"
-
-id="character-screen">
-
-
-
-
-
-
-<!--
-
-НЕВИДИМАЯ ЗОНА ПАРНЯ
-
-
-Нажатие:
-
-
-BOY
-
-
-↓
-
-SCREEN 3
-
-
-↓
-
-graphics/man start.png
-
-
--->
-
+id="screen-002">
 
 
 <button
-
 class="character-hotspot boy-hotspot"
-
-id="boy-choice">
-
+id="button-screen-002-01">
 </button>
-
-
-
-
-
-
-
-<!--
-
-НЕВИДИМАЯ ЗОНА ДЕВУШКИ
-
-
-Нажатие:
-
-
-GIRL
-
-
-↓
-
-SCREEN 3
-
-
-↓
-
-graphics/girl start.png
-
-
--->
-
 
 
 <button
-
 class="character-hotspot girl-hotspot"
-
-id="girl-choice">
-
+id="button-screen-002-02">
 </button>
-
-
-
 
 
 </section>
@@ -347,313 +59,47 @@ id="girl-choice">
 
 
 
-
-
-
-
-
-<!--
-=================================================
-
-SCREEN 3
-
-INTRO CHARACTER START
-
-
-После выбора персонажа появляется:
-
-BOY:
-
-graphics/man Start.png
-
-
-или
-
-
-GIRL:
-
-graphics/girl Start.png
-
-
-
-Этот экран показывает только картинку.
-
-
-Поверх всей картинки находится
-невидимая кнопка.
-
-
-Любое нажатие:
-
-
-SCREEN 3
-
-↓
-
-SCREEN 4
-
-
-
-=================================================
--->
-
+<!-- SCREEN-003 CHARACTER INTRO START -->
 
 <section
-
-
 class="intro-character-screen"
-
-
-id="intro-character-screen">
-
-
-
-
+id="screen-003">
 
 
 <img
-
-
 id="intro-character-image"
-
-
 src="graphics/man Start.png"
-
-
 alt="Selected character">
 
 
-
-
-
-<!--
-
-Невидимая кнопка.
-
-
-Она занимает весь экран.
-
-
-Игрок нажимает на картинку,
-но фактически нажимает эту кнопку.
-
-
-ID нужен для game.js.
-
-
--->
-
-
-
 <button
-
-
 class="character-start-button"
-
-
-id="character-start-button">
-
-
+id="button-screen-003-01">
 </button>
-
-
-
-
 
 
 </section>
 
 
-<!--
-=================================================
 
 
-SCREEN 4
-
-
-INTRO CHARACTER
-
-
-
-После нажатия на:
-
-SCREEN 3
-
-(man Start / girl Start)
-
-
-открывается этот экран.
-
-
-
-Если выбран BOY:
-
-
-graphics/man1.png
-
-
-
-Если выбрана GIRL:
-
-
-graphics/girl1.png
-
-
-
-
-HTML только показывает картинку.
-
-
-
-Выбор делает:
-
-game.js
-
-
-
-=================================================
--->
-
-
+<!-- SCREEN-004 CHARACTER INTRO RESULT -->
 
 <section
-
-
 class="final-character-screen"
-
-
-id="final-character-screen">
-
-
-
-
+id="screen-004">
 
 
 <img
-
-
-
 id="final-character-image"
-
-
-
 src="graphics/man1.png"
-
-
-
 alt="Final character">
 
 
-
-
-
-
-
-<!--
-=================================================
-
-
-ПРОЗРАЧНАЯ КНОПКА SCREEN 4
-
-
-
-Этот экран является
-переходным экраном.
-
-
-
-Игрок видит:
-
-man1.png
-
-или
-
-girl1.png
-
-
-
-Но нажимает фактически
-эту кнопку.
-
-
-
-Переход:
-
-
-
-SCREEN 4
-
-
-↓
-
-
-SCREEN 5
-
-
-
-Кнопка занимает
-всю картинку.
-
-
-
-=================================================
--->
-
-
-
-<!--
-=================================================
-
-ПРОЗРАЧНАЯ КНОПКА SCREEN 4
-
-
-Этот экран является
-переходным экраном.
-
-
-Игрок видит:
-
-man1.png
-
-или
-
-girl1.png
-
-
-Но нажимает фактически
-эту кнопку.
-
-
-Переход:
-
-SCREEN 4
-
-↓
-
-SCREEN 5
-
-
-Кнопка занимает
-всю картинку.
-
-
-=================================================
--->
-
-
 <button
-
 class="final-character-next-button"
-
-id="final-character-next-button">
-
-
+id="button-screen-004-01">
 </button>
-
-
-
-
-
 
 
 </section>
@@ -661,6 +107,90 @@ id="final-character-next-button">
 
 
 
+<!-- SCREEN-005 LOCATION MAP -->
+
+<section
+class="location-screen"
+id="screen-005">
+
+
+<button
+class="location-hotspot location-1"
+id="button-screen-005-01">
+</button>
+
+
+<button
+class="location-hotspot location-2"
+id="button-screen-005-02">
+</button>
+
+
+<button
+class="location-hotspot location-3"
+id="button-screen-005-03">
+</button>
+
+
+<button
+class="location-hotspot location-4"
+id="button-screen-005-04">
+</button>
+
+
+</section>
+
+
+
+
+
+<!-- SCREEN-006 COCONUT GROVE -->
+
+<section
+class="location-scene-screen"
+id="screen-006">
+
+
+</section>
+
+
+
+
+
+<!-- SCREEN-007 MOUNTAIN LAKE -->
+
+<section
+class="location-scene-screen"
+id="screen-007">
+
+
+</section>
+
+
+
+
+
+<!-- SCREEN-008 BAMBOO GROVE -->
+
+<section
+class="location-scene-screen"
+id="screen-008">
+
+
+</section>
+
+
+
+
+
+<!-- SCREEN-009 BANANA PLANTATION -->
+
+<section
+class="location-scene-screen"
+id="screen-009">
+
+
+</section>
 
 
 
@@ -669,375 +199,24 @@ id="final-character-next-button">
 
 
 
-<!--
-=================================================
-
-
-SCREEN 5
-
-
-LOCATION MAP
-
-
-
-После выбора персонажа:
-
-
-
-SCREEN 4
-
-
-(man1.png / girl1.png)
-
-
-
-↓
-
-
-
-SCREEN 5
-
-
-
-Открывается карта острова.
-
-
-
-ФОН:
-
-
-
-graphics/fon3.png
-
-
-
-
-ВАЖНО:
-
-
-
-Вся графика находится внутри картинки:
-
-
-
-- карта;
-- номера;
-- названия локаций.
-
-
-
-HTML НЕ содержит:
-
-
-
-- карту;
-- текст;
-- иконки.
-
-
-
-HTML содержит только:
-
-
-
-4 прозрачные зоны выбора.
-
-
-
-=================================================
--->
-
-
-
-<section
-
-
-class="location-screen"
-
-
-id="location-screen">
-
-
-
-
 
 <!--
 
-LOCATION 1
+GAME LOGIC:
 
+game.js handles:
 
-На карте:
+BUTTON ACTION
 
+GAME STATE changes
 
-1. COCONUT GROVE
-
-
-
-Нажатие:
-
-
-
-LOCATION 1
-
-
-↓
-
-
-LOCAL COCONUT intro.png
-
-
-↓
-
-
-если BOY:
-
-
-LOCAL COCONUT man1.png
-
-
-если GIRL:
-
-
-LOCAL COCONUT girl1.png
-
-
+SCREEN transitions
 
 -->
-
-<button
-
-
-class="location-hotspot location-1"
-
-
-id="location-1">
-
-
-</button>
-
-
-
-
-
-
-
-<!--
-
-LOCATION 2
-
-
-На карте:
-
-
-2. MOUNTAIN LAKE
-
-
-
-Нажатие:
-
-
-
-LOCATION 2
-
-
-↓
-
-
-LOCAL LAKE intro.png
-
-
-↓
-
-
-если BOY:
-
-
-LOCAL LAKE man1.png
-
-
-если GIRL:
-
-
-LOCAL LAKE girl1.png
-
-
-
--->
-
-<button
-
-
-class="location-hotspot location-2"
-
-
-id="location-2">
-
-
-</button>
-
-
-
-
-
-
-
-<!--
-
-LOCATION 3
-
-
-На карте:
-
-
-3. BAMBOO GROVE
-
-
-
-Нажатие:
-
-
-
-LOCATION 3
-
-
-↓
-
-
-LOCAL BAMBOO intro.png
-
-
-↓
-
-
-если BOY:
-
-
-LOCAL BAMBOO man1.png
-
-
-если GIRL:
-
-
-LOCAL BAMBOO girl1.png
-
-
-
--->
-
-<button
-
-
-class="location-hotspot location-3"
-
-
-id="location-3">
-
-
-</button>
-
-
-
-
-
-
-
-<!--
-
-LOCATION 4
-
-
-На карте:
-
-
-4. BANANA PLANTATION
-
-
-
-Нажатие:
-
-
-
-LOCATION 4
-
-
-↓
-
-
-LOCAL BANANA intro.png
-
-
-↓
-
-
-если BOY:
-
-
-LOCAL BANANA man1.png
-
-
-если GIRL:
-
-
-LOCAL BANANA girl1.png
-
-
-
--->
-
-<button
-
-
-class="location-hotspot location-4"
-
-
-id="location-4">
-
-
-</button>
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-<!--
-
-ПОДКЛЮЧЕНИЕ ЛОГИКИ ИГРЫ
-
-
-game.js отвечает за:
-
-
-- START GAME;
-
-- выбор BOY;
-
-- выбор GIRL;
-
-- переход SCREEN 3 → SCREEN 4.
-
-
-
--->
-
-
 
 <script src="game.js"></script>
 
 
-
-
-
-
 </body>
-
-
 
 </html>

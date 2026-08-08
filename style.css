@@ -1,39 +1,37 @@
 /*
 =================================================
 
-SURVIVE 30 DAYS
+SURVIVALGAME
 
-ФАЙЛ:
+FILE:
 
 style.css
 
 
-НАЗНАЧЕНИЕ:
+RESPONSIBILITY:
+
+ONLY VISUAL SYSTEM.
 
 
-Этот файл отвечает только за внешний вид.
+CSS controls:
+
+- size;
+- position;
+- layers;
+- visibility;
+- transparent buttons.
 
 
-Используется система:
+CSS DOES NOT CONTROL:
+
+- game state;
+- transitions;
+- story;
+- events;
+- actions.
 
 
-ГОТОВАЯ КАРТИНКА
-
-+
-
-ПРОЗРАЧНЫЕ КНОПКИ
-
-
-
-Здесь НЕТ:
-
-
-- текста игры;
-- изображений персонажей через HTML;
-- логики переходов.
-
-
-Логика находится в:
+Logic:
 
 game.js
 
@@ -42,20 +40,10 @@ game.js
 */
 
 
-
-
-
 /*
 =================================================
 
-1. ОСНОВНЫЕ НАСТРОЙКИ ЭКРАНА
-
-
-Телефонный экран.
-
-
-Убираем стандартные отступы браузера.
-
+GLOBAL SCREEN SETTINGS
 
 =================================================
 */
@@ -63,40 +51,26 @@ game.js
 
 body {
 
+    margin:0;
+    padding:0;
 
-margin:0;
+    width:100%;
+    height:100dvh;
 
+    overflow:hidden;
 
-padding:0;
-
-
-width:100%;
-
-
-height:100dvh;
-
-
-overflow:hidden;
-
-
-font-family:Arial,sans-serif;
-
+    font-family:Arial,sans-serif;
 
 }
-
-
-
 
 
 
 /*
 =================================================
 
-2. ГЛАВНЫЙ КОНТЕЙНЕР
+MAIN GAME CONTAINER
 
-
-Все игровые экраны находятся внутри:
-
+All screens exist inside:
 
 .game
 
@@ -107,52 +81,62 @@ font-family:Arial,sans-serif;
 
 .game {
 
+    width:100%;
+    height:100dvh;
 
-width:100%;
+    position:relative;
 
-
-height:100dvh;
-
-
-position:relative;
-
-
-overflow:hidden;
-
+    overflow:hidden;
 
 }
-
-
-
-
-
-
 
 
 
 /*
 =================================================
 
-SCREEN 1
+COMMON SCREEN RULE
 
+Every screen is a layer.
+
+Only one active screen should be visible.
+
+Visibility is controlled by game.js.
+
+=================================================
+*/
+
+
+.screen {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+}
+
+
+
+/*
+=================================================
+
+SCREEN-001
 
 START SCREEN
 
 
-Фон:
-
+ASSET:
 
 graphics/fon1.png
 
 
+BUTTON:
 
-Вся графика уже находится внутри картинки.
-
-
-HTML содержит только:
-
-
-прозрачную кнопку START.
+button-screen-001-01
 
 
 =================================================
@@ -161,78 +145,37 @@ HTML содержит только:
 
 .start-screen {
 
+    position:absolute;
 
-width:100%;
+    top:0;
+    left:0;
 
-
-height:100%;
-
-
-position:absolute;
-
-
-top:0;
+    width:100%;
+    height:100%;
 
 
-left:0;
+    background-image:url("graphics/fon1.png");
 
+    background-size:cover;
 
+    background-position:center;
 
-background-image:url("graphics/fon1.png");
-
-
-
-background-size:cover;
-
-
-
-background-position:center;
-
-
-
-background-repeat:no-repeat;
-
-
-
-display:block;
-
+    background-repeat:no-repeat;
 
 
 }
 
 
 
-
-
-
-
-
-
 /*
-=================================================
-
-НЕВИДИМАЯ КНОПКА START GAME
+SCREEN-001 BUTTON
 
 
-Она лежит поверх кнопки,
-которая нарисована внутри fon1.png.
+Transparent interaction zone.
 
+Only sends:
 
-
-Настройка положения:
-
-
-top
-
-
-left
-
-
-width
-
-
-height
-
+start_game
 
 
 =================================================
@@ -242,44 +185,28 @@ height
 .image-start-button {
 
 
-position:absolute;
+    position:absolute;
+
+    left:50%;
+    top:80%;
 
 
-
-left:50%;
-
+    transform:translate(-50%,-50%);
 
 
-top:80%;
+    width:100%;
+    height:20%;
 
 
+    background:transparent;
 
-transform:translate(-50%,-50%);
-
-
-
-width:100%;
+    border:none;
 
 
-
-height:20%;
-
+    cursor:pointer;
 
 
-background:transparent;
-
-
-
-border:none;
-
-
-
-cursor:pointer;
-
-
-
-z-index:5;
-
+    z-index:10;
 
 
 }
@@ -288,37 +215,24 @@ z-index:5;
 
 
 
-
-
-
-
 /*
 =================================================
 
-SCREEN 2
+SCREEN-002
+
+CHARACTER CHOICE
 
 
-CHOOSE YOUR CHARACTER
-
-
-
-Фон:
-
+ASSET:
 
 graphics/fon2.png
 
 
+BUTTONS:
 
-Вся графика находится внутри изображения.
+button-screen-002-01
 
-
-
-HTML содержит только две зоны:
-
-
-BOY
-
-GIRL
+button-screen-002-02
 
 
 =================================================
@@ -328,41 +242,27 @@ GIRL
 .character-screen {
 
 
-width:100%;
+    position:absolute;
 
 
-height:100%;
+    top:0;
+    left:0;
 
 
-
-position:absolute;
-
-
-
-top:0;
+    width:100%;
+    height:100%;
 
 
-left:0;
+    background-image:url("graphics/fon2.png");
 
 
-
-background-image:url("graphics/fon2.png");
-
+    background-size:cover;
 
 
-background-size:cover;
+    background-position:center;
 
 
-
-background-position:center;
-
-
-
-background-repeat:no-repeat;
-
-
-
-display:none;
+    background-repeat:no-repeat;
 
 
 
@@ -370,22 +270,13 @@ display:none;
 
 
 
-
-
-
-
-
-
 /*
-=================================================
-
-ПРОЗРАЧНЫЕ КНОПКИ ВЫБОРА
+Character selection zones.
 
 
-Игрок их не видит.
+Buttons are invisible.
 
-
-Они только принимают нажатие.
+Graphic exists only inside PNG.
 
 
 =================================================
@@ -395,134 +286,49 @@ display:none;
 .character-hotspot {
 
 
-position:absolute;
+    position:absolute;
 
 
-
-background:transparent;
-
+    background:transparent;
 
 
-border:none;
+    border:none;
 
 
-
-cursor:pointer;
-
+    cursor:pointer;
 
 
-z-index:5;
-
+    z-index:10;
 
 
 }
 
-
-
-
-
-
-
-
-/*
-=================================================
-
-ЗОНА BOY
-
-
-Левая половина экрана.
-
-
-При нажатии:
-
-
-BOY
-
-↓
-
-SCREEN 3
-
-↓
-
-man Start.png
-
-
-=================================================
-*/
 
 
 .boy-hotspot {
 
 
-left:0;
+    left:0;
+    top:0;
 
 
-
-top:0;
-
-
-
-width:50%;
-
-
-
-height:100%;
-
+    width:50%;
+    height:100%;
 
 
 }
 
-
-
-
-
-
-
-
-/*
-=================================================
-
-ЗОНА GIRL
-
-
-Правая половина экрана.
-
-
-При нажатии:
-
-
-GIRL
-
-↓
-
-SCREEN 3
-
-↓
-
-girl Start.png
-
-
-=================================================
-*/
 
 
 .girl-hotspot {
 
 
-right:0;
+    right:0;
+    top:0;
 
 
-
-top:0;
-
-
-
-width:50%;
-
-
-
-height:100%;
-
+    width:50%;
+    height:100%;
 
 
 }
@@ -531,32 +337,24 @@ height:100%;
 
 
 
-
-
-
-
 /*
 =================================================
 
-SCREEN 3
+SCREEN-003
+
+CHARACTER INTRO START
 
 
-INTRO CHARACTER START
+Assets:
+
+graphics/man Start.png
+
+graphics/girl Start.png
 
 
-После выбора  персонажа.
+BUTTON:
 
-
-Показывает:
-
-
-man Start.png
-
-
-или
-
-
-girl Start.png
+button-screen-003-01
 
 
 =================================================
@@ -566,215 +364,107 @@ girl Start.png
 .intro-character-screen {
 
 
-width:100%;
+    position:absolute;
 
 
-height:100%;
+    top:0;
+    left:0;
 
 
-
-position:absolute;
-
-
-
-top:0;
+    width:100%;
+    height:100%;
 
 
-left:0;
+    background:black;
 
 
-
-display:none;
-
+    display:flex;
 
 
-background:black;
+    align-items:center;
 
-
-
-z-index:10;
-
-
-
-align-items:center;
-
-
-
-justify-content:center;
+    justify-content:center;
 
 
 
 }
 
-
-
-
-
-
-
-
-
-/*
-=================================================
-
-КАРТИНКА SCREEN 3
-
-
-Заполняет экран телефона.
-
-
-=================================================
-*/
 
 
 .intro-character-screen img {
 
-position:absolute;
 
-top:0;
-left:0;
+    position:absolute;
 
-width:100%;
-height:100%;
 
-object-fit:cover;
+    top:0;
+    left:0;
 
-z-index:1;
+
+    width:100%;
+    height:100%;
+
+
+    object-fit:cover;
+
+
 
 }
 
-/*
-=================================================
-
-ПРОЗРАЧНАЯ КНОПКА SCREEN 3
 
 
-Эта кнопка находится поверх:
-
-man Start.png
-
-или
-
-girl Start.png
-
-
-Игрок видит только картинку.
-
-
-При нажатии:
-
-SCREEN 3
-
-↓
-
-SCREEN 4
-
-
-
-Кнопка занимает весь экран.
-
-
-=================================================
-*/
 
 
 .character-start-button {
 
 
-position:absolute;
+    position:absolute;
 
 
-/*
-Кнопка начинается
-от верхнего левого угла экрана.
-*/
-
-top:0;
-
-left:0;
+    top:0;
+    left:0;
 
 
-
-/*
-Размер кнопки:
-
-100% ширины
-
-100% высоты
+    width:100%;
+    height:100%;
 
 
-То есть нажать можно
-в любом месте картинки.
-*/
-
-width:100%;
-
-height:100%;
+    background:transparent;
 
 
-
-/*
-Полностью прозрачная кнопка.
-
-Игрок её не видит.
-*/
-
-background:transparent;
+    border:none;
 
 
-
-/*
-Убираем стандартную рамку кнопки.
-*/
-
-border:none;
+    cursor:pointer;
 
 
-
-/*
-Курсор для проверки
-на компьютере.
-*/
-
-cursor:pointer;
-
-
-
-/*
-Кнопка должна быть
-выше изображения.
-
-*/
-
-z-index:20;
+    z-index:20;
 
 
 }
 
+
+
+
+
 /*
 =================================================
 
-SCREEN 4
+SCREEN-004
 
-INTRO CHARACTER
-
-
-После SCREEN 3.
+CHARACTER INTRO RESULT
 
 
-Показывает:
+Assets:
 
 graphics/man1.png
-
-или
 
 graphics/girl1.png
 
 
+BUTTON:
 
-Этот экран появляется
-после нажатия на всю картинку
-SCREEN 3.
+button-screen-004-01
 
 
 =================================================
@@ -783,153 +473,151 @@ SCREEN 3.
 
 .final-character-screen {
 
-width:100%;
 
-height:100%;
+    position:absolute;
 
-position:absolute;
 
-top:0;
+    top:0;
+    left:0;
 
-left:0;
 
-display:none;
+    width:100%;
+    height:100%;
 
-background:black;
 
-z-index:30;
+    background:black;
 
-align-items:center;
 
-justify-content:center;
+    display:flex;
+
+
+    align-items:center;
+
+    justify-content:center;
+
 
 }
-
-
 
 
 
 .final-character-screen img {
 
-position:absolute;
 
-top:0;
-left:0;
+    position:absolute;
 
-width:100%;
-height:100%;
 
-object-fit:cover;
+    top:0;
+    left:0;
 
-z-index:1;
+
+    width:100%;
+    height:100%;
+
+
+    object-fit:cover;
+
 
 }
+
 
 
 .final-character-next-button {
 
-position:absolute;
 
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:red;
-
-opacity:0.3;
-
-border:5px solid red;
-
-cursor:pointer;
-
-z-index:100;
-
-}
+    position:absolute;
 
 
+    top:0;
+    left:0;
 
 
-
-# =================================================
-#
-# SCREEN 5
-#
-# LOCATION MAP
-#
-# Фон:
-#
-# graphics/fon3.png
-#
-#
-# На картинке уже находятся:
-#
-# - карта острова;
-# - номера локаций;
-# - названия мест.
-#
-# HTML содержит только:
-#
-# прозрачные кнопки выбора.
-#
-# =================================================
+    width:100%;
+    height:100%;
 
 
-.location-screen {
-
-width:100%;
-
-height:100%;
+    background:transparent;
 
 
-position:absolute;
+    border:none;
 
 
-top:0;
-
-left:0;
+    cursor:pointer;
 
 
-
-background-image:url("graphics/fon3.png");
-
-
-
-background-size:cover;
-
-
-
-background-position:center;
-
-
-
-background-repeat:no-repeat;
-
-
-
-display:none;
-
-
-
-z-index:40;
-
+    z-index:20;
 
 
 }
+
+
 
 
 
 /*
 =================================================
 
-ПРОЗРАЧНЫЕ КНОПКИ ЛОКАЦИЙ
+SCREEN-005
+
+LOCATION MAP
 
 
-Они лежат поверх карты.
+ASSET:
+
+graphics/fon3.png
 
 
-Игрок видит только fon3.png.
+BUTTONS:
+
+button-screen-005-01
+
+button-screen-005-02
+
+button-screen-005-03
+
+button-screen-005-04
+
+
+=================================================
+*/
+
+
+.location-screen {
+
+
+    position:absolute;
+
+
+    top:0;
+    left:0;
+
+
+    width:100%;
+    height:100%;
+
+
+
+    background-image:url("graphics/fon3.png");
+
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+    background-repeat:no-repeat;
+
+
+}
+
+
+
+
+/*
+Location transparent buttons.
+
+Only ACTION transfer.
 
 
 =================================================
@@ -939,19 +627,19 @@ z-index:40;
 .location-hotspot {
 
 
-position:absolute;
+    position:absolute;
 
 
-background:transparent;
+    background:transparent;
 
 
-border:none;
+    border:none;
 
 
-cursor:pointer;
+    cursor:pointer;
 
 
-z-index:50;
+    z-index:20;
 
 
 }
@@ -959,32 +647,9 @@ z-index:50;
 
 
 /*
-=================================================
-
-LOCATION 1
-
-
 COCONUT GROVE
 
-
-graphics/fon3.png
-
-
-Кнопка соответствует
-первой точке на карте.
-
-
-Дальше game.js решает:
-
-BOY:
-
-LOCAL COCONUT man1.png
-
-
-GIRL:
-
-LOCAL COCONUT girl1.png
-
+button-screen-005-01
 
 =================================================
 */
@@ -993,16 +658,14 @@ LOCAL COCONUT girl1.png
 .location-1 {
 
 
-left:35%;
+    left:35%;
+
+    top:18%;
 
 
-top:18%;
+    width:30%;
 
-
-width:30%;
-
-
-height:18%;
+    height:18%;
 
 
 }
@@ -1010,22 +673,9 @@ height:18%;
 
 
 /*
-=================================================
-
-LOCATION 2
-
-
 MOUNTAIN LAKE
 
-
-Дальше:
-
-LOCAL LAKE man1.png
-
-или
-
-LOCAL LAKE girl1.png
-
+button-screen-005-02
 
 =================================================
 */
@@ -1034,16 +684,14 @@ LOCAL LAKE girl1.png
 .location-2 {
 
 
-left:15%;
+    left:15%;
+
+    top:45%;
 
 
-top:45%;
+    width:35%;
 
-
-width:35%;
-
-
-height:18%;
+    height:18%;
 
 
 }
@@ -1051,22 +699,9 @@ height:18%;
 
 
 /*
-=================================================
-
-LOCATION 3
-
-
 BAMBOO GROVE
 
-
-Дальше:
-
-LOCAL BAMBOO man1.png
-
-или
-
-LOCAL BAMBOO girl1.png
-
+button-screen-005-03
 
 =================================================
 */
@@ -1075,16 +710,14 @@ LOCAL BAMBOO girl1.png
 .location-3 {
 
 
-right:10%;
+    right:10%;
+
+    top:45%;
 
 
-top:45%;
+    width:35%;
 
-
-width:35%;
-
-
-height:18%;
+    height:18%;
 
 
 }
@@ -1092,22 +725,9 @@ height:18%;
 
 
 /*
-=================================================
-
-LOCATION 4
-
-
 BANANA PLANTATION
 
-
-Дальше:
-
-LOCAL BANANA man1.png
-
-или
-
-LOCAL BANANA girl1.png
-
+button-screen-005-04
 
 =================================================
 */
@@ -1116,16 +736,67 @@ LOCAL BANANA girl1.png
 .location-4 {
 
 
-left:35%;
+    left:35%;
+
+    bottom:15%;
 
 
-bottom:15%;
+    width:30%;
+
+    height:18%;
 
 
-width:30%;
+}
 
 
-height:18%;
+
+
+
+/*
+=================================================
+
+SCREEN-006
+
+SCREEN-007
+
+SCREEN-008
+
+SCREEN-009
+
+
+LOCATION INTRO SCREENS
+
+
+Future screens.
+
+
+Graphics will be connected through:
+
+ASSET REGISTRY.
+
+
+=================================================
+*/
+
+
+.location-scene-screen {
+
+
+    position:absolute;
+
+
+    top:0;
+    left:0;
+
+
+    width:100%;
+    height:100%;
+
+
+    background-size:cover;
+
+
+    background-position:center;
 
 
 }
