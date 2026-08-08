@@ -167,10 +167,21 @@ const screens = {
     document.getElementById("screen-008"),
 
 
-    screen009:
-    document.getElementById("screen-009")
+   screen009:
+document.getElementById("screen-009"),
+
+
+screen010:
+document.getElementById("screen-010"),
+
+
+screen011:
+document.getElementById("screen-011")
 
 };
+
+
+
 
 
 
@@ -213,6 +224,33 @@ const finalCharacterImage =
 document.getElementById(
 "final-character-image"
 );
+
+/*
+=================================================
+
+SCREEN-010
+
+LOCATION CHARACTER RESULT IMAGE
+
+Uses:
+
+gameState.location
+
++
+
+gameState.character
+
+
+=================================================
+*/
+
+
+const locationCharacterImage =
+document.getElementById(
+"location-character-image"
+);
+
+
 
 
 
@@ -308,7 +346,43 @@ const buttons = {
     banana:
     document.getElementById(
     "button-screen-005-04"
-    )
+   ),
+
+
+    coconutNext:
+document.getElementById(
+"button-screen-006-01"
+),
+
+lakeNext:
+document.getElementById(
+"button-screen-007-01"
+),
+
+bambooNext:
+document.getElementById(
+"button-screen-008-01"
+),
+
+bananaNext:
+document.getElementById(
+"button-screen-009-01"
+),
+
+locationCharacterNext:
+document.getElementById(
+"button-screen-010-01"
+),
+
+
+firstEvent:
+document.getElementById(
+"button-screen-011-01"
+)
+
+
+
+
 
 };
 
@@ -740,6 +814,320 @@ function(){
 
 });
 
+/*
+=================================================
+
+SCREEN-006
+
+COCONUT GROVE INTRO
+
+NEXT:
+
+SCREEN-010
+
+=================================================
+*/
+
+
+buttons.coconutNext.addEventListener(
+"click",
+function(){
+
+    updateLocationCharacter();
+
+    showScreen(
+        screens.screen010
+    );
+
+});
+
+
+
+
+
+/*
+=================================================
+
+SCREEN-007
+
+MOUNTAIN LAKE INTRO
+
+NEXT:
+
+SCREEN-010
+
+=================================================
+*/
+
+
+buttons.lakeNext.addEventListener(
+"click",
+function(){
+
+    updateLocationCharacter();
+
+    showScreen(
+        screens.screen010
+    );
+
+});
+
+
+
+
+
+/*
+=================================================
+
+SCREEN-008
+
+BAMBOO GROVE INTRO
+
+NEXT:
+
+SCREEN-010
+
+=================================================
+*/
+
+
+buttons.bambooNext.addEventListener(
+"click",
+function(){
+
+    updateLocationCharacter();
+
+    showScreen(
+        screens.screen010
+    );
+
+});
+
+
+
+
+
+/*
+=================================================
+
+SCREEN-009
+
+BANANA PLANTATION INTRO
+
+NEXT:
+
+SCREEN-010
+
+=================================================
+*/
+
+
+buttons.bananaNext.addEventListener(
+"click",
+function(){
+
+    updateLocationCharacter();
+
+    showScreen(
+        screens.screen010
+    );
+
+});
+
+
+
+
+/*
+=================================================
+
+SCREEN-010
+
+LOCATION CHARACTER RESULT
+
+
+Select image:
+
+LOCATION
+
++
+
+CHARACTER
+
+
+=================================================
+*/
+
+
+function updateLocationCharacter(){
+
+
+
+    if(
+    gameState.location==="coconut" &&
+    gameState.character==="boy"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL COCONUT man1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="coconut" &&
+    gameState.character==="girl"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL COCONUT girl1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="lake" &&
+    gameState.character==="boy"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL LAKE man1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="lake" &&
+    gameState.character==="girl"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL LAKE girl1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="bamboo" &&
+    gameState.character==="boy"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL BAMBOO man1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="bamboo" &&
+    gameState.character==="girl"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL BAMBOO girl1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="banana" &&
+    gameState.character==="boy"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL BANANA man1.png";
+
+    }
+
+
+
+    if(
+    gameState.location==="banana" &&
+    gameState.character==="girl"
+    ){
+
+        locationCharacterImage.src =
+        "graphics/LOCAL BANANA girl1.png";
+
+    }
+
+
+}
+
+
+
+
+
+/*
+=================================================
+
+SCREEN-010
+
+BUTTON
+
+NEXT:
+
+SCREEN-011
+
+
+=================================================
+*/
+
+
+buttons.locationCharacterNext.addEventListener(
+"click",
+function(){
+
+
+    updateLocationCharacter();
+
+
+    showScreen(
+    screens.screen011
+    );
+
+
+});
+
+
+/*
+=================================================
+
+SCREEN-011
+
+FIRST SURVIVAL EVENT
+
+
+TEMPORARY TEST
+
+
+=================================================
+*/
+
+
+buttons.firstEvent.addEventListener(
+"click",
+function(){
+
+
+    gameState.day =
+    gameState.day + 1;
+
+
+    console.log(
+    "DAY:",
+    gameState.day
+    );
+
+
+});
+
+
 
 
 
@@ -764,3 +1152,4 @@ Only SCREEN-001 visible.
 showScreen(
 screens.screen001
 );
+
