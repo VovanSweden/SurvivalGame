@@ -469,12 +469,26 @@ FIRST SURVIVAL EVENT
 
 ASSET:
 
-none
+background_day0
+
+
+FILE:
+
+graphics/fon day0.png
 
 
 BUTTON:
 
 button-screen-011-01
+
+
+STATE READ:
+
+gameState.character
+
+gameState.location
+
+gameState.day
 
 
 STATE WRITE:
@@ -490,9 +504,18 @@ SCREEN-012
 =================================================
 -->
 
+
+
 <section
 class="location-scene-screen"
 id="screen-011">
+
+
+<img
+
+src="graphics/fon day0.png"
+
+alt="Day 0 Story Intro">
 
 
 <button
