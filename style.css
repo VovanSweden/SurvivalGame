@@ -861,12 +861,14 @@ Image fills the screen.
     position:absolute;
 
     top:0;
-    left:0;
-
-    width:100%;
+    left:50%;
 
     height:100%;
 
-    object-fit:cover;
+    width:auto;
+
+    transform:translateX(-50%);
+
+    object-fit:contain;
 
 }
