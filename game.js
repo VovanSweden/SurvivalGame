@@ -176,9 +176,22 @@ document.getElementById("screen-010"),
 
 
 screen011:
-document.getElementById("screen-011")
+document.getElementById("screen-011"),
+
+
+screen012:
+document.getElementById("screen-012"),
+
+
+screen013:
+document.getElementById("screen-013"),
+
+
+screen014:
+document.getElementById("screen-014")
 
 };
+
 
 
 
@@ -248,6 +261,39 @@ gameState.character
 const locationCharacterImage =
 document.getElementById(
 "location-character-image"
+);
+
+/*
+=================================================
+
+SCREEN-012
+
+SCREEN-013
+
+SCREEN-014
+
+ITEM SELECTION CHARACTER IMAGE
+
+
+Uses:
+
+gameState.character
+
+
+=================================================
+*/
+
+
+const itemCharacterImage =
+document.getElementById(
+"item-character-image"
+);
+
+
+
+const itemResultCharacterImage =
+document.getElementById(
+"item-result-character-image"
 );
 
 
@@ -378,13 +424,31 @@ document.getElementById(
 firstEvent:
 document.getElementById(
 "button-screen-011-01"
+),
+
+
+chooseItems:
+document.getElementById(
+"button-screen-012-01"
+),
+
+
+confirmSelectedItems:
+document.getElementById(
+"button-screen-013-01"
+),
+
+
+confirmItems:
+document.getElementById(
+"button-screen-014-01"
 )
 
-
-
-
-
 };
+
+
+
+
 
 
 
@@ -835,6 +899,10 @@ function(){
 
     updateLocationCharacter();
 
+
+
+
+
     showScreen(
         screens.screen010
     );
@@ -1060,7 +1128,66 @@ function updateLocationCharacter(){
 }
 
 
+    if(
+    gameState.location==="banana" &&
+    gameState.character==="girl"
+    ){
 
+        locationCharacterImage.src =
+        "graphics/LOCAL BANANA girl1.png";
+
+    }
+
+
+
+
+
+/*
+=================================================
+
+ITEM SCREEN CHARACTER SELECTOR
+
+Uses:
+
+gameState.character
+
+=================================================
+*/
+
+
+function updateItemCharacter(){
+
+
+    if(gameState.character==="boy"){
+
+
+        itemCharacterImage.src =
+        "graphics/man2.png";
+
+
+        itemResultCharacterImage.src =
+        "graphics/man2.png";
+
+
+    }
+
+
+
+    if(gameState.character==="girl"){
+
+
+        itemCharacterImage.src =
+        "graphics/girl2.png";
+
+
+        itemResultCharacterImage.src =
+        "graphics/girl2.png";
+
+
+    }
+
+
+}
 
 
 /*
@@ -1122,6 +1249,126 @@ function(){
     console.log(
     "DAY:",
     gameState.day
+    );
+
+
+    updateItemCharacter();
+
+
+    showScreen(
+    screens.screen012
+    );
+
+
+});
+
+/*
+=================================================
+
+SCREEN-012
+
+CHOOSE ITEMS
+
+NEXT:
+
+SCREEN-013
+
+
+=================================================
+*/
+
+
+buttons.chooseItems.addEventListener(
+"click",
+function(){
+
+
+    updateItemCharacter();
+
+
+    showScreen(
+    screens.screen013
+    );
+
+
+});
+
+
+
+
+
+/*
+=================================================
+
+SCREEN-013
+
+CONFIRM SELECTED ITEMS
+
+
+NEXT:
+
+SCREEN-014
+
+
+=================================================
+*/
+
+
+buttons.confirmSelectedItems.addEventListener(
+"click",
+function(){
+
+
+    gameState.selectedItems = [
+        "temporary_item_1",
+        "temporary_item_2",
+        "temporary_item_3",
+        "temporary_item_4"
+    ];
+
+
+
+    showScreen(
+    screens.screen014
+    );
+
+
+});
+
+
+
+
+
+/*
+=================================================
+
+SCREEN-014
+
+CONFIRM ITEMS
+
+
+NEXT:
+
+SCREEN-015
+
+
+=================================================
+*/
+
+
+buttons.confirmItems.addEventListener(
+"click",
+function(){
+
+
+    gameState.items =
+    gameState.selectedItems;
+
+
+
+    console.log(
+    "ITEMS:",
+    gameState.items
     );
 
 

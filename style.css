@@ -874,3 +874,167 @@ Image fills the screen.
     transform:translate(-50%, -50%);
 
 }
+
+/*
+=================================================
+
+SCREEN-012
+
+DAY 1 CHOOSE ITEMS
+
+ASSET:
+
+graphics/fon day1.png
+
+BUTTON:
+
+button-screen-012-01
+
+
+=================================================
+*/
+
+
+.day1-screen {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+}
+
+
+
+.day1-screen img {
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transform:translate(-50%, -50%);
+
+}
+
+
+
+
+/*
+=================================================
+
+SCREEN-013
+
+ITEM SELECTION
+
+
+CHARACTER IMAGE:
+
+man2.png
+
+girl2.png
+
+
+BUTTON:
+
+button-screen-013-01
+
+
+=================================================
+*/
+
+
+.item-selection-screen {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+}
+
+
+
+.item-selection-screen img {
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    max-width:96%;
+    max-height:96%;
+
+    width:auto;
+    height:auto;
+
+    transform:translate(-50%, -50%);
+
+}
+
+
+
+/*
+=================================================
+
+SCREEN-014
+
+ITEM SELECTION RESULT
+
+
+BUTTON:
+
+button-screen-014-01
+
+
+=================================================
+*/
+
+
+.item-result-screen {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+}
+
+
+
+.item-result-screen img {
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    max-width:96%;
+    max-height:96%;
+
+    width:auto;
+    height:auto;
+
+    transform:translate(-50%, -50%);
+
+}
