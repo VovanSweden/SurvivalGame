@@ -860,14 +860,15 @@ Image fills the screen.
 
     position:absolute;
 
-    top:2%;
-
+    top:50%;
     left:50%;
 
-    height:96%;
+    max-width:96%;
+    max-height:96%;
 
     width:auto;
+    height:auto;
 
-    transform:translateX(-50%);
+    transform:translate(-50%, -50%);
 
 }
