@@ -800,3 +800,73 @@ ASSET REGISTRY.
 
 
 }
+
+
+/*
+=================================================
+
+LOCATION INTRO BUTTONS
+
+SCREEN-006
+SCREEN-007
+SCREEN-008
+SCREEN-009
+SCREEN-010
+SCREEN-011
+
+
+Transparent full-screen interaction zone.
+
+=================================================
+*/
+
+.location-next-button {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:transparent;
+
+    border:none;
+
+    cursor:pointer;
+
+    z-index:20;
+
+}
+
+/*
+=================================================
+
+LOCATION IMAGE SYSTEM
+
+SCREEN-006
+SCREEN-007
+SCREEN-008
+SCREEN-009
+SCREEN-010
+
+Image fills the screen.
+
+=================================================
+*/
+
+.location-scene-screen img {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
