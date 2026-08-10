@@ -1136,7 +1136,7 @@ width:15%;
 
 height:20%;
 
-background:red;
+background:rgb(5, 187, 219);
 
 opacity:0.5;
 
@@ -1404,7 +1404,7 @@ Controlled by game.js.
 
 .item-hotspot{
 
-    background:red;
+    background:rgb(4, 0, 255);
 
     opacity:0.5;
 
