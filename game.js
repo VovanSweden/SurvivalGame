@@ -579,10 +579,18 @@ document.getElementById(
 "button-item-first-aid-kit-view"
 ),
 
+
+itemFirstAidKitSelect:
+document.getElementById(
+"button-item-first-aid-kit-select"
+),
+
+
 confirmItems:
 document.getElementById(
 "button-screen-014-01"
 ),
+
 
 itemIntroBack:
 document.getElementById(
