@@ -693,10 +693,7 @@ document.getElementById(
 
 
 
-itemFirstAidKitView:
-document.getElementById(
-"button-item-first_aid_kit-view"
-),
+
 
 
 itemFirstAidKitSelect:
