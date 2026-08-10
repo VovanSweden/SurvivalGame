@@ -205,19 +205,138 @@ const itemIcons = {
 };
 
 
+
 const itemData = {
 
 
-first_aid_kit: {
-
-name:"First Aid Kit",
-
-image:"assets/items/first_aid_kit.png",
-
-description:
-"Medical treatment. Helps with injuries and health problems."
-
+headlamp:{
+name:"Headlamp",
+image:"assets/items/headlamp.png",
+description:"Light source for darkness and night exploration."
 },
+
+
+fishing_rod:{
+name:"Fishing Rod",
+image:"assets/items/fishing_rod.png",
+description:"Tool for fishing and food strategy."
+},
+
+
+first_aid_kit:{
+name:"First Aid Kit",
+image:"assets/items/first_aid_kit.png",
+description:"Medical treatment for injuries and health problems."
+},
+
+
+pistol:{
+name:"Pistol",
+image:"assets/items/pistol.png",
+description:"Emergency protection with limited ammunition."
+},
+
+
+mobile_phone:{
+name:"Mobile Phone",
+image:"assets/items/mobile_phone.png",
+description:"Communication attempt and connection with previous life."
+},
+
+
+warm_sweater:{
+name:"Warm Sweater",
+image:"assets/items/warm_sweater.png",
+description:"Protection from cold conditions."
+},
+
+
+machete:{
+name:"Machete",
+image:"assets/items/machete.png",
+description:"Tool for processing resources and building."
+},
+
+
+coffee_cup:{
+name:"Coffee Cup",
+image:"assets/items/coffee_cup.png",
+description:"Comfort item and possible container."
+},
+
+
+tent:{
+name:"Tent",
+image:"assets/items/tent.png",
+description:"Protection from rain and wind."
+},
+
+
+bean_can:{
+name:"Bean Can",
+image:"assets/items/bean_can.png",
+description:"Food source and future container."
+},
+
+
+cigarettes:{
+name:"Cigarettes",
+image:"assets/items/cigarettes.png",
+description:"Psychological comfort item."
+},
+
+
+radio:{
+name:"Radio",
+image:"assets/items/radio.png",
+description:"Communication and information device."
+},
+
+
+sunscreen:{
+name:"Sunscreen",
+image:"assets/items/sunscreen.png",
+description:"Protection from sun exposure."
+},
+
+
+binoculars:{
+name:"Binoculars",
+image:"assets/items/binoculars.png",
+description:"Observation tool with hidden possibilities."
+},
+
+
+book:{
+name:"Book",
+image:"assets/items/book.png",
+description:"Mental support and possible resource."
+},
+
+
+toothpaste:{
+name:"Toothpaste",
+image:"assets/items/toothpaste.png",
+description:"Personal hygiene and comfort."
+}
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 machete: {

@@ -1270,3 +1270,45 @@ UNIVERSAL ITEM INTRO
     color:white;
 
 }
+
+/*
+=================================================
+
+UNIVERSAL ITEM SELECT CHECK MARK
+
+Works with all ITEM IDs.
+
+Controlled by game.js.
+
+=================================================
+*/
+
+
+.item-selected-mark {
+
+    display:none;
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    font-size:60px;
+
+
+    color:#00ff00;
+
+
+    font-weight:bold;
+
+
+    text-shadow:
+    0 0 10px black;
+
+}
