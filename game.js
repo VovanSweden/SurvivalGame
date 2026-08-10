@@ -577,9 +577,9 @@ document.getElementById(
 
 
 
-itemFirstAidKit:
+itemFirstAidKitView:
 document.getElementById(
-"button-item-first-aid-kit-select"
+"button-item-first-aid-kit-view"
 ),
 
 confirmItems:
@@ -1494,6 +1494,37 @@ function selectItem(itemID){
 }
 
 
+function openItemIntro(itemID){
+
+
+gameState.currentItemPreview = itemID;
+
+
+gameState.itemReturnScreen =
+screens.screen013;
+
+
+
+itemIntroImage.src =
+itemIcons[itemID];
+
+
+itemIntroName.innerText =
+itemID;
+
+
+itemIntroDescription.innerText =
+"Medical treatment item";
+
+
+showScreen(
+screens.screen015
+);
+
+
+}
+
+
 /*
 =================================================
 
@@ -1505,14 +1536,14 @@ SCREEN-013
 */
 
 
-buttons.itemFirstAidKit.addEventListener(
+buttons.itemFirstAidKitView.addEventListener(
 "click",
 function(){
 
 
-    selectItem(
-    "first_aid_kit"
-    );
+openItemIntro(
+"first_aid_kit"
+);
 
 
 });
@@ -1543,22 +1574,21 @@ buttons.confirmSelectedItems.addEventListener(
 function(){
 
 
-    gameState.selectedItems = [
-        "temporary_item_1",
-        "temporary_item_2",
-        "temporary_item_3",
-        "temporary_item_4"
-    ];
+if(
+gameState.selectedItems.length !== 4
+){
+
+return;
+
+}
 
 
-
-    showScreen(
-    screens.screen014
-    );
+showScreen(
+screens.screen014
+);
 
 
 });
-
 
 
 
@@ -1600,6 +1630,28 @@ function(){
 
 
 
+buttons.itemIntroBack.addEventListener(
+"click",
+function(){
+
+
+showScreen(
+gameState.itemReturnScreen
+);
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1618,6 +1670,8 @@ Only SCREEN-001 visible.
 
 =================================================
 */
+
+
 
 
 showScreen(
