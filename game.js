@@ -1787,7 +1787,15 @@ const itemID =
 button.dataset.itemId;
 
 
+console.log(
+"CLICK ITEM:",
+itemID
+);
+
+
 selectItem(itemID);
+
+
 
 
 });

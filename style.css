@@ -1331,7 +1331,11 @@ Controlled by game.js.
 
 }
 
+.selected-mark{
 
+display:none;
+
+}
 
 
 
