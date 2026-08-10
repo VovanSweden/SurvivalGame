@@ -692,14 +692,20 @@ document.getElementById(
 
 
 
-
-
+itemFirstAidKitView:
+document.getElementById(
+"button-item-first_aid_kit-view"
+),
 
 
 itemFirstAidKitSelect:
 document.getElementById(
 "button-item-first_aid_kit-select"
 ),
+
+
+
+
 
 
 confirmItems:
