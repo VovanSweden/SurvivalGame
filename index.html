@@ -578,6 +578,12 @@ id="button-item-first-aid-kit-view">
 <button
 class="item-hotspot"
 id="button-item-first-aid-kit-select">
+
+<span
+id="first-aid-selected-mark">
+✓
+</span>
+
 </button>
 
 
@@ -662,6 +668,60 @@ id="button-screen-015-back">
 
 
 
+/*
+=================================================
+
+ITEM SELECT CHECK MARK
+
+FIRST AID KIT
+
+Visible only after selection.
+
+Controlled by game.js.
+
+=================================================
+*/
+
+
+#first-aid-selected-mark {
+
+
+    display:none;
+
+
+    position:absolute;
+
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:translate(-50%,-50%);
+
+
+
+    font-size:60px;
+
+
+    color:#00ff00;
+
+
+    font-weight:bold;
+
+
+
+    text-shadow:
+    0 0 10px black;
+
+
+
+}
+
+
+
+
+
 </div>
 
 
@@ -672,3 +732,4 @@ id="button-screen-015-back">
 </body>
 
 </html>
+

@@ -1533,7 +1533,7 @@ function selectItem(itemID){
 
     gameState.selectedItems.push(itemID);
 
-
+updateSelectedItemVisual(itemID);
 
     console.log(
     "SELECTED ITEMS:",
@@ -1567,6 +1567,28 @@ function updateItemSelectionVisual(){
 
 
 }
+
+function updateSelectedItemVisual(itemID){
+
+
+    if(
+    itemID==="first_aid_kit"
+    ){
+
+
+        document
+        .getElementById(
+        "first-aid-selected-mark"
+        )
+        .style.display="block";
+
+
+    }
+
+
+}
+
+
 
 
 function openItemIntro(itemID){
