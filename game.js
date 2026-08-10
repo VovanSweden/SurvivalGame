@@ -205,8 +205,7 @@ const itemIcons = {
 };
 
 
-itemIntroDescription.style.display="none";
-itemIntroName.style.display="none";
+
 
 
 
@@ -1729,6 +1728,10 @@ function openItemIntro(itemID){
     showScreen(
     screens.screen015
     );
+
+    itemIntroName.style.display="none";
+
+itemIntroDescription.style.display="none";
 
 
 }
