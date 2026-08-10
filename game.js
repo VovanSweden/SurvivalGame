@@ -308,9 +308,6 @@ document.getElementById("screen-015")
 
 
 
-screen015:
-document.getElementById("screen-015"),
-
 };
 
 
@@ -592,10 +589,7 @@ document.getElementById(
 "button-screen-015-back"
 ),
 
-itemIntroBack:
-document.getElementById(
-"button-screen-015-back"
-)
+
 
 };
 
@@ -1545,6 +1539,16 @@ openItemIntro(
 "first_aid_kit"
 );
 
+
+});
+
+buttons.itemFirstAidKitSelect.addEventListener(
+"click",
+function(){
+
+selectItem(
+"first_aid_kit"
+);
 
 });
 
