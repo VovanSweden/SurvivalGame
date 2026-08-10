@@ -1270,8 +1270,8 @@ UNIVERSAL ITEM INTRO
     top:50%;
     left:50%;
 
-    max-width:80%;
-    max-height:60%;
+    max-width:100%;
+    max-height:100%;
 
     transform:translate(-50%,-50%);
 
