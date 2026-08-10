@@ -205,6 +205,24 @@ const itemIcons = {
 };
 
 
+const itemData = {
+
+
+first_aid_kit: {
+
+name:"First Aid Kit",
+
+image:"assets/items/first_aid_kit.png",
+
+description:
+"Medical treatment. Helps with injuries and health problems."
+
+}
+
+
+};
+
+
 
 
 console.log("SURVIVALGAME STARTED");
@@ -282,7 +300,16 @@ document.getElementById("screen-013"),
 
 
 screen014:
-document.getElementById("screen-014")
+document.getElementById("screen-014"),
+
+
+screen015:
+document.getElementById("screen-015")
+
+
+
+screen015:
+document.getElementById("screen-015"),
 
 };
 
@@ -390,7 +417,22 @@ document.getElementById(
 "item-result-character-image"
 );
 
+const itemIntroImage =
+document.getElementById(
+"item-intro-image"
+);
 
+
+const itemIntroName =
+document.getElementById(
+"item-intro-name"
+);
+
+
+const itemIntroDescription =
+document.getElementById(
+"item-intro-description"
+);
 
 
 
@@ -543,6 +585,16 @@ document.getElementById(
 confirmItems:
 document.getElementById(
 "button-screen-014-01"
+),
+
+itemIntroBack:
+document.getElementById(
+"button-screen-015-back"
+),
+
+itemIntroBack:
+document.getElementById(
+"button-screen-015-back"
 )
 
 };
