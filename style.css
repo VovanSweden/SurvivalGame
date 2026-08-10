@@ -1380,3 +1380,16 @@ Controlled by game.js.
     0 0 10px black;
 
 }
+
+
+/* DEBUG ITEM HOTSPOT */
+
+.item-hotspot{
+
+    background:red;
+
+    opacity:0.5;
+
+    border:3px solid yellow;
+
+}
