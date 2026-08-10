@@ -205,6 +205,10 @@ const itemIcons = {
 };
 
 
+itemIntroDescription.style.display="none";
+itemIntroName.style.display="none";
+
+
 
 const itemData = {
 
