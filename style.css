@@ -1108,6 +1108,22 @@ Transparent zone.
 
 }
 
+
+#button-item-first_aid_kit-select {
+
+
+    left:20%;
+
+    top:35%;
+
+
+    width:15%;
+
+    height:20%;
+
+
+}
+
 /*
 =================================================
 
@@ -1270,6 +1286,54 @@ UNIVERSAL ITEM INTRO
     color:white;
 
 }
+
+
+/*
+=================================================
+
+ITEM SELECT CHECK MARK
+
+Visible only after selection.
+
+Controlled by game.js.
+
+=================================================
+*/
+
+
+.selected-mark {
+
+    display:none;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:60px;
+
+    color:#00ff00;
+
+    font-weight:bold;
+
+    text-shadow:
+    0 0 10px black;
+
+}
+
+
+
+.item-select-button.selected .selected-mark {
+
+    display:block;
+
+}
+
+
+
+
 
 /*
 =================================================

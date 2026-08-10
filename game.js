@@ -695,13 +695,13 @@ document.getElementById(
 
 itemFirstAidKitView:
 document.getElementById(
-"button-item-first-aid-kit-view"
+"button-item-first_aid_kit-view"
 ),
 
 
 itemFirstAidKitSelect:
 document.getElementById(
-"button-item-first-aid-kit-select"
+"button-item-first_aid_kit-select"
 ),
 
 
