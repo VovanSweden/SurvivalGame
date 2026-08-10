@@ -1509,17 +1509,12 @@ ADD ITEM TO SELECTED ITEMS
 function selectItem(itemID){
 
 
-    // максимум 4 предмета
-
     if(gameState.selectedItems.length >= 4){
 
         return;
 
     }
 
-
-
-    // нельзя выбрать один предмет два раза
 
     if(
     gameState.selectedItems.includes(itemID)
@@ -1530,96 +1525,152 @@ function selectItem(itemID){
     }
 
 
-
     gameState.selectedItems.push(itemID);
 
-updateSelectedItemVisual(itemID);
 
     console.log(
     "SELECTED ITEMS:",
     gameState.selectedItems
     );
+
+
     updateItemSelectionVisual();
 
 
 }
 
+
+
+
+/*
+=================================================
+
+ITEM SELECTION VISUAL SYSTEM
+
+Reads:
+
+gameState.selectedItems
+
+Updates:
+
+all ITEM SELECT buttons
+
+=================================================
+*/
+
+
 function updateItemSelectionVisual(){
 
 
-    if(
-    gameState.selectedItems.includes(
-    "first_aid_kit"
-    )
-    ){
-
-        buttons.itemFirstAidKitSelect.innerHTML = "✓";
+    const itemSelectButtons =
+    document.querySelectorAll(
+    ".item-select-button"
+    );
 
 
-    }
-    else{
+    itemSelectButtons.forEach(
+    function(button){
 
 
-        buttons.itemFirstAidKitSelect.innerHTML = "";
+        const itemID =
+        button.dataset.itemId;
 
 
-    }
+        if(
+        gameState.selectedItems.includes(itemID)
+        ){
+
+
+            button.classList.add(
+            "selected"
+            );
+
+
+        }
+        else{
+
+
+            button.classList.remove(
+            "selected"
+            );
+
+
+        }
+
+
+    });
 
 
 }
 
-function updateSelectedItemVisual(itemID){
+/*
+=================================================
 
+UNIVERSAL ITEM INTRO SYSTEM
 
-    if(
-    itemID==="first_aid_kit"
-    ){
+Receives:
 
+ITEM ID
 
-        document
-        .getElementById(
-        "first-aid-selected-mark"
-        )
-        .style.display="block";
+Writes:
 
+gameState.currentItemPreview
+gameState.itemReturnScreen
 
-    }
+Opens:
 
+SCREEN-015
 
-}
-
-
+=================================================
+*/
 
 
 function openItemIntro(itemID){
 
 
-gameState.currentItemPreview = itemID;
+    gameState.currentItemPreview =
+    itemID;
 
 
-gameState.itemReturnScreen =
-screens.screen013;
+    gameState.itemReturnScreen =
+    screens.screen013;
 
 
-
-itemIntroImage.src =
-itemIcons[itemID];
-
-
-itemIntroName.innerText =
-itemData[itemID].name;
+    itemIntroImage.src =
+    itemData[itemID].image;
 
 
-itemIntroDescription.innerText =
-itemData[itemID].description;
+    itemIntroName.innerText =
+    itemData[itemID].name;
 
 
-showScreen(
-screens.screen015
-);
+    itemIntroDescription.innerText =
+    itemData[itemID].description;
+
+
+    showScreen(
+    screens.screen015
+    );
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -1645,13 +1696,31 @@ openItemIntro(
 
 });
 
-buttons.itemFirstAidKitSelect.addEventListener(
+const itemSelectButtons =
+document.querySelectorAll(
+".item-select-button"
+);
+
+
+
+itemSelectButtons.forEach(
+function(button){
+
+
+button.addEventListener(
 "click",
 function(){
 
-selectItem(
-"first_aid_kit"
-);
+
+const itemID =
+button.dataset.itemId;
+
+
+selectItem(itemID);
+
+
+});
+
 
 });
 
