@@ -1031,11 +1031,10 @@ button-screen-014-01
     top:50%;
     left:50%;
 
-    max-width:96%;
-    max-height:96%;
+    width:100%;
+    height:100%;
 
-    width:auto;
-    height:auto;
+    object-fit:cover;
 
     transform:translate(-50%, -50%);
 
@@ -1155,18 +1154,22 @@ UNIVERSAL ITEM INTRO
 
 .item-intro-screen {
 
-   
-    position:absolute;
+  position:absolute;
 
-    top:50%;
-    left:50%;
+    top:0;
+    left:0;
 
     width:100%;
     height:100%;
 
-    object-fit:cover;
+    background:black;
 
-    transform:translate(-50%, -50%);
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;  
+   
 
 }
 
