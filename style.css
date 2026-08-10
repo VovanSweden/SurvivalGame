@@ -1079,3 +1079,31 @@ Transparent interaction zone.
     z-index:20;
 
 }
+
+/*
+=================================================
+
+ITEM BUTTON
+
+SCREEN-013
+
+FIRST AID KIT SELECT
+
+Transparent zone.
+
+=================================================
+*/
+
+.item-hotspot {
+
+    position:absolute;
+
+    background:transparent;
+
+    border:none;
+
+    cursor:pointer;
+
+    z-index:30;
+
+}

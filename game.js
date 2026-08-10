@@ -120,6 +120,91 @@ const gameState = {
 
 
 
+/*
+=================================================
+
+ITEM ICON DATABASE
+
+ITEM ID
+
+↓
+
+ICON FILE
+
+=================================================
+*/
+
+
+const itemIcons = {
+
+
+    first_aid_kit:
+    "assets/icons/icon_first_aid_kit.png",
+
+
+    headlamp:
+    "assets/icons/icon_headlamp.png",
+
+
+    fishing_rod:
+    "assets/icons/icon_fishing_rod.png",
+
+
+    pistol:
+    "assets/icons/icon_pistol.png",
+
+
+    mobile_phone:
+    "assets/icons/icon_mobile_phone.png",
+
+
+    warm_sweater:
+    "assets/icons/icon_warm_sweater.png",
+
+
+    machete:
+    "assets/icons/icon_machete.png",
+
+
+    coffee_cup:
+    "assets/icons/icon_coffee_cup.png",
+
+
+    tent:
+    "assets/icons/icon_tent.png",
+
+
+    bean_can:
+    "assets/icons/icon_bean_can.png",
+
+
+    cigarettes:
+    "assets/icons/icon_cigarettes.png",
+
+
+    radio:
+    "assets/icons/icon_radio.png",
+
+
+    sunscreen:
+    "assets/icons/icon_sunscreen.png",
+
+
+    binoculars:
+    "assets/icons/icon_binoculars.png",
+
+
+    book:
+    "assets/icons/icon_book.png",
+
+
+    toothpaste:
+    "assets/icons/icon_toothpaste.png"
+
+
+};
+
+
 
 
 console.log("SURVIVALGAME STARTED");
@@ -447,6 +532,13 @@ document.getElementById(
 "button-screen-013-01"
 ),
 
+
+
+
+itemFirstAidKit:
+document.getElementById(
+"button-item-first-aid-kit-select"
+),
 
 confirmItems:
 document.getElementById(
@@ -1292,6 +1384,82 @@ function(){
 
     showScreen(
     screens.screen013
+    );
+
+
+});
+
+
+
+
+
+/*
+=================================================
+
+ITEM SELECTION SYSTEM
+
+ADD ITEM TO SELECTED ITEMS
+
+=================================================
+*/
+
+
+function selectItem(itemID){
+
+
+    // максимум 4 предмета
+
+    if(gameState.selectedItems.length >= 4){
+
+        return;
+
+    }
+
+
+
+    // нельзя выбрать один предмет два раза
+
+    if(
+    gameState.selectedItems.includes(itemID)
+    ){
+
+        return;
+
+    }
+
+
+
+    gameState.selectedItems.push(itemID);
+
+
+
+    console.log(
+    "SELECTED ITEMS:",
+    gameState.selectedItems
+    );
+
+
+}
+
+
+/*
+=================================================
+
+FIRST AID KIT TEST BUTTON
+
+SCREEN-013
+
+=================================================
+*/
+
+
+buttons.itemFirstAidKit.addEventListener(
+"click",
+function(){
+
+
+    selectItem(
+    "first_aid_kit"
     );
 
 
