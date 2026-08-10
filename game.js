@@ -339,55 +339,7 @@ description:"Personal hygiene and comfort."
 
 
 
-machete: {
 
-name:"Machete",
-
-image:"assets/items/machete.png",
-
-description:
-"Tool for processing resources and building."
-
-},
-
-
-tent: {
-
-name:"Tent",
-
-image:"assets/items/tent.png",
-
-description:
-"Shelter protection from rain and wind."
-
-},
-
-
-binoculars: {
-
-name:"Binoculars",
-
-image:"assets/items/binoculars.png",
-
-description:
-"Observation tool with hidden fire creation possibility."
-
-},
-
-
-radio: {
-
-name:"Radio",
-
-image:"assets/items/radio.png",
-
-description:
-"Communication and information device."
-
-}
-
-
-};
 
 
 
