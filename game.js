@@ -1539,6 +1539,31 @@ function selectItem(itemID){
     "SELECTED ITEMS:",
     gameState.selectedItems
     );
+    updateItemSelectionVisual();
+
+
+}
+
+function updateItemSelectionVisual(){
+
+
+    if(
+    gameState.selectedItems.includes(
+    "first_aid_kit"
+    )
+    ){
+
+        buttons.itemFirstAidKitSelect.innerHTML = "✓";
+
+
+    }
+    else{
+
+
+        buttons.itemFirstAidKitSelect.innerHTML = "";
+
+
+    }
 
 
 }
