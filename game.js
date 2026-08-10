@@ -89,6 +89,15 @@ const gameState = {
     items: [],
 
 
+    selectedItems: [],
+
+
+    currentItemPreview: null,
+
+
+    itemReturnScreen: null,
+
+
     day: 0,
 
 
@@ -1128,16 +1137,7 @@ function updateLocationCharacter(){
 }
 
 
-    if(
-    gameState.location==="banana" &&
-    gameState.character==="girl"
-    ){
-
-        locationCharacterImage.src =
-        "graphics/LOCAL BANANA girl1.png";
-
-    }
-
+   
 
 
 
@@ -1161,12 +1161,14 @@ function updateItemCharacter(){
     if(gameState.character==="boy"){
 
 
+        // SCREEN-013 ITEM SELECTION
         itemCharacterImage.src =
         "graphics/man2.png";
 
 
+        // SCREEN-014 ITEM RESULT
         itemResultCharacterImage.src =
-        "graphics/man2.png";
+        "graphics/man item.png";
 
 
     }
@@ -1176,12 +1178,14 @@ function updateItemCharacter(){
     if(gameState.character==="girl"){
 
 
+        // SCREEN-013 ITEM SELECTION
         itemCharacterImage.src =
         "graphics/girl2.png";
 
 
+        // SCREEN-014 ITEM RESULT
         itemResultCharacterImage.src =
-        "graphics/girl2.png";
+        "graphics/girl item.png";
 
 
     }
