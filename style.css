@@ -1111,11 +1111,11 @@ Transparent zone.
 #button-item-first_aid_kit-select {
 
 
-      left:56%;
+      left:59%;
     top:10%;
 
-   width:7%;
-    height:7%;
+   width: 3%;
+    height:3%;
 
 
 }
@@ -1124,11 +1124,11 @@ Transparent zone.
 
 #button-item-first_aid_kit-view {
 
-     left:62%;
+     left:59%;
     top:10%;
 
-    width:7%;
-    height:7%;
+    width:12%;
+    height:12%;
 
 background:rgb(5, 187, 219);
 
