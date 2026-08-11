@@ -1850,6 +1850,50 @@ selectItem(itemID);
 });
 
 
+/*
+=================================================
+
+SCREEN-014 ITEM ICON DISPLAY
+
+Loads selected item icons
+
+=================================================
+*/
+
+
+function updateResultItems(){
+
+
+    const selected =
+    gameState.selectedItems;
+
+
+    for(let i = 0; i < 4; i++){
+
+
+        const icon =
+        document.getElementById(
+        "result-item-" + (i + 1)
+        );
+
+
+        if(selected[i]){
+
+
+            icon.src =
+            itemIcons[selected[i]];
+
+
+        }
+
+
+    }
+
+
+}
+
+
+
 
 
 
@@ -1882,6 +1926,9 @@ gameState.selectedItems.length !== 4
 return;
 
 }
+
+
+updateResultItems();
 
 
 showScreen(
