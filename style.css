@@ -1061,7 +1061,7 @@ game.js
 
     position:absolute;
 
-    width:12%;
+    width:50%;
 
     height:auto;
 
@@ -1091,39 +1091,32 @@ FOUR SELECTED ITEMS POSITIONS
 
 #result-item-1 {
 
-    left:15%;
-
+    left:10%;
     top:20%;
 
 }
-
 
 
 #result-item-2 {
 
-    left:35%;
-
-    top:20%;
+    left:10%;
+    top:35%;
 
 }
-
 
 
 #result-item-3 {
 
-    left:55%;
-
-    top:20%;
+    left:10%;
+    top:50%;
 
 }
 
 
-
 #result-item-4 {
 
-    left:75%;
-
-    top:20%;
+    left:10%;
+    top:65%;
 
 }
 

@@ -1860,9 +1860,7 @@ Loads selected item icons
 =================================================
 */
 
-
 function updateResultItems(){
-
 
     const selected =
     gameState.selectedItems;
@@ -1882,6 +1880,21 @@ function updateResultItems(){
 
             icon.src =
             itemIcons[selected[i]];
+
+
+            icon.dataset.itemId =
+            selected[i];
+
+
+            icon.onclick = function(){
+
+
+                openItemIntro(
+                    this.dataset.itemId
+                );
+
+
+            };
 
 
         }
