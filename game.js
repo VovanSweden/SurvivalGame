@@ -1890,8 +1890,9 @@ function updateResultItems(){
 
 
                 openItemIntro(
-                    this.dataset.itemId
-                );
+            this.dataset.itemId,
+            screens.screen014
+           );
 
 
             };
