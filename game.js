@@ -1702,15 +1702,25 @@ SCREEN-015
 */
 
 
-function openItemIntro(itemID){
+function openItemIntro(itemID, returnScreen){
 
 
     gameState.currentItemPreview =
     itemID;
 
 
-    gameState.itemReturnScreen =
-    screens.screen013;
+    if(returnScreen){
+
+        gameState.itemReturnScreen =
+        returnScreen;
+
+    }
+    else{
+
+        gameState.itemReturnScreen =
+        screens.screen013;
+
+    }
 
 
     itemIntroImage.src =
