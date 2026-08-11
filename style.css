@@ -1111,11 +1111,11 @@ Transparent zone.
 #button-item-first_aid_kit-select {
 
 
-      left:42%;
-    top:12%;
+      left:60%;
+    top:8%;
 
-    width:16%;
-    height:12%;
+   width:5%;
+    height:5%;
 
 
 }
@@ -1124,11 +1124,11 @@ Transparent zone.
 
 #button-item-first_aid_kit-view {
 
-     left:42%;
-    top:12%;
+     left:60%;
+    top:10%;
 
-    width:16%;
-    height:12%;
+    width:5%;
+    height:5%;
 
 background:rgb(5, 187, 219);
 
@@ -1396,7 +1396,7 @@ Controlled by game.js.
 
 .item-hotspot{
 
-    background:rgb(4, 0, 255);
+    background:rgb(250, 4, 16);
 
     opacity:0.5;
 
