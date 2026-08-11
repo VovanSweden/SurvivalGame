@@ -426,7 +426,10 @@ document.getElementById("screen-014"),
 
 
 screen015:
-document.getElementById("screen-015")
+document.getElementById("screen-015"),
+
+screen016:
+document.getElementById("screen-016")
 
 
 
@@ -1989,15 +1992,18 @@ buttons.confirmItems.addEventListener(
 "click",
 function(){
 
-
     gameState.items =
     gameState.selectedItems;
-
 
 
     console.log(
     "ITEMS:",
     gameState.items
+    );
+
+
+    showScreen(
+    screens.screen016
     );
 
 
