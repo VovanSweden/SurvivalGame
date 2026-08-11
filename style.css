@@ -1212,20 +1212,13 @@ UNIVERSAL ITEM INTRO
 
 .item-intro-back-button {
 
-
     position:absolute;
 
-    bottom:5%;
+    top:0;
+    left:0;
 
-    left:50%;
-
-    transform:translateX(-50%);
-
-
-    width:50%;
-
-    height:15%;
-
+    width:100%;
+    height:100%;
 
     background:transparent;
 
@@ -1233,6 +1226,7 @@ UNIVERSAL ITEM INTRO
 
     cursor:pointer;
 
+    z-index:20;
 
 }
 
