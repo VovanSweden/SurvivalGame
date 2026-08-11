@@ -1043,6 +1043,80 @@ button-screen-014-01
 /*
 =================================================
 
+SCREEN-014
+
+SELECTED ITEM ICONS
+
+
+Controlled by:
+
+game.js
+
+
+=================================================
+*/
+
+
+.result-item-icon {
+
+    position:absolute;
+
+    width:12%;
+
+    height:auto;
+
+    z-index:10;
+
+}
+
+
+
+/*
+FOUR SELECTED ITEMS POSITIONS
+*/
+
+
+#result-item-1 {
+
+    left:15%;
+
+    top:20%;
+
+}
+
+
+
+#result-item-2 {
+
+    left:35%;
+
+    top:20%;
+
+}
+
+
+
+#result-item-3 {
+
+    left:55%;
+
+    top:20%;
+
+}
+
+
+
+#result-item-4 {
+
+    left:75%;
+
+    top:20%;
+
+}
+
+/*
+=================================================
+
 SCREEN-012
 
 DAY 1 CHOOSE ITEMS BUTTON
