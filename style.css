@@ -1100,7 +1100,7 @@ FOUR SELECTED ITEMS POSITIONS
 #result-item-2 {
 
     left:5%;
-    top:35%;
+    top:25%;
 
 }
 
@@ -1108,7 +1108,7 @@ FOUR SELECTED ITEMS POSITIONS
 #result-item-3 {
 
     left:5%;
-    top:45%;
+    top:50%;
 
 }
 
@@ -1227,7 +1227,7 @@ opacity:0.5;
 #button-item-headlamp-select {
 
 left:10%;
-top:12%;
+top:10%;
 
 width:3%;
 height:3%;
@@ -1238,7 +1238,7 @@ height:3%;
 #button-item-headlamp-view {
 
 left:10%;
-top:12%;
+top:10%;
 
 width:9%;
 height:9%;
@@ -1255,7 +1255,7 @@ opacity:0.5;
 
 #button-item-fishing_rod-select {
 
-left:30%;
+left:35%;
 top:10%;
 
 width:3%;
@@ -1266,7 +1266,7 @@ height:3%;
 
 #button-item-fishing_rod-view {
 
-left:30%;
+left:35%;
 top:10%;
 
 width:9%;
@@ -1314,7 +1314,7 @@ opacity:0.5;
 #button-item-mobile_phone-select {
 
 left:80%;
-top:30%;
+top:40%;
 
 width:3%;
 height:3%;
@@ -1325,7 +1325,7 @@ height:3%;
 #button-item-mobile_phone-view {
 
 left:80%;
-top:30%;
+top:40%;
 
 width:9%;
 height:9%;
@@ -1343,7 +1343,7 @@ opacity:0.5;
 #button-item-warm_sweater-select {
 
 left:10%;
-top:20%;
+top:30%;
 
 width:3%;
 height:3%;
@@ -1354,7 +1354,7 @@ height:3%;
 #button-item-warm_sweater-view {
 
 left:10%;
-top:20%;
+top:30%;
 
 width:9%;
 height:9%;
@@ -1401,7 +1401,7 @@ opacity:0.5;
 #button-item-coffee_cup-select {
 
 left:80%;
-top:35%;
+top:50%;
 
 width:3%;
 height:3%;
@@ -1412,7 +1412,7 @@ height:3%;
 #button-item-coffee_cup-view {
 
 left:80%;
-top:35%;
+top:50%;
 
 width:9%;
 height:9%;
@@ -1429,8 +1429,8 @@ opacity:0.5;
 
 #button-item-tent-select {
 
-left:50%;
-top:72%;
+left:53%;
+top:75%;
 
 width:3%;
 height:3%;
@@ -1440,8 +1440,8 @@ height:3%;
 
 #button-item-tent-view {
 
-left:50%;
-top:72%;
+left:53%;
+top:75%;
 
 width:9%;
 height:9%;
@@ -1459,7 +1459,7 @@ opacity:0.5;
 #button-item-bean_can-select {
 
 left:80%;
-top:60%;
+top:57%;
 
 width:3%;
 height:3%;
@@ -1470,7 +1470,7 @@ height:3%;
 #button-item-bean_can-view {
 
 left:80%;
-top:60%;
+top:57%;
 
 width:9%;
 height:9%;
@@ -1488,7 +1488,7 @@ opacity:0.5;
 #button-item-cigarettes-select {
 
 left:10%;
-top:55%;
+top:60%;
 
 width:3%;
 height:3%;
@@ -1499,7 +1499,7 @@ height:3%;
 #button-item-cigarettes-view {
 
 left:10%;
-top:55%;
+top:60%;
 
 width:9%;
 height:9%;
@@ -1517,7 +1517,7 @@ opacity:0.5;
 #button-item-radio-select {
 
 left:10%;
-top:40%;
+top:35%;
 
 width:3%;
 height:3%;
@@ -1528,7 +1528,7 @@ height:3%;
 #button-item-radio-view {
 
 left:10%;
-top:40%;
+top:35%;
 
 width:9%;
 height:9%;
@@ -1545,8 +1545,8 @@ opacity:0.5;
 
 #button-item-sunscreen-select {
 
-left:10%;
-top:60%;
+left:12%;
+top:70%;
 
 width:3%;
 height:3%;
@@ -1556,8 +1556,8 @@ height:3%;
 
 #button-item-sunscreen-view {
 
-left:10%;
-top:60%;
+left:12%;
+top:70%;
 
 width:9%;
 height:9%;
