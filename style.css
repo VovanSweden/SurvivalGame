@@ -1024,7 +1024,7 @@ button-screen-014-01
 
 
 
-.item-result-screen img {
+.item-result-screen > #item-result-character-image {
 
     position:absolute;
 
@@ -1036,7 +1036,7 @@ button-screen-014-01
 
     object-fit:cover;
 
-    transform:translate(-50%, -50%);
+    transform:translate(-50%,-50%);
 
 }
 
@@ -1064,6 +1064,19 @@ game.js
     width:12%;
 
     height:auto;
+
+    z-index:10;
+
+}
+
+#item-result-character-image {
+
+    z-index:1;
+
+}
+
+
+.result-item-icon {
 
     z-index:10;
 
