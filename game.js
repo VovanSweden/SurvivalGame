@@ -1754,28 +1754,64 @@ itemIntroDescription.style.display="none";
 
 
 
+
+
+
 /*
 =================================================
 
-FIRST AID KIT TEST BUTTON
+UNIVERSAL ITEM VIEW BUTTONS
 
 SCREEN-013
+
+All items:
+
+VIEW ITEM
+
+↓
+
+ITEM ID
+
+↓
+
+SCREEN-015
+
 
 =================================================
 */
 
 
-buttons.itemFirstAidKitView.addEventListener(
+const itemViewButtons =
+document.querySelectorAll(
+".item-view-button"
+);
+
+
+
+itemViewButtons.forEach(
+function(button){
+
+
+button.addEventListener(
 "click",
 function(){
 
 
-openItemIntro(
-"first_aid_kit"
-);
+const itemID =
+button.dataset.itemId;
+
+
+openItemIntro(itemID);
 
 
 });
+
+
+});
+
+
+
+
 
 const itemSelectButtons =
 document.querySelectorAll(
