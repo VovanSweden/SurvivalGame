@@ -1885,6 +1885,9 @@ function updateResultItems(){
             icon.dataset.itemId =
             selected[i];
 
+            icon.style.zIndex = 100;
+            icon.style.cursor = "pointer";
+
 
             icon.onclick = function(){
 
