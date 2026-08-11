@@ -1966,10 +1966,10 @@ graphics/fon test.png
 
 .item-hotspot{
 
-    background:rgb(250, 4, 16);
+    background:transparent;
 
-    opacity:0;
+    opacity:1;
 
-    border:3px solid yellow;
+    border:none;
 
 }
