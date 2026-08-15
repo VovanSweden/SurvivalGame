@@ -349,48 +349,55 @@ and chooses story.
 =================================================
 */
 
-
 function selectStory(){
 
 
     const items =
-    gameState.items.slice().sort();
+    gameState.items;
 
 
-
-    const story1 =
+    const story1Items =
     [
         "mobile_phone",
         "cigarettes",
         "coffee_cup",
         "book"
-    ].sort();
+    ];
+
+
+    const story2Items =
+    [
+        "headlamp",
+        "fishing_rod",
+        "first_aid_kit",
+        "pistol",
+        "warm_sweater",
+        "machete",
+        "tent",
+        "bean_can",
+        "radio",
+        "sunscreen",
+        "binoculars",
+        "toothpaste"
+    ];
 
 
 
-   const story2 =
-[
-    "headlamp",
-    "fishing_rod",
-    "first_aid_kit",
-    "pistol",
-    "warm_sweater",
-    "machete",
-    "tent",
-    "bean_can",
-    "radio",
-    "sunscreen",
-    "binoculars",
-    "toothpaste"
-].sort();
+    const hasStory1 =
+    items.every(
+        item => story1Items.includes(item)
+    );
 
 
 
-    if(
-        JSON.stringify(items)
-        ===
-        JSON.stringify(story1)
-    ){
+    const hasStory2 =
+    items.every(
+        item => story2Items.includes(item)
+    );
+
+
+
+    if(hasStory1){
 
         gameState.currentStory =
         "STORY_1";
@@ -407,11 +414,7 @@ function selectStory(){
 
 
 
-    if(
-        JSON.stringify(items)
-        ===
-        JSON.stringify(story2)
-    ){
+    if(hasStory2){
 
         gameState.currentStory =
         "STORY_2";
@@ -428,7 +431,8 @@ function selectStory(){
 
 
 
-    gameState.currentStory = null;
+    gameState.currentStory =
+    null;
 
 
     console.log(
@@ -437,7 +441,6 @@ function selectStory(){
 
 
 }
-
 
 
 
