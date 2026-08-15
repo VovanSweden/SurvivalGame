@@ -2120,10 +2120,24 @@ if(
 gameState.currentStory === "STORY_1"
 ){
 
-    document.getElementById(
-    "story-day-image"
-    ).src =
-   "Stories/story1/1srorygirl/1srorygirlday1.png";
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image"
+        ).src =
+        "Stories/story1/1storyman/1storymanday1.png";
+
+    }
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday1.png";
+
+    }
 
 
     showScreen(
@@ -2134,14 +2148,33 @@ gameState.currentStory === "STORY_1"
 
 
 
+
+
+
+
+
 if(
 gameState.currentStory === "STORY_2"
 ){
 
-    document.getElementById(
-    "story-day-image-030"
-    ).src =
-    "Stories/story2/2srorygirl/2srorygirlday1.png";
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image-030"
+        ).src =
+        "Stories/story2/2storyman/2storymanday1.png";
+
+    }
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image-030"
+        ).src =
+        "Stories/story2/2storygirl/2storygirlday1.png";
+
+    }
 
 
     showScreen(
@@ -2149,9 +2182,6 @@ gameState.currentStory === "STORY_2"
     );
 
 }
-
-});
-
 
 
 
