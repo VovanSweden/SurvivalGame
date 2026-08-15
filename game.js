@@ -2116,28 +2116,39 @@ function(){
 
 
 
-    if(
-    gameState.currentStory === "STORY_1"
-    ){
+if(
+gameState.currentStory === "STORY_1"
+){
 
-        showScreen(
-        screens.screen016
-        );
-
-    }
-
+    document.getElementById(
+    "story-day-image"
+    ).src =
+    "Stories/story1/1storygirlday1.png";
 
 
-    if(
-    gameState.currentStory === "STORY_2"
-    ){
+    showScreen(
+    screens.screen016
+    );
 
-        showScreen(
-        screens.screen030
-        );
+}
 
-    }
 
+
+if(
+gameState.currentStory === "STORY_2"
+){
+
+    document.getElementById(
+    "story-day-image-030"
+    ).src =
+    "Stories/story2/2storygirlday1.png";
+
+
+    showScreen(
+    screens.screen030
+    );
+
+}
 
 });
 
