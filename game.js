@@ -2098,27 +2098,48 @@ SCREEN-015
 */
 
 
-if(
-gameState.currentStory === "STORY_1"
-){
+buttons.confirmItems.addEventListener(
+"click",
+function(){
 
-showScreen(
-screens.screen016
-);
-
-}
+    gameState.items =
+    gameState.selectedItems;
 
 
-if(
-gameState.currentStory === "STORY_2"
-){
+    console.log(
+    "ITEMS:",
+    gameState.items
+    );
 
-showScreen(
-screens.screen030
-);
 
-}
+    selectStory();
 
+
+
+    if(
+    gameState.currentStory === "STORY_1"
+    ){
+
+        showScreen(
+        screens.screen016
+        );
+
+    }
+
+
+
+    if(
+    gameState.currentStory === "STORY_2"
+    ){
+
+        showScreen(
+        screens.screen030
+        );
+
+    }
+
+
+});
 
 
 
