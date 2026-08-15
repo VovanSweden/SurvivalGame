@@ -2123,7 +2123,7 @@ gameState.currentStory === "STORY_1"
     document.getElementById(
     "story-day-image"
     ).src =
-    "Stories/story1/1storygirlday1.png";
+   "Stories/story1/1srorygirl/1srorygirlday1.png";
 
 
     showScreen(
@@ -2141,7 +2141,7 @@ gameState.currentStory === "STORY_2"
     document.getElementById(
     "story-day-image-030"
     ).src =
-    "Stories/story2/2storygirlday1.png";
+    "Stories/story2/2srorygirl/2srorygirlday1.png";
 
 
     showScreen(
