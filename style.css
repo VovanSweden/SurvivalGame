@@ -1914,22 +1914,32 @@ Controlled by game.js.
 
 
 
+
+
+
 /*
 =================================================
 
 SCREEN-016
 
-TEST SCREEN
+STORY 1 - DAY 1
 
 ASSET:
 
-graphics/fon test.png
+1storymanday1.png
+
+1storygirlday1.png
+
+
+BUTTON:
+
+button-screen-016-01
 
 =================================================
 */
 
 
-.test-screen {
+.story-screen {
 
     position:absolute;
 
@@ -1944,7 +1954,8 @@ graphics/fon test.png
 }
 
 
-.test-screen img {
+
+#story-day-image {
 
     position:absolute;
 
@@ -1962,6 +1973,39 @@ graphics/fon test.png
 
 
 
+.story-next-button {
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:transparent;
+
+    border:none;
+
+    cursor:pointer;
+
+    z-index:20;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* DEBUG ITEM HOTSPOT */
 
 .item-hotspot{
@@ -1973,3 +2017,4 @@ graphics/fon test.png
     border:none;
 
 }
+

@@ -101,6 +101,15 @@ const gameState = {
     day: 0,
 
 
+        currentStory: null,
+
+
+    currentStoryDay: 0,
+
+
+    endingResult: null,
+
+
     health: 100,
 
 
@@ -329,7 +338,105 @@ description:"Personal hygiene and comfort."
 
 
 
+/*
+=================================================
 
+STORY SELECTOR SYSTEM
+
+Checks selected items
+and chooses story.
+
+=================================================
+*/
+
+
+function selectStory(){
+
+
+    const items =
+    gameState.items.slice().sort();
+
+
+
+    const story1 =
+    [
+        "mobile_phone",
+        "cigarettes",
+        "coffee_cup",
+        "book"
+    ].sort();
+
+
+
+   const story2 =
+[
+    "headlamp",
+    "fishing_rod",
+    "first_aid_kit",
+    "pistol",
+    "warm_sweater",
+    "machete",
+    "tent",
+    "bean_can",
+    "radio",
+    "sunscreen",
+    "binoculars",
+    "toothpaste"
+].sort();
+
+
+
+    if(
+        JSON.stringify(items)
+        ===
+        JSON.stringify(story1)
+    ){
+
+        gameState.currentStory =
+        "STORY_1";
+
+
+        console.log(
+        "STORY SELECTED: STORY_1"
+        );
+
+
+        return;
+
+    }
+
+
+
+    if(
+        JSON.stringify(items)
+        ===
+        JSON.stringify(story2)
+    ){
+
+        gameState.currentStory =
+        "STORY_2";
+
+
+        console.log(
+        "STORY SELECTED: STORY_2"
+        );
+
+
+        return;
+
+    }
+
+
+
+    gameState.currentStory = null;
+
+
+    console.log(
+    "NO STORY MATCH"
+    );
+
+
+}
 
 
 
@@ -429,7 +536,10 @@ screen015:
 document.getElementById("screen-015"),
 
 screen016:
-document.getElementById("screen-016")
+document.getElementById("screen-016"),
+
+screen030:
+document.getElementById("screen-030")
 
 
 
@@ -1988,26 +2098,32 @@ SCREEN-015
 */
 
 
-buttons.confirmItems.addEventListener(
-"click",
-function(){
+if(
+gameState.currentStory === "STORY_1"
+){
 
-    gameState.items =
-    gameState.selectedItems;
+showScreen(
+screens.screen016
+);
 
-
-    console.log(
-    "ITEMS:",
-    gameState.items
-    );
+}
 
 
-    showScreen(
-    screens.screen016
-    );
+if(
+gameState.currentStory === "STORY_2"
+){
+
+showScreen(
+screens.screen030
+);
+
+}
 
 
-});
+
+
+
+
 
 
 
