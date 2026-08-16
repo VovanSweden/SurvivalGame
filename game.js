@@ -570,7 +570,8 @@ document.getElementById("screen-022"),
 screen023:
 document.getElementById("screen-023"),
 
-
+screen024:
+document.getElementById("screen-024"),
 
 
 
@@ -934,10 +935,33 @@ document.getElementById(
 "button-screen-021-01"
 ),
 
+
+
+
 roulette:
 document.getElementById(
 "button-screen-022-01"
 ),
+
+
+story023Next:
+document.getElementById(
+"button-screen-023-01"
+),
+
+
+authorNext:
+document.getElementById(
+"button-screen-024-01"
+),
+
+
+
+
+
+
+
+
 
 
 story030Next:
@@ -2743,6 +2767,20 @@ function checkRouletteResult(angle){
     screens.screen023
     );
 
+buttons.story023Next.addEventListener(
+"click",
+function(){
+
+
+showScreen(
+screens.screen024
+);
+
+
+});
+
+
+
 
 }
 
@@ -2951,6 +2989,38 @@ function(){
 
 
 
+buttons.authorNext.addEventListener(
+"click",
+function(){
+
+
+gameState.character = null;
+
+gameState.location = null;
+
+gameState.items = [];
+
+gameState.selectedItems = [];
+
+
+showScreen(
+screens.screen001
+);
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2977,7 +3047,6 @@ Only SCREEN-001 visible.
 
 =================================================
 */
-
 
 
 
