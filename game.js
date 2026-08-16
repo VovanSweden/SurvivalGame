@@ -2537,6 +2537,7 @@ function(){
 
 
 
+
 /*
 =================================================
 
@@ -2553,6 +2554,7 @@ DAY 1 → DAY 6
 buttons.story030Next.addEventListener(
 "click",
 function(){
+
 
     if(gameState.character==="boy"){
 
@@ -2578,6 +2580,7 @@ function(){
     screens.screen031
     );
 
+
 });
 
 
@@ -2590,15 +2593,30 @@ buttons.story031Next.addEventListener(
 function(){
 
 
-    document.getElementById(
-    "story-day-image-032"
-    ).src =
-    "Stories/story2/2storygirl/2storygirlday3.png";
+    if(gameState.character==="boy"){
+
+        document.getElementById(
+        "story-day-image-032"
+        ).src =
+        "Stories/story2/2storyman/2storymanday3.png";
+
+    }
+
+
+    if(gameState.character==="girl"){
+
+        document.getElementById(
+        "story-day-image-032"
+        ).src =
+        "Stories/story2/2storygirl/2storygirlday3.png";
+
+    }
 
 
     showScreen(
     screens.screen032
     );
+
 
 });
 
@@ -2612,15 +2630,30 @@ buttons.story032Next.addEventListener(
 function(){
 
 
-    document.getElementById(
-    "story-day-image-033"
-    ).src =
-    "Stories/story2/2storygirl/2storygirlday4.png";
+    if(gameState.character==="boy"){
+
+        document.getElementById(
+        "story-day-image-033"
+        ).src =
+        "Stories/story2/2storyman/2storymanday4.png";
+
+    }
+
+
+    if(gameState.character==="girl"){
+
+        document.getElementById(
+        "story-day-image-033"
+        ).src =
+        "Stories/story2/2storygirl/2storygirlday4.png";
+
+    }
 
 
     showScreen(
     screens.screen033
     );
+
 
 });
 
@@ -2634,15 +2667,30 @@ buttons.story033Next.addEventListener(
 function(){
 
 
-    document.getElementById(
-    "story-day-image-034"
-    ).src =
-    "Stories/story2/2storygirl/2storygirlday5.png";
+    if(gameState.character==="boy"){
+
+        document.getElementById(
+        "story-day-image-034"
+        ).src =
+        "Stories/story2/2storyman/2storymanday5.png";
+
+    }
+
+
+    if(gameState.character==="girl"){
+
+        document.getElementById(
+        "story-day-image-034"
+        ).src =
+        "Stories/story2/2storygirl/2storygirlday5.png";
+
+    }
 
 
     showScreen(
     screens.screen034
     );
+
 
 });
 
@@ -2656,17 +2704,34 @@ buttons.story034Next.addEventListener(
 function(){
 
 
-    document.getElementById(
-    "story-day-image-035"
-    ).src =
-    "Stories/story2/2storygirl/2storygirlday6.png";
+    if(gameState.character==="boy"){
+
+        document.getElementById(
+        "story-day-image-035"
+        ).src =
+        "Stories/story2/2storyman/2storymanday6.png";
+
+    }
+
+
+    if(gameState.character==="girl"){
+
+        document.getElementById(
+        "story-day-image-035"
+        ).src =
+        "Stories/story2/2storygirl/2storygirlday6.png";
+
+    }
 
 
     showScreen(
     screens.screen035
     );
 
+
 });
+
+
 
 
 
