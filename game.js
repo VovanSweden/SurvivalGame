@@ -2648,7 +2648,6 @@ function(){
 function checkRouletteResult(angle){
 
 
-
     console.log(
     "ROULETTE ANGLE:",
     angle
@@ -2664,10 +2663,31 @@ function checkRouletteResult(angle){
         );
 
 
-        document.getElementById(
-        "story-day-image-023"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday7.png";
+
+        if(gameState.character === "boy"){
+
+
+            document.getElementById(
+            "story-day-image-023"
+            ).src =
+            "Stories/story1/1storyman/1storymanday7.png";
+
+
+        }
+
+
+
+        if(gameState.character === "girl"){
+
+
+            document.getElementById(
+            "story-day-image-023"
+            ).src =
+            "Stories/story1/1storygirl/1storygirlday7.png";
+
+
+        }
+
 
 
     }
@@ -2679,10 +2699,31 @@ function checkRouletteResult(angle){
         );
 
 
-        document.getElementById(
-        "story-day-image-023"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday8.png";
+
+        if(gameState.character === "boy"){
+
+
+            document.getElementById(
+            "story-day-image-023"
+            ).src =
+            "Stories/story1/1storyman/1storymanday8.png";
+
+
+        }
+
+
+
+        if(gameState.character === "girl"){
+
+
+            document.getElementById(
+            "story-day-image-023"
+            ).src =
+            "Stories/story1/1storygirl/1storygirlday8.png";
+
+
+        }
+
 
 
     }
