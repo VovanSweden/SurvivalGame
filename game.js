@@ -2625,13 +2625,31 @@ function(){
 
 
 
-    const finalAngle =
+   let finalAngle;
+
+
+if(Math.random() < 0.7){
+
+    // GREEN ZONE
+    finalAngle =
     Math.floor(
-    Math.random() * 360
+    Math.random() * 180
     );
 
+}
+else{
 
-    const spins = 5;
+    // RED ZONE
+    finalAngle =
+    180 +
+    Math.floor(
+    Math.random() * 180
+    );
+
+}
+
+
+  const spins = 5 + Math.floor(Math.random() * 3);
 
 
 
