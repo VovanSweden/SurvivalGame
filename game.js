@@ -2277,6 +2277,21 @@ gameState.itemReturnScreen
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 =================================================
 
@@ -2284,9 +2299,18 @@ STORY 1 DAY FLOW
 
 DAY 1 → DAY 6
 
+Каждый NEXT:
+
+1. Проверяет персонажа
+2. Загружает следующую картинку
+3. Открывает следующий экран
+
+
 =================================================
 */
 
+
+// DAY 1 → DAY 2
 
 buttons.story016Next.addEventListener(
 "click",
@@ -2303,7 +2327,6 @@ function(){
     }
 
 
-
     if(gameState.character === "girl"){
 
         document.getElementById(
@@ -2312,7 +2335,6 @@ function(){
         "Stories/story1/1storygirl/1storygirlday2.png";
 
     }
-
 
 
     showScreen(
@@ -2324,51 +2346,161 @@ function(){
 
 
 
+
+// DAY 2 → DAY 3
+
 buttons.story017Next.addEventListener(
 "click",
 function(){
+
+
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image-018"
+        ).src =
+        "Stories/story1/1storyman/1storymanday3.png";
+
+    }
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image-018"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday3.png";
+
+    }
+
 
     showScreen(
     screens.screen018
     );
 
+
 });
 
 
+
+
+// DAY 3 → DAY 4
 
 buttons.story018Next.addEventListener(
 "click",
 function(){
 
+
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image-019"
+        ).src =
+        "Stories/story1/1storyman/1storymanday4.png";
+
+    }
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image-019"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday4.png";
+
+    }
+
+
     showScreen(
     screens.screen019
     );
 
+
 });
 
 
+
+
+// DAY 4 → DAY 5
 
 buttons.story019Next.addEventListener(
 "click",
 function(){
 
+
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image-020"
+        ).src =
+        "Stories/story1/1storyman/1storymanday5.png";
+
+    }
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image-020"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday5.png";
+
+    }
+
+
     showScreen(
     screens.screen020
     );
 
+
 });
 
 
+
+
+// DAY 5 → DAY 6
 
 buttons.story020Next.addEventListener(
 "click",
 function(){
 
+
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image-021"
+        ).src =
+        "Stories/story1/1storyman/1storymanday6.png";
+
+    }
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image-021"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday6.png";
+
+    }
+
+
     showScreen(
     screens.screen021
     );
 
+
 });
+
+
+
+
+
+
+
+
+
+
 
 
 
