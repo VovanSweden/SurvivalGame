@@ -2534,6 +2534,164 @@ function(){
 
 });
 
+buttons.story021Next.addEventListener(
+"click",
+function(){
+
+    showScreen(
+    screens.screen022
+    );
+
+});
+
+
+
+
+
+
+
+
+
+/*
+=================================================
+
+ROULETTE SYSTEM
+
+REAL ANGLE RESULT
+
+=================================================
+*/
+
+
+let rouletteSpinning = false;
+
+
+buttons.roulette.addEventListener(
+"click",
+function(){
+
+
+    if(rouletteSpinning){
+
+        return;
+
+    }
+
+
+    rouletteSpinning = true;
+
+
+
+    const finalAngle =
+    Math.floor(
+    Math.random() * 360
+    );
+
+
+    const spins = 5;
+
+
+
+    const totalRotation =
+    spins * 360 + finalAngle;
+
+
+
+    rouletteArrow.style.transition =
+    "transform 4s ease-out";
+
+
+
+    rouletteArrow.style.transform =
+    "translate(-50%,-50%) rotate("
+    + totalRotation +
+    "deg)";
+
+
+
+
+
+    setTimeout(
+    function(){
+
+
+
+        checkRouletteResult(
+        finalAngle
+        );
+
+
+        rouletteSpinning=false;
+
+
+    },
+    4200
+    );
+
+
+
+});
+
+
+
+
+
+function checkRouletteResult(angle){
+
+
+
+    console.log(
+    "ROULETTE ANGLE:",
+    angle
+    );
+
+
+
+    if(angle < 180){
+
+
+        console.log(
+        "GREEN ZONE - SURVIVAL"
+        );
+
+
+        document.getElementById(
+        "story-day-image-023"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday7.png";
+
+
+    }
+    else{
+
+
+        console.log(
+        "RED ZONE - DEATH"
+        );
+
+
+        document.getElementById(
+        "story-day-image-023"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday8.png";
+
+
+    }
+
+
+
+    showScreen(
+    screens.screen023
+    );
+
+
+}
+
+
+
+
+
+
 
 
 
