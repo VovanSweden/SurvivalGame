@@ -2604,6 +2604,7 @@ REAL ANGLE RESULT
 =================================================
 */
 
+let rouletteCurrentAngle = 0;
 
 let rouletteSpinning = false;
 
@@ -2634,20 +2635,17 @@ function(){
 
 
 
-    const totalRotation =
-    spins * 360 + finalAngle;
+    rouletteCurrentAngle += spins * 360 + finalAngle;
 
 
-
-    rouletteArrow.style.transition =
-    "transform 4s ease-out";
-
+rouletteArrow.style.transition =
+"transform 4s ease-out";
 
 
-    rouletteArrow.style.transform =
-    "translate(-50%,-50%) rotate("
-    + totalRotation +
-    "deg)";
+rouletteArrow.style.transform =
+"translate(-50%,-50%) rotate("
++ rouletteCurrentAngle +
+"deg)";
 
 
 
