@@ -716,6 +716,10 @@ document.getElementById(
 "item-intro-description"
 );
 
+const rouletteArrow =
+document.getElementById(
+"roulette-arrow"
+);
 
 
 
@@ -919,6 +923,11 @@ document.getElementById(
 story021Next:
 document.getElementById(
 "button-screen-021-01"
+),
+
+roulette:
+document.getElementById(
+"button-screen-022-01"
 ),
 
 
