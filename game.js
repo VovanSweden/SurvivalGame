@@ -3061,7 +3061,28 @@ function checkRouletteResult2(angle){
 
 }
 
+/*
+=================================================
 
+STORY 2 RESULT → AUTHOR
+
+SCREEN-037
+
+=================================================
+*/
+
+
+buttons.story037Next.addEventListener(
+"click",
+function(){
+
+
+showScreen(
+screens.screen038
+);
+
+
+});
 
 }
 
@@ -3344,7 +3365,64 @@ screens.screen001
 
 
 
+/*
+=================================================
 
+STORY 2 AUTHOR → RESTART
+
+SCREEN-038
+
+=================================================
+*/
+
+
+buttons.author038Next.addEventListener(
+"click",
+function(){
+
+
+gameState.character = null;
+
+gameState.location = null;
+
+gameState.items = [];
+
+gameState.selectedItems = [];
+
+
+// убрать зелёные галочки
+
+updateItemSelectionVisual();
+
+
+// очистить выбранные предметы
+
+for(let i = 1; i <= 4; i++){
+
+
+const icon =
+document.getElementById(
+"result-item-" + i
+);
+
+
+if(icon){
+
+icon.src = "";
+
+}
+
+
+}
+
+
+
+showScreen(
+screens.screen001
+);
+
+
+});
 
 
 
