@@ -598,12 +598,26 @@ document.getElementById("screen-034"),
 
 
 screen035:
-document.getElementById("screen-035")
+document.getElementById("screen-035"),
 
 
+screen036:
+document.getElementById("screen-036"),
 
+
+screen037:
+document.getElementById("screen-037"),
+
+
+screen038:
+document.getElementById("screen-038")
 
 };
+
+
+
+
+
 
 
 
@@ -988,9 +1002,30 @@ story035Next:
 document.getElementById("button-screen-035-01"),
 
 
+roulette2:
+document.getElementById(
+"button-screen-036-01"
+),
+
+
+story037Next:
+document.getElementById(
+"button-screen-037-01"
+),
+
+
+author038Next:
+document.getElementById(
+"button-screen-038-01"
+),
 
 
 };
+
+
+
+
+
 
 
 
@@ -2609,6 +2644,30 @@ let rouletteCurrentAngle = 0;
 let rouletteSpinning = false;
 
 
+
+/*
+=================================================
+
+STORY 2 ROULETTE SYSTEM
+
+=================================================
+*/
+
+
+let rouletteCurrentAngle2 = 0;
+
+let rouletteSpinning2 = false;
+
+
+const rouletteArrow2 =
+document.getElementById(
+"roulette-arrow-2"
+);
+
+
+
+
+
 buttons.roulette.addEventListener(
 "click",
 function(){
@@ -2795,6 +2854,212 @@ screens.screen024
 
 });
 
+
+/*
+=================================================
+
+STORY 2 ROULETTE
+
+SCREEN-036
+
+=================================================
+*/
+
+
+buttons.roulette2.addEventListener(
+"click",
+function(){
+
+
+    if(rouletteSpinning2){
+
+        return;
+
+    }
+
+
+    rouletteSpinning2 = true;
+
+
+
+    let finalAngle2;
+
+
+    if(Math.random() < 0.7){
+
+
+        finalAngle2 =
+        Math.floor(
+        Math.random() * 180
+        );
+
+
+    }
+    else{
+
+
+        finalAngle2 =
+        180 +
+        Math.floor(
+        Math.random() * 180
+        );
+
+
+    }
+
+
+
+    const spins2 =
+    5 +
+    Math.floor(
+    Math.random() * 3
+    );
+
+
+
+    rouletteCurrentAngle2 +=
+    spins2 * 360 +
+    finalAngle2;
+
+
+
+    rouletteArrow2.style.transition =
+    "transform 4s ease-out";
+
+
+
+    rouletteArrow2.style.transform =
+    "translate(-50%,-50%) rotate("
+    +
+    rouletteCurrentAngle2
+    +
+    "deg)";
+
+
+
+    setTimeout(
+    function(){
+
+
+        checkRouletteResult2(
+        finalAngle2
+        );
+
+
+        rouletteSpinning2=false;
+
+
+    },
+    4200
+    );
+
+
+});
+
+
+/*
+=================================================
+
+STORY 2 ROULETTE RESULT
+
+GREEN:
+DAY 7
+
+RED:
+DAY 8
+
+=================================================
+*/
+
+
+function checkRouletteResult2(angle){
+
+
+    console.log(
+    "STORY 2 ROULETTE ANGLE:",
+    angle
+    );
+
+
+
+    if(angle < 180){
+
+
+        console.log(
+        "STORY 2 GREEN ZONE"
+        );
+
+
+        if(gameState.character === "boy"){
+
+
+            document.getElementById(
+            "story-day-image-037"
+            ).src =
+            "Stories/story2/2storyman/2storymanday7.png";
+
+
+        }
+
+
+
+        if(gameState.character === "girl"){
+
+
+            document.getElementById(
+            "story-day-image-037"
+            ).src =
+            "Stories/story2/2storygirl/2storygirlday7.png";
+
+
+        }
+
+
+
+    }
+    else{
+
+
+        console.log(
+        "STORY 2 RED ZONE"
+        );
+
+
+        if(gameState.character === "boy"){
+
+
+            document.getElementById(
+            "story-day-image-037"
+            ).src =
+            "Stories/story2/2storyman/2storymanday8.png";
+
+
+        }
+
+
+
+        if(gameState.character === "girl"){
+
+
+            document.getElementById(
+            "story-day-image-037"
+            ).src =
+            "Stories/story2/2storygirl/2storygirlday8.png";
+
+
+        }
+
+
+    }
+
+
+
+    showScreen(
+    screens.screen037
+    );
+
+
+}
 
 
 
@@ -3000,7 +3265,35 @@ function(){
     );
 
 
+
 });
+
+
+/*
+=================================================
+
+STORY 2 DAY 6 → ROULETTE
+
+NEXT:
+
+SCREEN-036
+
+=================================================
+*/
+
+
+buttons.story035Next.addEventListener(
+"click",
+function(){
+
+
+    showScreen(
+    screens.screen036
+    );
+
+
+});
+
 
 
 
