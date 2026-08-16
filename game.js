@@ -568,7 +568,28 @@ document.getElementById("screen-021"),
 
 
 screen030:
-document.getElementById("screen-030")
+document.getElementById("screen-030"),
+
+
+screen031:
+document.getElementById("screen-031"),
+
+
+screen032:
+document.getElementById("screen-032"),
+
+
+screen033:
+document.getElementById("screen-033"),
+
+
+screen034:
+document.getElementById("screen-034"),
+
+
+screen035:
+document.getElementById("screen-035")
+
 
 
 
@@ -901,7 +922,28 @@ document.getElementById(
 ),
 
 
+story030Next:
+document.getElementById("button-screen-030-01"),
 
+
+story031Next:
+document.getElementById("button-screen-031-01"),
+
+
+story032Next:
+document.getElementById("button-screen-032-01"),
+
+
+story033Next:
+document.getElementById("button-screen-033-01"),
+
+
+story034Next:
+document.getElementById("button-screen-034-01"),
+
+
+story035Next:
+document.getElementById("button-screen-035-01"),
 
 
 
@@ -2495,7 +2537,136 @@ function(){
 
 
 
+/*
+=================================================
 
+STORY 2 DAY FLOW
+
+DAY 1 → DAY 6
+
+=================================================
+*/
+
+
+// DAY 1 → DAY 2
+
+buttons.story030Next.addEventListener(
+"click",
+function(){
+
+    if(gameState.character==="boy"){
+
+        document.getElementById(
+        "story-day-image-031"
+        ).src =
+        "Stories/story2/2storyman/2storymanday2.png";
+
+    }
+
+
+    if(gameState.character==="girl"){
+
+        document.getElementById(
+        "story-day-image-031"
+        ).src =
+        "Stories/story2/2storygirl/2storygirlday2.png";
+
+    }
+
+
+    showScreen(
+    screens.screen031
+    );
+
+});
+
+
+
+
+// DAY 2 → DAY 3
+
+buttons.story031Next.addEventListener(
+"click",
+function(){
+
+
+    document.getElementById(
+    "story-day-image-032"
+    ).src =
+    "Stories/story2/2storygirl/2storygirlday3.png";
+
+
+    showScreen(
+    screens.screen032
+    );
+
+});
+
+
+
+
+// DAY 3 → DAY 4
+
+buttons.story032Next.addEventListener(
+"click",
+function(){
+
+
+    document.getElementById(
+    "story-day-image-033"
+    ).src =
+    "Stories/story2/2storygirl/2storygirlday4.png";
+
+
+    showScreen(
+    screens.screen033
+    );
+
+});
+
+
+
+
+// DAY 4 → DAY 5
+
+buttons.story033Next.addEventListener(
+"click",
+function(){
+
+
+    document.getElementById(
+    "story-day-image-034"
+    ).src =
+    "Stories/story2/2storygirl/2storygirlday5.png";
+
+
+    showScreen(
+    screens.screen034
+    );
+
+});
+
+
+
+
+// DAY 5 → DAY 6
+
+buttons.story034Next.addEventListener(
+"click",
+function(){
+
+
+    document.getElementById(
+    "story-day-image-035"
+    ).src =
+    "Stories/story2/2storygirl/2storygirlday6.png";
+
+
+    showScreen(
+    screens.screen035
+    );
+
+});
 
 
 

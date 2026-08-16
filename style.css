@@ -2052,7 +2052,13 @@ button-screen-030-01
 
 
 
-#story-day-image-030 {
+
+#story-day-image-030,
+#story-day-image-031,
+#story-day-image-032,
+#story-day-image-033,
+#story-day-image-034,
+#story-day-image-035 {
 
     position:absolute;
 
@@ -2067,6 +2073,14 @@ button-screen-030-01
     transform:translate(-50%,-50%);
 
 }
+
+
+
+
+
+
+
+
 
 
 
