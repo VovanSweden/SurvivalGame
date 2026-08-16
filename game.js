@@ -3003,6 +3003,28 @@ gameState.items = [];
 gameState.selectedItems = [];
 
 
+// Убираем зелёные галочки
+updateItemSelectionVisual();
+
+
+// очищаем картинки выбранных предметов
+for(let i = 1; i <= 4; i++){
+
+    const icon =
+    document.getElementById(
+    "result-item-" + i
+    );
+
+    if(icon){
+
+        icon.src = "";
+
+    }
+
+}
+
+
+
 showScreen(
 screens.screen001
 );
