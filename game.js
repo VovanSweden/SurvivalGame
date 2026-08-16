@@ -539,8 +539,33 @@ document.getElementById("screen-014"),
 screen015:
 document.getElementById("screen-015"),
 
+
 screen016:
 document.getElementById("screen-016"),
+
+
+screen017:
+document.getElementById("screen-017"),
+
+
+screen018:
+document.getElementById("screen-018"),
+
+
+screen019:
+document.getElementById("screen-019"),
+
+
+screen020:
+document.getElementById("screen-020"),
+
+
+screen021:
+document.getElementById("screen-021")
+
+
+
+
 
 screen030:
 document.getElementById("screen-030")
@@ -838,6 +863,46 @@ itemIntroBack:
 document.getElementById(
 "button-screen-015-back"
 ),
+
+
+story016Next:
+document.getElementById(
+"button-screen-016-01"
+),
+
+
+story017Next:
+document.getElementById(
+"button-screen-017-01"
+),
+
+
+story018Next:
+document.getElementById(
+"button-screen-018-01"
+),
+
+
+story019Next:
+document.getElementById(
+"button-screen-019-01"
+),
+
+
+story020Next:
+document.getElementById(
+"button-screen-020-01"
+),
+
+
+story021Next:
+document.getElementById(
+"button-screen-021-01"
+),
+
+
+
+
 
 
 
@@ -2212,7 +2277,98 @@ gameState.itemReturnScreen
 
 
 
+/*
+=================================================
 
+STORY 1 DAY FLOW
+
+DAY 1 → DAY 6
+
+=================================================
+*/
+
+
+buttons.story016Next.addEventListener(
+"click",
+function(){
+
+
+    if(gameState.character === "boy"){
+
+        document.getElementById(
+        "story-day-image-017"
+        ).src =
+        "Stories/story1/1storyman/1storymanday2.png";
+
+    }
+
+
+
+    if(gameState.character === "girl"){
+
+        document.getElementById(
+        "story-day-image-017"
+        ).src =
+        "Stories/story1/1storygirl/1storygirlday2.png";
+
+    }
+
+
+
+    showScreen(
+    screens.screen017
+    );
+
+
+});
+
+
+
+buttons.story017Next.addEventListener(
+"click",
+function(){
+
+    showScreen(
+    screens.screen018
+    );
+
+});
+
+
+
+buttons.story018Next.addEventListener(
+"click",
+function(){
+
+    showScreen(
+    screens.screen019
+    );
+
+});
+
+
+
+buttons.story019Next.addEventListener(
+"click",
+function(){
+
+    showScreen(
+    screens.screen020
+    );
+
+});
+
+
+
+buttons.story020Next.addEventListener(
+"click",
+function(){
+
+    showScreen(
+    screens.screen021
+    );
+
+});
 
 
 
