@@ -368,6 +368,10 @@ function selectStory(){
 
     const story2Items =
     [
+        "mobile_phone",
+        
+        "coffee_cup",
+        "book"
         "headlamp",
         "fishing_rod",
         "first_aid_kit",
