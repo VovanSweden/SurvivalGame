@@ -2392,7 +2392,7 @@ gameState.currentStory === "STORY_1"
 ){
 
     loadStoryDayImage(
-"story-day-image",
+"story-day-image-016",
 1
 );
 
@@ -2415,7 +2415,7 @@ gameState.currentStory === "STORY_2"
 ){
 
       loadStoryDayImage(
-"story-day-image",
+"story-day-image-016",
 1
 );
 
@@ -2425,6 +2425,29 @@ screens.screen016
 );
 
 }
+
+
+
+
+
+if(
+gameState.currentStory === "STORY_4"
+){
+
+      loadStoryDayImage(
+"story-day-image-016",
+1
+);
+
+
+showScreen(
+screens.screen016
+);
+
+}
+
+
+
 
 
 
@@ -2448,7 +2471,21 @@ screens.screen030
 
 
 
+if(
+gameState.currentStory === "STORY_4"
+){
 
+    loadStoryDayImage(
+    "story-day-image-016",
+    1
+    );
+
+
+    showScreen(
+    screens.screen016
+    );
+
+}
 
 
 
@@ -2505,7 +2542,7 @@ Used by:
 
 STORY_1
 STORY_2
-
+STORY_4
 Route:
 
 SCREEN-016 → SCREEN-024
