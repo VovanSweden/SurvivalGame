@@ -825,7 +825,40 @@ document.getElementById(
 "roulette-arrow"
 );
 
+const rouletteWheel =
+document.getElementById(
+"roulette-wheel"
+);
 
+
+function loadRouletteAssets(){
+
+    const story =
+    stories[gameState.currentStory];
+
+
+    if(!story){
+
+        return;
+
+    }
+
+
+    rouletteWheel.src =
+    story.rouletteAssets.roulette;
+
+
+    rouletteArrow.src =
+    story.rouletteAssets.arrow;
+
+
+    console.log(
+    "LOAD ROULETTE:",
+    story.rouletteAssets.roulette,
+    story.rouletteAssets.arrow
+    );
+
+}
 
 
 
@@ -2681,6 +2714,9 @@ buttons.story021Next.addEventListener(
 "click",
 function(){
 
+    loadRouletteAssets();
+
+
     showScreen(
     screens.screen022
     );
@@ -3273,6 +3309,8 @@ SCREEN-036
 buttons.story035Next.addEventListener(
 "click",
 function(){
+
+    loadRouletteAssets();
 
 
     showScreen(
