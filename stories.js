@@ -194,16 +194,13 @@ filePrefix:
 
     rouletteAssets:{
 
-        background:
-        "Stories/story1/roulette/roulette_bg.png",
+    roulette:
+    "Stories/story1/Selectelements/Roulette.png",
 
-        wheel:
-        "Stories/story1/roulette/roulette_wheel.png",
+    arrow:
+    "Stories/story1/Selectelements/Arrow.png"
 
-        arrow:
-        "Stories/story1/roulette/roulette_arrow.png"
-
-    },
+},
 
     roulette:{
         green:7,
@@ -317,16 +314,13 @@ filePrefix:
 
     rouletteAssets:{
 
-        background:
-        "Stories/story1/roulette/roulette_bg.png",
+    roulette:
+    "Stories/story2/Selectelements/Roulette.png",
 
-        wheel:
-        "Stories/story1/roulette/roulette_wheel.png",
+    arrow:
+    "Stories/story2/Selectelements/Arrow.png"
 
-        arrow:
-        "Stories/story1/roulette/roulette_arrow.png"
-
-    },
+},
 
     roulette:{
         green:7,
@@ -424,18 +418,15 @@ filePrefix:
 
     6,
 
-    rouletteAssets:{
+     rouletteAssets:{
 
-        background:
-        "Stories/story1/roulette/roulette_bg.png",
+    roulette:
+    "Stories/story4/Selectelements/Roulette.png",
 
-        wheel:
-        "Stories/story1/roulette/roulette_wheel.png",
+    arrow:
+    "Stories/story4/Selectelements/Arrow.png"
 
-        arrow:
-        "Stories/story1/roulette/roulette_arrow.png"
-
-    },
+},
 
     roulette:{
         green:7,
@@ -536,16 +527,13 @@ filePrefix:
 
     rouletteAssets:{
 
-        background:
-        "Stories/story1/roulette/roulette_bg.png",
+    roulette:
+    "Stories/story5/Selectelements/Roulette.png",
 
-        wheel:
-        "Stories/story1/roulette/roulette_wheel.png",
+    arrow:
+    "Stories/story5/Selectelements/Arrow.png"
 
-        arrow:
-        "Stories/story1/roulette/roulette_arrow.png"
-
-    },
+},
 
     roulette:{
         green:7,
@@ -553,7 +541,6 @@ filePrefix:
     }
 
 },
-
 
 
 
@@ -688,18 +675,15 @@ filePrefix:
 
     6,
 
-    rouletteAssets:{
+  rouletteAssets:{
 
-        background:
-        "Stories/story1/roulette/roulette_bg.png",
+    roulette:
+    "Stories/story3/Selectelements/Roulette.png",
 
-        wheel:
-        "Stories/story1/roulette/roulette_wheel.png",
+    arrow:
+    "Stories/story3/Selectelements/Arrow.png"
 
-        arrow:
-        "Stories/story1/roulette/roulette_arrow.png"
-
-    },
+},
 
     roulette:{
         green:7,
