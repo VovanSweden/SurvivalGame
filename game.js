@@ -2430,26 +2430,6 @@ screens.screen016
 
 
 
-if(
-gameState.currentStory === "STORY_4"
-){
-
-      loadStoryDayImage(
-"story-day-image-016",
-1
-);
-
-
-showScreen(
-screens.screen016
-);
-
-}
-
-
-
-
-
 
 
 
