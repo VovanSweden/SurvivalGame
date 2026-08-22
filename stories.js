@@ -423,6 +423,108 @@ filePrefix:
 },
 
 
+
+
+
+STORY_4:{
+
+
+priority:70,
+
+
+items:[
+
+"sunscreen",
+"toothpaste",
+"tent",
+"book"
+
+],
+
+
+folder:
+
+"Stories/story4",
+
+
+
+characters:{
+
+
+boy:{
+
+folder:
+"4storyman",
+
+filePrefix:
+"4storyman"
+
+},
+
+
+girl:{
+
+folder:
+"4storygirl",
+
+filePrefix:
+"4storygirl"
+
+}
+
+
+},
+
+
+    // Первый экран истории
+
+    screens:{
+
+    day1:16,
+
+    day2:17,
+
+    day3:18,
+
+    day4:19,
+
+    day5:20,
+
+    day6:21,
+
+    roulette:22,
+
+    result:23,
+
+    author:24
+
+},
+
+
+
+    // Количество дней
+    days:
+
+    6,
+
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 
