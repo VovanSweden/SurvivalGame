@@ -353,95 +353,178 @@ and chooses story.
 function selectStory(){
 
 
-    const items =
+    const selected =
     gameState.items;
 
 
-    const story1Items =
-    [
-        "mobile_phone",
-        "cigarettes",
-        "coffee_cup",
-        "book"
-    ];
+
+    for(
+        const storyID in stories
+    ){
 
 
-    const story2Items =
-    [
-        "mobile_phone",
-        "cigarettes",
-        "coffee_cup",
-        "book",
-        "headlamp",
-        "fishing_rod",
-        "first_aid_kit",
-        "pistol",
-        "warm_sweater",
-        "machete",
-        "tent",
-        "bean_can",
-        "radio",
-        "sunscreen",
-        "binoculars",
-        "toothpaste"
-    ];
+        const story =
+        stories[storyID];
 
 
 
-    const hasStory1 =
-    items.every(
-        item => story1Items.includes(item)
-    );
+        if(
+            !story.items
+        ){
+
+            continue;
+
+        }
 
 
 
-    const hasStory2 =
-    items.every(
-        item => story2Items.includes(item)
-    );
-
-
-
-    if(hasStory1){
-
-        gameState.currentStory =
-        "STORY_1";
-
-
-        console.log(
-        "STORY SELECTED: STORY_1"
+        const match =
+        selected.every(
+            item =>
+            story.items.includes(item)
         );
 
 
-        return;
 
-    }
-
+        if(match){
 
 
-    if(hasStory2){
-
-        gameState.currentStory =
-        "STORY_2";
+            gameState.currentStory =
+            storyID;
 
 
-        console.log(
-        "STORY SELECTED: STORY_2"
-        );
+            console.log(
+            "STORY SELECTED:",
+            storyID
+            );
 
 
-        return;
+            return;
+
+
+        }
+
 
     }
 
 
 
     gameState.currentStory =
-    null;
+    "STORY_3";
+
 
 
     console.log(
-    "NO STORY MATCH"
+    "DEFAULT STORY SELECTED: STORY_3"
+    );
+
+
+}
+
+
+
+
+
+console.log("SURVIVALGAME STARTED");
+
+
+
+
+
+
+
+/*
+=================================================
+
+STORY MEDIA PLAYER
+
+Loads story image from stories.js
+
+INPUT:
+
+currentStory
+character
+day
+
+OUTPUT:
+
+SCREEN IMAGE
+
+=================================================
+*/
+
+
+function loadStoryDayImage(
+screenImageID,
+day
+){
+
+
+    const story =
+    stories[gameState.currentStory];
+
+
+    if(!story){
+
+        console.log(
+        "NO STORY DATA"
+        );
+
+        return;
+
+    }
+
+
+
+    let characterData;
+
+
+
+    if(
+    gameState.character === "boy"
+    ){
+
+        characterData =
+        story.characters.boy;
+
+    }
+
+
+
+    if(
+    gameState.character === "girl"
+    ){
+
+        characterData =
+        story.characters.girl;
+
+    }
+
+
+
+    const imagePath =
+
+    story.folder
+    + "/"
+    + characterData.folder
+    + "/"
+    + characterData.filePrefix
+    + "day"
+    + day
+    + ".png";
+
+
+
+    document.getElementById(
+    screenImageID
+    ).src =
+    imagePath;
+
+
+
+    console.log(
+    "LOAD STORY IMAGE:",
+    imagePath
     );
 
 
@@ -456,13 +539,6 @@ function selectStory(){
 
 
 
-
-
-
-
-
-
-console.log("SURVIVALGAME STARTED");
 
 
 
@@ -2315,29 +2391,15 @@ if(
 gameState.currentStory === "STORY_1"
 ){
 
-    if(gameState.character === "boy"){
-
-        document.getElementById(
-        "story-day-image"
-        ).src =
-        "Stories/story1/1storyman/1storymanday1.png";
-
-    }
+    loadStoryDayImage(
+"story-day-image",
+1
+);
 
 
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday1.png";
-
-    }
-
-
-    showScreen(
-    screens.screen016
-    );
+showScreen(
+screens.screen016
+);
 
 }
 
@@ -2352,33 +2414,56 @@ if(
 gameState.currentStory === "STORY_2"
 ){
 
-    if(gameState.character === "boy"){
-
-        document.getElementById(
-        "story-day-image-030"
-        ).src =
-        "Stories/story2/2storyman/2storymanday1.png";
-
-    }
+      loadStoryDayImage(
+"story-day-image",
+1
+);
 
 
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image-030"
-        ).src =
-        "Stories/story2/2storygirl/2storygirlday1.png";
-
-    }
-
-
-    showScreen(
-    screens.screen030
-    );
+showScreen(
+screens.screen016
+);
 
 }
 
+
+
+
+
+if(
+gameState.currentStory === "STORY_3"
+){
+
+      loadStoryDayImage(
+"story-day-image",
+1
+);
+
+
+showScreen(
+screens.screen030
+);
+
+}
+
+
+
+
+
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2411,26 +2496,25 @@ gameState.itemReturnScreen
 
 
 
-
-
-
-
 /*
 =================================================
 
-STORY 1 DAY FLOW
+SPECIAL STORY DAY FLOW
 
-DAY 1 → DAY 6
+Used by:
 
-Каждый NEXT:
+STORY_1
+STORY_2
 
-1. Проверяет персонажа
-2. Загружает следующую картинку
-3. Открывает следующий экран
+Route:
 
+SCREEN-016 → SCREEN-024
 
 =================================================
 */
+
+
+
 
 
 // DAY 1 → DAY 2
@@ -2440,24 +2524,10 @@ buttons.story016Next.addEventListener(
 function(){
 
 
-    if(gameState.character === "boy"){
-
-        document.getElementById(
-        "story-day-image-017"
-        ).src =
-        "Stories/story1/1storyman/1storymanday2.png";
-
-    }
-
-
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image-017"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday2.png";
-
-    }
+  loadStoryDayImage(
+"story-day-image-017",
+2
+);
 
 
     showScreen(
@@ -2476,25 +2546,10 @@ buttons.story017Next.addEventListener(
 "click",
 function(){
 
-
-    if(gameState.character === "boy"){
-
-        document.getElementById(
-        "story-day-image-018"
-        ).src =
-        "Stories/story1/1storyman/1storymanday3.png";
-
-    }
-
-
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image-018"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday3.png";
-
-    }
+loadStoryDayImage(
+"story-day-image-018",
+3
+);
 
 
     showScreen(
@@ -2513,25 +2568,10 @@ buttons.story018Next.addEventListener(
 "click",
 function(){
 
-
-    if(gameState.character === "boy"){
-
-        document.getElementById(
-        "story-day-image-019"
-        ).src =
-        "Stories/story1/1storyman/1storymanday4.png";
-
-    }
-
-
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image-019"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday4.png";
-
-    }
+loadStoryDayImage(
+"story-day-image-019",
+4
+);
 
 
     showScreen(
@@ -2551,24 +2591,12 @@ buttons.story019Next.addEventListener(
 function(){
 
 
-    if(gameState.character === "boy"){
+   loadStoryDayImage(
+"story-day-image-020",
+5
+);
 
-        document.getElementById(
-        "story-day-image-020"
-        ).src =
-        "Stories/story1/1storyman/1storymanday5.png";
-
-    }
-
-
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image-020"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday5.png";
-
-    }
+    
 
 
     showScreen(
@@ -2588,24 +2616,10 @@ buttons.story020Next.addEventListener(
 function(){
 
 
-    if(gameState.character === "boy"){
-
-        document.getElementById(
-        "story-day-image-021"
-        ).src =
-        "Stories/story1/1storyman/1storymanday6.png";
-
-    }
-
-
-    if(gameState.character === "girl"){
-
-        document.getElementById(
-        "story-day-image-021"
-        ).src =
-        "Stories/story1/1storygirl/1storygirlday6.png";
-
-    }
+   loadStoryDayImage(
+"story-day-image-021",
+6
+);
 
 
     showScreen(
@@ -2652,7 +2666,7 @@ let rouletteSpinning = false;
 /*
 =================================================
 
-STORY 2 ROULETTE SYSTEM
+STORY 3 ROULETTE SYSTEM
 
 =================================================
 */
@@ -2867,7 +2881,7 @@ screens.screen024
 /*
 =================================================
 
-STORY 2 ROULETTE
+STORY 3 ROULETTE
 
 SCREEN-036
 
@@ -2969,7 +2983,7 @@ function(){
 /*
 =================================================
 
-STORY 2 ROULETTE RESULT
+STORY 3 ROULETTE RESULT
 
 GREEN:
 DAY 7
@@ -2985,7 +2999,7 @@ function checkRouletteResult2(angle){
 
 
     console.log(
-    "STORY 2 ROULETTE ANGLE:",
+    "STORY 3 ROULETTE ANGLE:",
     angle
     );
 
@@ -2995,7 +3009,7 @@ function checkRouletteResult2(angle){
 
 
         console.log(
-        "STORY 2 GREEN ZONE"
+        "STORY 3 GREEN ZONE"
         );
 
 
@@ -3005,7 +3019,7 @@ function checkRouletteResult2(angle){
             document.getElementById(
             "story-day-image-037"
             ).src =
-            "Stories/story2/2storyman/2storymanday7.png";
+            "Stories/story3/3storyman/3storymanday7.png";
 
 
         }
@@ -3018,7 +3032,7 @@ function checkRouletteResult2(angle){
             document.getElementById(
             "story-day-image-037"
             ).src =
-            "Stories/story2/2storygirl/2storygirlday7.png";
+            "Stories/story3/3storygirl/3storygirlday7.png";
 
 
         }
@@ -3030,7 +3044,7 @@ function checkRouletteResult2(angle){
 
 
         console.log(
-        "STORY 2 RED ZONE"
+        "STORY 3 RED ZONE"
         );
 
 
@@ -3040,7 +3054,7 @@ function checkRouletteResult2(angle){
             document.getElementById(
             "story-day-image-037"
             ).src =
-            "Stories/story2/2storyman/2storymanday8.png";
+            "Stories/story3/3storyman/3storymanday8.png";
 
 
         }
@@ -3053,7 +3067,7 @@ function checkRouletteResult2(angle){
             document.getElementById(
             "story-day-image-037"
             ).src =
-            "Stories/story2/2storygirl/2storygirlday8.png";
+            "Stories/story3/3storygirl/3storygirlday8.png";
 
 
         }
@@ -3073,7 +3087,7 @@ function checkRouletteResult2(angle){
 /*
 =================================================
 
-STORY 2 RESULT → AUTHOR
+STORY 3 RESULT → AUTHOR
 
 SCREEN-037
 
@@ -3106,7 +3120,7 @@ screens.screen038
 /*
 =================================================
 
-STORY 2 DAY FLOW
+STORY 3 DAY FLOW
 
 DAY 1 → DAY 6
 
@@ -3121,24 +3135,10 @@ buttons.story030Next.addEventListener(
 function(){
 
 
-    if(gameState.character==="boy"){
-
-        document.getElementById(
-        "story-day-image-031"
-        ).src =
-        "Stories/story2/2storyman/2storymanday2.png";
-
-    }
-
-
-    if(gameState.character==="girl"){
-
-        document.getElementById(
-        "story-day-image-031"
-        ).src =
-        "Stories/story2/2storygirl/2storygirlday2.png";
-
-    }
+    loadStoryDayImage(
+"story-day-image-031",
+2
+);
 
 
     showScreen(
@@ -3158,25 +3158,10 @@ buttons.story031Next.addEventListener(
 function(){
 
 
-    if(gameState.character==="boy"){
-
-        document.getElementById(
-        "story-day-image-032"
-        ).src =
-        "Stories/story2/2storyman/2storymanday3.png";
-
-    }
-
-
-    if(gameState.character==="girl"){
-
-        document.getElementById(
-        "story-day-image-032"
-        ).src =
-        "Stories/story2/2storygirl/2storygirlday3.png";
-
-    }
-
+   loadStoryDayImage(
+"story-day-image-032",
+3
+);
 
     showScreen(
     screens.screen032
@@ -3195,24 +3180,10 @@ buttons.story032Next.addEventListener(
 function(){
 
 
-    if(gameState.character==="boy"){
-
-        document.getElementById(
-        "story-day-image-033"
-        ).src =
-        "Stories/story2/2storyman/2storymanday4.png";
-
-    }
-
-
-    if(gameState.character==="girl"){
-
-        document.getElementById(
-        "story-day-image-033"
-        ).src =
-        "Stories/story2/2storygirl/2storygirlday4.png";
-
-    }
+   loadStoryDayImage(
+"story-day-image-033",
+4
+);
 
 
     showScreen(
@@ -3231,25 +3202,10 @@ buttons.story033Next.addEventListener(
 "click",
 function(){
 
-
-    if(gameState.character==="boy"){
-
-        document.getElementById(
-        "story-day-image-034"
-        ).src =
-        "Stories/story2/2storyman/2storymanday5.png";
-
-    }
-
-
-    if(gameState.character==="girl"){
-
-        document.getElementById(
-        "story-day-image-034"
-        ).src =
-        "Stories/story2/2storygirl/2storygirlday5.png";
-
-    }
+ loadStoryDayImage(
+"story-day-image-034",
+5
+);
 
 
     showScreen(
@@ -3269,24 +3225,10 @@ buttons.story034Next.addEventListener(
 function(){
 
 
-    if(gameState.character==="boy"){
-
-        document.getElementById(
-        "story-day-image-035"
-        ).src =
-        "Stories/story2/2storyman/2storymanday6.png";
-
-    }
-
-
-    if(gameState.character==="girl"){
-
-        document.getElementById(
-        "story-day-image-035"
-        ).src =
-        "Stories/story2/2storygirl/2storygirlday6.png";
-
-    }
+   loadStoryDayImage(
+"story-day-image-035",
+6
+);
 
 
     showScreen(
@@ -3301,7 +3243,7 @@ function(){
 /*
 =================================================
 
-STORY 2 DAY 6 → ROULETTE
+STORY 3 DAY 6 → ROULETTE
 
 NEXT:
 
@@ -3376,7 +3318,7 @@ screens.screen001
 /*
 =================================================
 
-STORY 2 AUTHOR → RESTART
+STORY 3 AUTHOR → RESTART
 
 SCREEN-038
 

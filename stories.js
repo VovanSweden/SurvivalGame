@@ -98,7 +98,7 @@ const stories = {
 STORY 1
 
 Первая история.
-Текущая рабочая версия игры.
+
 ====================================================
 */
 
@@ -121,50 +121,74 @@ STORY_1:{
 
     // Папка с файлами истории
 
-    folder:
+  folder:
 
-    "Stories/story1",
+"Stories/story1",
+
+
+
+characters:{
+
+
+boy:{
+
+folder:
+"1storyman",
+
+filePrefix:
+"1storyman"
+
+},
+
+
+girl:{
+
+folder:
+"1storygirl",
+
+filePrefix:
+"1storygirl"
+
+}
+
+
+},
+
+
+    
 
 
 
     // Первый экран истории
 
-    screenStart:
+    screens:{
 
-    16,
+    day1:16,
+
+    day2:17,
+
+    day3:18,
+
+    day4:19,
+
+    day5:20,
+
+    day6:21,
+
+    roulette:22,
+
+    result:23,
+
+    author:24
+
+},
 
 
 
     // Количество дней
-
     days:
 
     6,
-
-
-
-    // Экран рулетки
-
-    rouletteScreen:
-
-    22,
-
-
-
-    // Экран результата
-
-    resultScreen:
-
-    23,
-
-
-
-    // Экран автора
-
-    authorScreen:
-
-    24
-
 
 },
 
@@ -177,13 +201,16 @@ STORY_1:{
 STORY 2
 
 Вторая история.
-Текущая рабочая версия игры.
+
 ====================================================
 */
 
 
+
 STORY_2:{
 
+
+    // Какие предметы открывают историю
 
     items:[
 
@@ -191,45 +218,80 @@ STORY_2:{
         "fishing_rod",
         "first_aid_kit",
         "pistol"
-
     ],
 
 
 
-    folder:
+    // Папка с файлами истории
 
-    "Stories/story2",
+  folder:
 
-
-
-    screenStart:
-
-    30,
+"Stories/story2",
 
 
 
+characters:{
+
+
+boy:{
+
+folder:
+"2storyman",
+
+filePrefix:
+"2storyman"
+
+},
+
+
+girl:{
+
+folder:
+"2storygirl",
+
+filePrefix:
+"2storygirl"
+
+}
+
+
+},
+
+
+    
+
+
+
+    // Первый экран истории
+
+    screens:{
+
+    day1:16,
+
+    day2:17,
+
+    day3:18,
+
+    day4:19,
+
+    day5:20,
+
+    day6:21,
+
+    roulette:22,
+
+    result:23,
+
+    author:24
+
+},
+
+
+
+    // Количество дней
     days:
 
     6,
-
-
-
-    rouletteScreen:
-
-    36,
-
-
-
-    resultScreen:
-
-    37,
-
-
-
-    authorScreen:
-
-    38
-
 
 },
 
@@ -239,105 +301,120 @@ STORY_2:{
 
 
 /*
-====================================================
-STORY 3
+STORY_3
 
-НОВАЯ ИСТОРИЯ
+Базовая тестовая история.
 
-Комбинация:
+Используется для комбинаций предметов,
+которые направляются в эту группу.
 
-Палатка
-Мачете
-Удочка
-Аптечка
+В будущем список items может быть изменён
+или часть предметов может быть перенесена
+в новые истории.
 
-
-Логика:
-
-Палатка =
-убежище
-
-Мачете =
-инструмент + защита
-
-Удочка =
-еда
-
-Аптечка =
-безопасность
-
-
-Эта комбинация больше похожа
-на историю выживания,
-где герой уже подготовился
-и имеет шанс построить лагерь.
-
-
-====================================================
 */
+
 
 
 STORY_3:{
 
 
+    // Какие предметы открывают историю
+
     items:[
 
-        "tent",
-        "machete",
+       "mobile_phone",
+        "cigarettes",
+        "coffee_cup",
+        "book",
+        "headlamp",
         "fishing_rod",
-        "first_aid_kit"
-
+        "first_aid_kit",
+        "pistol",
+        "warm_sweater",
+        "machete",
+        "tent",
+        "bean_can",
+        "radio",
+        "sunscreen",
+        "binoculars",
+        "toothpaste"
     ],
 
 
 
-    folder:
+    // Папка с файлами истории
 
-    "Stories/story3",
+  folder:
+
+"Stories/story3",
 
 
 
-    /*
+characters:{
+
+
+boy:{
+
+folder:
+"3storyman",
+
+filePrefix:
+"3storyman"
+
+},
+
+
+girl:{
+
+folder:
+"3storygirl",
+
+filePrefix:
+"3storygirl"
+
+}
+
+
+},
+
+
     
-    Номера экранов пока резервируем.
-
-    После создания экранов
-    заменим номера.
-
-
-    */
-
-    screenStart:
-
-    44,
 
 
 
+    // Первый экран истории
+
+    screens:{
+
+    day1:30,
+
+    day2:31,
+
+    day3:32,
+
+    day4:33,
+
+    day5:34,
+
+    day6:35,
+
+    roulette:36,
+
+    result:37,
+
+    author:38
+
+},
+
+
+
+    // Количество дней
     days:
 
     6,
 
-
-
-    rouletteScreen:
-
-    50,
-
-
-
-    resultScreen:
-
-    51,
-
-
-
-    authorScreen:
-
-    52
-
-
-}
-
+},
 
 
 };
