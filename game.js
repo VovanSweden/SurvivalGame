@@ -2435,7 +2435,7 @@ gameState.currentStory === "STORY_3"
 ){
 
       loadStoryDayImage(
-"story-day-image",
+"story-day-image-030",
 1
 );
 

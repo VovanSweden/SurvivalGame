@@ -218,10 +218,10 @@ STORY_2:{
 
     items:[
 
-        "headlamp",
+        "machete",
         "fishing_rod",
         "first_aid_kit",
-        "pistol"
+        "tent"
     ],
 
 
