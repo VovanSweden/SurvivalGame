@@ -192,14 +192,23 @@ filePrefix:
 
     6,
 
+    rouletteAssets:{
+
+        background:
+        "Stories/story1/roulette/roulette_bg.png",
+
+        wheel:
+        "Stories/story1/roulette/roulette_wheel.png",
+
+        arrow:
+        "Stories/story1/roulette/roulette_arrow.png"
+
+    },
 
     roulette:{
-
-green:7,
-
-red:8
-
-}
+        green:7,
+        red:8
+    }
 
 },
 
@@ -306,16 +315,25 @@ filePrefix:
 
     6,
 
+    rouletteAssets:{
+
+        background:
+        "Stories/story1/roulette/roulette_bg.png",
+
+        wheel:
+        "Stories/story1/roulette/roulette_wheel.png",
+
+        arrow:
+        "Stories/story1/roulette/roulette_arrow.png"
+
+    },
+
     roulette:{
-
-green:7,
-
-red:8
-
-}
+        green:7,
+        red:8
+    }
 
 },
-
 
 
 
@@ -406,14 +424,23 @@ filePrefix:
 
     6,
 
-roulette:{
+    rouletteAssets:{
 
-green:7,
+        background:
+        "Stories/story1/roulette/roulette_bg.png",
 
-red:8
+        wheel:
+        "Stories/story1/roulette/roulette_wheel.png",
 
-}
+        arrow:
+        "Stories/story1/roulette/roulette_arrow.png"
 
+    },
+
+    roulette:{
+        green:7,
+        red:8
+    }
 
 },
 
@@ -507,15 +534,23 @@ filePrefix:
 
     6,
 
-roulette:{
+    rouletteAssets:{
 
-green:7,
+        background:
+        "Stories/story1/roulette/roulette_bg.png",
 
-red:8
+        wheel:
+        "Stories/story1/roulette/roulette_wheel.png",
 
-}
+        arrow:
+        "Stories/story1/roulette/roulette_arrow.png"
 
+    },
 
+    roulette:{
+        green:7,
+        red:8
+    }
 
 },
 
@@ -653,16 +688,25 @@ filePrefix:
 
     6,
 
+    rouletteAssets:{
+
+        background:
+        "Stories/story1/roulette/roulette_bg.png",
+
+        wheel:
+        "Stories/story1/roulette/roulette_wheel.png",
+
+        arrow:
+        "Stories/story1/roulette/roulette_arrow.png"
+
+    },
+
     roulette:{
-
-green:7,
-
-red:8
-
-}
+        green:7,
+        red:8
+    }
 
 },
-
 
 
 
