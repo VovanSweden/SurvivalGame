@@ -396,6 +396,94 @@ filePrefix:
 
 
 
+STORY_5:{
+
+
+priority:60,
+
+
+items:[
+
+ 
+        "headlamp",        
+      
+        "warm_sweater",   
+       
+        "radio",      
+        "binoculars"
+      
+
+],
+
+
+folder:
+
+"Stories/story5",
+
+
+
+characters:{
+
+
+boy:{
+
+folder:
+"5storyman",
+
+filePrefix:
+"5storyman"
+
+},
+
+
+girl:{
+
+folder:
+"5storygirl",
+
+filePrefix:
+"5storygirl"
+
+}
+
+
+},
+
+
+    // Первый экран истории
+
+    screens:{
+
+    day1:16,
+
+    day2:17,
+
+    day3:18,
+
+    day4:19,
+
+    day5:20,
+
+    day6:21,
+
+    roulette:22,
+
+    result:23,
+
+    author:24
+
+},
+
+
+
+    // Количество дней
+    days:
+
+    6,
+
+},
+
+
 
 
 

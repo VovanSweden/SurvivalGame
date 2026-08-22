@@ -2471,6 +2471,36 @@ gameState.currentStory === "STORY_4"
 
 
 
+if(
+gameState.currentStory === "STORY_5"
+){
+
+    loadStoryDayImage(
+    "story-day-image-016",
+    1
+    );
+
+
+    showScreen(
+    screens.screen016
+    );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 
