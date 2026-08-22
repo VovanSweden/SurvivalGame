@@ -2822,91 +2822,70 @@ rouletteArrow.style.transform =
 function checkRouletteResult(angle){
 
 
-    console.log(
-    "ROULETTE ANGLE:",
-    angle
-    );
+    const story =
+    stories[gameState.currentStory];
+
+
+    if(!story){
+
+        console.log(
+        "NO STORY FOR ROULETTE"
+        );
+
+        return;
+
+    }
+
+
+
+    let resultDay;
 
 
 
     if(angle < 180){
 
 
+        resultDay =
+        story.roulette.green;
+
+
         console.log(
-        "GREEN ZONE - SURVIVAL"
+        "GREEN RESULT DAY:",
+        resultDay
         );
-
-
-
-        if(gameState.character === "boy"){
-
-
-            document.getElementById(
-            "story-day-image-023"
-            ).src =
-            "Stories/story1/1storyman/1storymanday7.png";
-
-
-        }
-
-
-
-        if(gameState.character === "girl"){
-
-
-            document.getElementById(
-            "story-day-image-023"
-            ).src =
-            "Stories/story1/1storygirl/1storygirlday7.png";
-
-
-        }
-
 
 
     }
     else{
 
 
+        resultDay =
+        story.roulette.red;
+
+
         console.log(
-        "RED ZONE - DEATH"
+        "RED RESULT DAY:",
+        resultDay
         );
-
-
-
-        if(gameState.character === "boy"){
-
-
-            document.getElementById(
-            "story-day-image-023"
-            ).src =
-            "Stories/story1/1storyman/1storymanday8.png";
-
-
-        }
-
-
-
-        if(gameState.character === "girl"){
-
-
-            document.getElementById(
-            "story-day-image-023"
-            ).src =
-            "Stories/story1/1storygirl/1storygirlday8.png";
-
-
-        }
-
 
 
     }
 
 
 
-    showScreen(
+    loadStoryDayImage(
+        "story-day-image-023",
+        resultDay
+    );
+
+
+
+        showScreen(
     screens.screen023
     );
+
+    
+}
 
 buttons.story023Next.addEventListener(
 "click",
@@ -2919,7 +2898,6 @@ screens.screen024
 
 
 });
-}
 
 
 
@@ -3046,82 +3024,61 @@ DAY 8
 function checkRouletteResult2(angle){
 
 
-    console.log(
-    "STORY 3 ROULETTE ANGLE:",
-    angle
-    );
+    const story =
+    stories[gameState.currentStory];
+
+
+    if(!story){
+
+        console.log(
+        "NO STORY DATA"
+        );
+
+        return;
+
+    }
+
+
+
+    let resultDay;
 
 
 
     if(angle < 180){
 
 
+        resultDay =
+        story.roulette.green;
+
+
         console.log(
-        "STORY 3 GREEN ZONE"
+        "STORY 3 GREEN RESULT DAY:",
+        resultDay
         );
-
-
-        if(gameState.character === "boy"){
-
-
-            document.getElementById(
-            "story-day-image-037"
-            ).src =
-            "Stories/story3/3storyman/3storymanday7.png";
-
-
-        }
-
-
-
-        if(gameState.character === "girl"){
-
-
-            document.getElementById(
-            "story-day-image-037"
-            ).src =
-            "Stories/story3/3storygirl/3storygirlday7.png";
-
-
-        }
-
 
 
     }
     else{
 
 
+        resultDay =
+        story.roulette.red;
+
+
         console.log(
-        "STORY 3 RED ZONE"
+        "STORY 3 RED RESULT DAY:",
+        resultDay
         );
 
 
-        if(gameState.character === "boy"){
-
-
-            document.getElementById(
-            "story-day-image-037"
-            ).src =
-            "Stories/story3/3storyman/3storymanday8.png";
-
-
-        }
-
-
-
-        if(gameState.character === "girl"){
-
-
-            document.getElementById(
-            "story-day-image-037"
-            ).src =
-            "Stories/story3/3storygirl/3storygirlday8.png";
-
-
-        }
-
-
     }
+
+
+
+    loadStoryDayImage(
+    "story-day-image-037",
+    resultDay
+    );
 
 
 
@@ -3131,6 +3088,18 @@ function checkRouletteResult2(angle){
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 =================================================

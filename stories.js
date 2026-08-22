@@ -192,6 +192,15 @@ filePrefix:
 
     6,
 
+
+    roulette:{
+
+green:7,
+
+red:8
+
+}
+
 },
 
 
@@ -297,6 +306,14 @@ filePrefix:
 
     6,
 
+    roulette:{
+
+green:7,
+
+red:8
+
+}
+
 },
 
 
@@ -389,6 +406,15 @@ filePrefix:
 
     6,
 
+roulette:{
+
+green:7,
+
+red:8
+
+}
+
+
 },
 
 
@@ -480,6 +506,16 @@ filePrefix:
     days:
 
     6,
+
+roulette:{
+
+green:7,
+
+red:8
+
+}
+
+
 
 },
 
@@ -616,6 +652,14 @@ filePrefix:
     days:
 
     6,
+
+    roulette:{
+
+green:7,
+
+red:8
+
+}
 
 },
 
