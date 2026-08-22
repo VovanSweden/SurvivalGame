@@ -371,7 +371,7 @@ function selectStory(){
         "mobile_phone",
         
         "coffee_cup",
-        "book"
+        "book",
         "headlamp",
         "fishing_rod",
         "first_aid_kit",
