@@ -369,7 +369,7 @@ function selectStory(){
     const story2Items =
     [
         "mobile_phone",
-        
+        "cigarettes",
         "coffee_cup",
         "book",
         "headlamp",
