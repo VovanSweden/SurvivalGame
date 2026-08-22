@@ -345,7 +345,7 @@ STORY SELECTOR SYSTEM
 
 
 Checks selected items
-and chooses story.
+and chooses story  .
 
 =================================================
 */
